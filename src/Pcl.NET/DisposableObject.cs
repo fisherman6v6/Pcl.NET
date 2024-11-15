@@ -1,50 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
-  /*
-   https://github.com/jbruening/PclSharp
-   */
-  public abstract class DisposableObject : IDisposable
-  {
-    protected bool _suppressDispose;
-
-    private int _disposed;
-
-    public void Dispose()
+    /*
+     https://github.com/jbruening/PclSharp
+     */
+    public abstract class DisposableObject : IDisposable
     {
-      Dispose(disposing: true);
-      GC.SuppressFinalize(this);
-    }
+        protected bool _suppressDispose;
 
-    ~DisposableObject()
-    {
-      Dispose(disposing: false);
-    }
+        private int _disposed;
 
-    private void Dispose(bool disposing)
-    {
-      if (Interlocked.Exchange(ref _disposed, 1) == 0)
-      {
-        if (disposing)
+        public void Dispose()
         {
-          RelaseManagedResources();
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
-        if (!_suppressDispose)
+
+        ~DisposableObject()
         {
-          DisposeObject();
+            Dispose(disposing: false);
         }
-      }
-    }
 
-    protected virtual void RelaseManagedResources()
-    {
-    }
+        private void Dispose(bool disposing)
+        {
+            if (Interlocked.Exchange(ref _disposed, 1) == 0)
+            {
+                if (disposing)
+                {
+                    RelaseManagedResources();
+                }
+                if (!_suppressDispose)
+                {
+                    DisposeObject();
+                }
+            }
+        }
 
-    protected abstract void DisposeObject();
-  }
+        protected virtual void RelaseManagedResources()
+        {
+        }
+
+        protected abstract void DisposeObject();
+    }
 }

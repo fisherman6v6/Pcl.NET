@@ -10,11 +10,11 @@ using namespace std;
 extern "C" {
 #endif
 
-  EXPORT(PCDWriter*) io_pcdwriter_ctor();
+    EXPORT(PCDWriter*) io_pcdwriter_ctor();
 
-  EXPORT(void) io_pcdwriter_delete(PCDWriter** ptr);
+    EXPORT(void) io_pcdwriter_delete(PCDWriter** ptr);
 
-  EXPORT(int32_t) io_pcdwriter_write_xyz(PCDWriter* ptr, const char* str, PointCloud<PointXYZ>* cloud, int binary);
+    EXPORT(int32_t) io_pcdwriter_write_xyz(PCDWriter* ptr, const char* str, PointCloud<PointXYZ>* cloud, int binary);
 
 #ifdef __cplusplus  
 }

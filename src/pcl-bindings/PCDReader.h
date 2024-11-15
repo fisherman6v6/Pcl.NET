@@ -10,11 +10,11 @@ using namespace std;
 extern "C" {
 #endif
 
-  EXPORT(PCDReader*) io_pcdreader_ctor();
+    EXPORT(PCDReader*) io_pcdreader_ctor();
 
-  EXPORT(void) io_pcdreader_delete(PCDReader** ptr);
+    EXPORT(void) io_pcdreader_delete(PCDReader** ptr);
 
-  EXPORT(int32_t) io_pcdreader_read_xyz(PCDReader* ptr, const char* str, PointCloud<PointXYZ>* cloud, int offset);
+    EXPORT(int32_t) io_pcdreader_read_xyz(PCDReader* ptr, const char* str, PointCloud<PointXYZ>* cloud, int offset);
 
 #ifdef __cplusplus  
 }

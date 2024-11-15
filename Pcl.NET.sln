@@ -12,6 +12,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pcl-bindings", "src\pcl-bindings\pcl-bindings.vcxproj", "{FA3800A9-BCB8-4964-A1E9-BDF8A8B9EC05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{352E239D-53F8-4CF5-ACF0-0BDAB5D90055}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pcl.NET", "src\Pcl.NET\Pcl.NET.csproj", "{56D8B0CA-2921-404C-A80C-27362BE2950C}"
 EndProject
