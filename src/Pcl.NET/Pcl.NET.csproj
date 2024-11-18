@@ -1,10 +1,167 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Authors>Alessandro Fici</Authors>
+    <Description></Description>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>0.0.1</Version>
+    <PackageOutputPath>../../packages</PackageOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="native\debug\win-x64\" />
+    <Folder Include="native\release\win-x64\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\x64\Debug\boost_filesystem-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_filesystem-vc144-mt-gd-x64-1_85.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\boost_iostreams-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_iostreams-vc144-mt-gd-x64-1_85.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\bz2d.dll" Link="native\debug\win-x64\bz2d.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\double-conversion.dll" Link="native\debug\win-x64\double-conversion.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\fmtd.dll" Link="native\debug\win-x64\fmtd.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\jpeg62.dll" Link="native\debug\win-x64\jpeg62.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\liblzma.dll" Link="native\debug\win-x64\liblzma.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\libpng16d.dll" Link="native\debug\win-x64\libpng16d.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\lz4d.dll" Link="native\debug\win-x64\lz4d.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\pcl-bindings.dll" Link="native\debug\win-x64\pcl-bindings.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\pcl_commond.dll" Link="native\debug\win-x64\pcl_commond.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\pcl_iod.dll" Link="native\debug\win-x64\pcl_iod.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\pcl_io_plyd.dll" Link="native\debug\win-x64\pcl_io_plyd.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\pugixml.dll" Link="native\debug\win-x64\pugixml.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\tiffd.dll" Link="native\debug\win-x64\tiffd.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\verdict.dll" Link="native\debug\win-x64\verdict.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\zlibd1.dll" Link="native\debug\win-x64\zlibd1.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\zstd.dll" Link="native\debug\win-x64\zstd.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\boost_filesystem-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_filesystem-vc144-mt-x64-1_85.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\boost_iostreams-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_iostreams-vc144-mt-x64-1_85.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\bz2.dll" Link="native\release\win-x64\bz2.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\double-conversion.dll" Link="native\release\win-x64\double-conversion.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\fmt.dll" Link="native\release\win-x64\fmt.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\jpeg62.dll" Link="native\release\win-x64\jpeg62.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\liblzma.dll" Link="native\release\win-x64\liblzma.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\libpng16.dll" Link="native\release\win-x64\libpng16.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\lz4.dll" Link="native\release\win-x64\lz4.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl-bindings.dll" Link="native\release\win-x64\pcl-bindings.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_common.dll" Link="native\release\win-x64\pcl_common.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_io.dll" Link="native\release\win-x64\pcl_io.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_io_ply.dll" Link="native\release\win-x64\pcl_io_ply.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pugixml.dll" Link="native\release\win-x64\pugixml.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\tiff.dll" Link="native\release\win-x64\tiff.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\verdict.dll" Link="native\release\win-x64\verdict.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\zlib1.dll" Link="native\release\win-x64\zlib1.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\zstd.dll" Link="native\release\win-x64\zstd.dll">
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>

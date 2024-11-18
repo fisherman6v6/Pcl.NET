@@ -1,4 +1,6 @@
-﻿namespace Pcl.NET
+﻿using Pcl.NET.Eigen;
+
+namespace Pcl.NET
 {
     public class PointCloudXYZ : PointCloud<PointXYZ>
     {

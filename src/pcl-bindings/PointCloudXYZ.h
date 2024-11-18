@@ -6,6 +6,7 @@
 
 using namespace pcl;
 using namespace std;
+
 using point_vector = vector<PointXYZ, Eigen::aligned_allocator<PointXYZ>>;
 
 #ifdef __cplusplus  
@@ -49,6 +50,10 @@ extern "C" {
     EXPORT(int) pointcloud_xyz_get_is_dense(PointCloud<PointXYZ>* ptr);
 
     EXPORT(void) pointcloud_xyz_concatenate(PointCloud<PointXYZ>* ptr1, PointCloud<PointXYZ>* ptr2, PointCloud<PointXYZ>* ptr_out);
+
+    EXPORT(Eigen::Vector4f*) pointcloud_xyz_get_sensor_origin(PointCloud<PointXYZ>* ptr);
+
+    EXPORT(void) pointcloud_xyz_set_sensor_origin(PointCloud<PointXYZ>* ptr, Eigen::Vector4f* value);
 
 #ifdef __cplusplus  
 }

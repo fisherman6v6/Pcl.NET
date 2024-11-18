@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\x64\Debug\pcl-bindings.dll" Link="pcl-bindings.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\src\Pcl.NET\Pcl.NET.csproj" />
   </ItemGroup>
 

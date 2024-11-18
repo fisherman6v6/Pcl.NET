@@ -139,19 +139,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Eigen_Matrix4f.h" />
     <ClInclude Include="export.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="PCDReader.h" />
     <ClInclude Include="PCDWriter.h" />
     <ClInclude Include="PointCloudXYZ.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="VectorXYZ.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Eigen_Matrix4f.cpp" />
     <ClCompile Include="PCDReader.cpp" />
     <ClCompile Include="PCDWriter.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="VectorXYZ.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="pcl-bindings.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
