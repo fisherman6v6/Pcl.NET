@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Eigen_Matrix4f.h" />
+    <ClInclude Include="Eigen_VectorXf.h" />
     <ClInclude Include="export.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="PCDReader.h" />
@@ -150,7 +151,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Eigen_Matrix4f.cpp" />
+    <ClCompile Include="Eigen_MatrixXf.cpp" />
+    <ClCompile Include="Eigen_VectorXf.cpp" />
     <ClCompile Include="PCDReader.cpp" />
     <ClCompile Include="PCDWriter.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />

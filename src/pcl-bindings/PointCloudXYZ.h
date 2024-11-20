@@ -51,9 +51,13 @@ extern "C" {
 
     EXPORT(void) pointcloud_xyz_concatenate(PointCloud<PointXYZ>* ptr1, PointCloud<PointXYZ>* ptr2, PointCloud<PointXYZ>* ptr_out);
 
-    EXPORT(Eigen::Vector4f*) pointcloud_xyz_get_sensor_origin(PointCloud<PointXYZ>* ptr);
+    EXPORT(Eigen::Vector4f) pointcloud_xyz_get_sensor_origin(PointCloud<PointXYZ>* ptr);
 
-    EXPORT(void) pointcloud_xyz_set_sensor_origin(PointCloud<PointXYZ>* ptr, Eigen::Vector4f* value);
+    EXPORT(void) pointcloud_xyz_set_sensor_origin(PointCloud<PointXYZ>* ptr, Eigen::Vector4f value);
+
+    EXPORT(Eigen::Quaternionf) pointcloud_xyz_get_sensor_orientation(PointCloud<PointXYZ>* ptr);
+
+    EXPORT(void) pointcloud_xyz_set_sensor_orientation(PointCloud<PointXYZ>* ptr, Eigen::Quaternionf value);
 
 #ifdef __cplusplus  
 }

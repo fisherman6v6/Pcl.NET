@@ -66,6 +66,18 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyz_concatenate(IntPtr ptr1, IntPtr ptr2, IntPtr out_ptr);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f pointcloud_xyz_get_sensor_origin(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyz_set_sensor_origin(IntPtr ptr, Eigen.Vector4f value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyz_set_sensor_orientation(IntPtr ptr, Eigen.Quaternionf value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Quaternionf pointcloud_xyz_get_sensor_orientation(IntPtr ptr);
+
         #endregion
 
         #region VectorXYZ

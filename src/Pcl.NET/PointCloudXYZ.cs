@@ -1,6 +1,4 @@
-﻿using Pcl.NET.Eigen;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
     public class PointCloudXYZ : PointCloud<PointXYZ>
     {
@@ -47,6 +45,31 @@ namespace Pcl.NET
         public override ulong Count => Invoke.pointcloud_xyz_size(_ptr);
 
         public override bool IsOrganized => Invoke.pointcloud_xyz_is_organized(_ptr);
+
+        public Eigen.Vector4f SensorOrigin
+        {
+            get
+            {
+                return Invoke.pointcloud_xyz_get_sensor_origin(_ptr);
+            }
+            set
+            {
+                Invoke.pointcloud_xyz_set_sensor_origin(_ptr, value);
+            }
+        }
+
+        public Eigen.Quaternionf SensorOrientation
+        {
+            get
+            {
+                return Invoke.pointcloud_xyz_get_sensor_orientation(_ptr);
+            }
+
+            set
+            {
+                Invoke.pointcloud_xyz_set_sensor_orientatation(_ptr, value);
+            }
+        }
 
         private PointCloudXYZ(IntPtr ptr)
         {
