@@ -67,7 +67,7 @@
 
             set
             {
-                Invoke.pointcloud_xyz_set_sensor_orientatation(_ptr, value);
+                Invoke.pointcloud_xyz_set_sensor_orientation(_ptr, value);
             }
         }
 
