@@ -8,157 +8,405 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.1</Version>
+    <Version>0.0.6</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="native\debug\win-x64\" />
+    <Folder Include="native\debug\win-x64\"/>
     <Folder Include="native\release\win-x64\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\..\x64\Debug\boost_filesystem-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_filesystem-vc144-mt-gd-x64-1_85.dll">
+    <None Include="..\..\x64\Debug\boost_filesystem-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_filesystem-vc144-mt-gd-x64-1_85.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\boost_iostreams-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_iostreams-vc144-mt-gd-x64-1_85.dll">
+    <None Include="..\..\x64\Debug\boost_iostreams-vc144-mt-gd-x64-1_85.dll" Link="native\debug\win-x64\boost_iostreams-vc144-mt-gd-x64-1_85.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\bz2d.dll" Link="native\debug\win-x64\bz2d.dll">
+    <None Include="..\..\x64\Debug\bz2d.dll" Link="native\debug\win-x64\bz2d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\double-conversion.dll" Link="native\debug\win-x64\double-conversion.dll">
+    <None Include="..\..\x64\Debug\double-conversion.dll" Link="native\debug\win-x64\double-conversion.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\fmtd.dll" Link="native\debug\win-x64\fmtd.dll">
+    <None Include="..\..\x64\Debug\fmtd.dll" Link="native\debug\win-x64\fmtd.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\jpeg62.dll" Link="native\debug\win-x64\jpeg62.dll">
+    <None Include="..\..\x64\Debug\jpeg62.dll" Link="native\debug\win-x64\jpeg62.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\liblzma.dll" Link="native\debug\win-x64\liblzma.dll">
+    <None Include="..\..\x64\Debug\liblzma.dll" Link="native\debug\win-x64\liblzma.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\libpng16d.dll" Link="native\debug\win-x64\libpng16d.dll">
+    <None Include="..\..\x64\Debug\libpng16d.dll" Link="native\debug\win-x64\libpng16d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\lz4d.dll" Link="native\debug\win-x64\lz4d.dll">
+    <None Include="..\..\x64\Debug\lz4d.dll" Link="native\debug\win-x64\lz4d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\pcl-bindings.dll" Link="native\debug\win-x64\pcl-bindings.dll">
+    <None Include="..\..\x64\Debug\pcl-bindings.dll" Link="native\debug\win-x64\pcl-bindings.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\pcl_commond.dll" Link="native\debug\win-x64\pcl_commond.dll">
+    <None Include="..\..\x64\Debug\pcl-bindings.exp" Link="native\debug\win-x64\pcl-bindings.exp" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\pcl_iod.dll" Link="native\debug\win-x64\pcl_iod.dll">
+    <None Include="..\..\x64\Debug\pcl-bindings.lib" Link="native\debug\win-x64\pcl-bindings.lib" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\pcl_io_plyd.dll" Link="native\debug\win-x64\pcl_io_plyd.dll">
+    <None Include="..\..\x64\Debug\pcl-bindings.pdb" Link="native\debug\win-x64\pcl-bindings.pdb" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\pugixml.dll" Link="native\debug\win-x64\pugixml.dll">
+    <None Include="..\..\x64\Debug\pcl_commond.dll" Link="native\debug\win-x64\pcl_commond.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\tiffd.dll" Link="native\debug\win-x64\tiffd.dll">
+    <None Include="..\..\x64\Debug\pcl_iod.dll" Link="native\debug\win-x64\pcl_iod.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\verdict.dll" Link="native\debug\win-x64\verdict.dll">
+    <None Include="..\..\x64\Debug\pcl_io_plyd.dll" Link="native\debug\win-x64\pcl_io_plyd.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\zlibd1.dll" Link="native\debug\win-x64\zlibd1.dll">
+    <None Include="..\..\x64\Debug\pugixml.dll" Link="native\debug\win-x64\pugixml.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Debug\zstd.dll" Link="native\debug\win-x64\zstd.dll">
+    <None Include="..\..\x64\Debug\tiffd.dll" Link="native\debug\win-x64\tiffd.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\boost_filesystem-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_filesystem-vc144-mt-x64-1_85.dll">
+    <None Include="..\..\x64\Debug\verdict.dll" Link="native\debug\win-x64\verdict.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\boost_iostreams-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_iostreams-vc144-mt-x64-1_85.dll">
+    <None Include="..\..\x64\Debug\vtkCommonColor-9.3d.dll" Link="native\debug\win-x64\vtkCommonColor-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\bz2.dll" Link="native\release\win-x64\bz2.dll">
+    <None Include="..\..\x64\Debug\vtkCommonComputationalGeometry-9.3d.dll" Link="native\debug\win-x64\vtkCommonComputationalGeometry-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\double-conversion.dll" Link="native\release\win-x64\double-conversion.dll">
+    <None Include="..\..\x64\Debug\vtkCommonCore-9.3d.dll" Link="native\debug\win-x64\vtkCommonCore-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\fmt.dll" Link="native\release\win-x64\fmt.dll">
+    <None Include="..\..\x64\Debug\vtkCommonDataModel-9.3d.dll" Link="native\debug\win-x64\vtkCommonDataModel-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\jpeg62.dll" Link="native\release\win-x64\jpeg62.dll">
+    <None Include="..\..\x64\Debug\vtkCommonExecutionModel-9.3d.dll" Link="native\debug\win-x64\vtkCommonExecutionModel-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\liblzma.dll" Link="native\release\win-x64\liblzma.dll">
+    <None Include="..\..\x64\Debug\vtkCommonMath-9.3d.dll" Link="native\debug\win-x64\vtkCommonMath-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\libpng16.dll" Link="native\release\win-x64\libpng16.dll">
+    <None Include="..\..\x64\Debug\vtkCommonMisc-9.3d.dll" Link="native\debug\win-x64\vtkCommonMisc-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\lz4.dll" Link="native\release\win-x64\lz4.dll">
+    <None Include="..\..\x64\Debug\vtkCommonSystem-9.3d.dll" Link="native\debug\win-x64\vtkCommonSystem-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\pcl-bindings.dll" Link="native\release\win-x64\pcl-bindings.dll">
+    <None Include="..\..\x64\Debug\vtkCommonTransforms-9.3d.dll" Link="native\debug\win-x64\vtkCommonTransforms-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\pcl_common.dll" Link="native\release\win-x64\pcl_common.dll">
+    <None Include="..\..\x64\Debug\vtkDICOMParser-9.3d.dll" Link="native\debug\win-x64\vtkDICOMParser-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\pcl_io.dll" Link="native\release\win-x64\pcl_io.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersCore-9.3d.dll" Link="native\debug\win-x64\vtkFiltersCore-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\pcl_io_ply.dll" Link="native\release\win-x64\pcl_io_ply.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersGeneral-9.3d.dll" Link="native\debug\win-x64\vtkFiltersGeneral-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\pugixml.dll" Link="native\release\win-x64\pugixml.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersGeometry-9.3d.dll" Link="native\debug\win-x64\vtkFiltersGeometry-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\tiff.dll" Link="native\release\win-x64\tiff.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersHybrid-9.3d.dll" Link="native\debug\win-x64\vtkFiltersHybrid-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\verdict.dll" Link="native\release\win-x64\verdict.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersSources-9.3d.dll" Link="native\debug\win-x64\vtkFiltersSources-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\zlib1.dll" Link="native\release\win-x64\zlib1.dll">
+    <None Include="..\..\x64\Debug\vtkFiltersVerdict-9.3d.dll" Link="native\debug\win-x64\vtkFiltersVerdict-9.3d.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>
-    <None Include="..\..\x64\Release\zstd.dll" Link="native\release\win-x64\zstd.dll">
+    <None Include="..\..\x64\Debug\vtkImagingCore-9.3d.dll" Link="native\debug\win-x64\vtkImagingCore-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkImagingSources-9.3d.dll" Link="native\debug\win-x64\vtkImagingSources-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkIOCore-9.3d.dll" Link="native\debug\win-x64\vtkIOCore-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkIOGeometry-9.3d.dll" Link="native\debug\win-x64\vtkIOGeometry-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkIOImage-9.3d.dll" Link="native\debug\win-x64\vtkIOImage-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkIOLegacy-9.3d.dll" Link="native\debug\win-x64\vtkIOLegacy-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkIOPLY-9.3d.dll" Link="native\debug\win-x64\vtkIOPLY-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkkissfft-9.3d.dll" Link="native\debug\win-x64\vtkkissfft-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkloguru-9.3d.dll" Link="native\debug\win-x64\vtkloguru-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkmetaio-9.3d.dll" Link="native\debug\win-x64\vtkmetaio-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtkRenderingCore-9.3d.dll" Link="native\debug\win-x64\vtkRenderingCore-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtksys-9.3d.dll" Link="native\debug\win-x64\vtksys-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\vtktoken-9.3d.dll" Link="native\debug\win-x64\vtktoken-9.3d.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\zlibd1.dll" Link="native\debug\win-x64\zlibd1.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Debug\zstd.dll" Link="native\debug\win-x64\zstd.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\boost_filesystem-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_filesystem-vc144-mt-x64-1_85.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\boost_iostreams-vc144-mt-x64-1_85.dll" Link="native\release\win-x64\boost_iostreams-vc144-mt-x64-1_85.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\bz2.dll" Link="native\release\win-x64\bz2.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\double-conversion.dll" Link="native\release\win-x64\double-conversion.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\fmt.dll" Link="native\release\win-x64\fmt.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\jpeg62.dll" Link="native\release\win-x64\jpeg62.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\liblzma.dll" Link="native\release\win-x64\liblzma.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\libpng16.dll" Link="native\release\win-x64\libpng16.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\lz4.dll" Link="native\release\win-x64\lz4.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl-bindings.dll" Link="native\release\win-x64\pcl-bindings.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl-bindings.exp" Link="native\release\win-x64\pcl-bindings.exp" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_common.dll" Link="native\release\win-x64\pcl_common.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_io.dll" Link="native\release\win-x64\pcl_io.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pcl_io_ply.dll" Link="native\release\win-x64\pcl_io_ply.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\pugixml.dll" Link="native\release\win-x64\pugixml.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\tiff.dll" Link="native\release\win-x64\tiff.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\verdict.dll" Link="native\release\win-x64\verdict.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonColor-9.3.dll" Link="native\release\win-x64\vtkCommonColor-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonComputationalGeometry-9.3.dll" Link="native\release\win-x64\vtkCommonComputationalGeometry-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonCore-9.3.dll" Link="native\release\win-x64\vtkCommonCore-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonDataModel-9.3.dll" Link="native\release\win-x64\vtkCommonDataModel-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonExecutionModel-9.3.dll" Link="native\release\win-x64\vtkCommonExecutionModel-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonMath-9.3.dll" Link="native\release\win-x64\vtkCommonMath-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonMisc-9.3.dll" Link="native\release\win-x64\vtkCommonMisc-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonSystem-9.3.dll" Link="native\release\win-x64\vtkCommonSystem-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkCommonTransforms-9.3.dll" Link="native\release\win-x64\vtkCommonTransforms-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkDICOMParser-9.3.dll" Link="native\release\win-x64\vtkDICOMParser-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersCore-9.3.dll" Link="native\release\win-x64\vtkFiltersCore-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersGeneral-9.3.dll" Link="native\release\win-x64\vtkFiltersGeneral-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersGeometry-9.3.dll" Link="native\release\win-x64\vtkFiltersGeometry-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersHybrid-9.3.dll" Link="native\release\win-x64\vtkFiltersHybrid-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersSources-9.3.dll" Link="native\release\win-x64\vtkFiltersSources-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkFiltersVerdict-9.3.dll" Link="native\release\win-x64\vtkFiltersVerdict-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkImagingCore-9.3.dll" Link="native\release\win-x64\vtkImagingCore-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkImagingSources-9.3.dll" Link="native\release\win-x64\vtkImagingSources-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkIOCore-9.3.dll" Link="native\release\win-x64\vtkIOCore-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkIOGeometry-9.3.dll" Link="native\release\win-x64\vtkIOGeometry-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkIOImage-9.3.dll" Link="native\release\win-x64\vtkIOImage-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkIOLegacy-9.3.dll" Link="native\release\win-x64\vtkIOLegacy-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkIOPLY-9.3.dll" Link="native\release\win-x64\vtkIOPLY-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkkissfft-9.3.dll" Link="native\release\win-x64\vtkkissfft-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkloguru-9.3.dll" Link="native\release\win-x64\vtkloguru-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkmetaio-9.3.dll" Link="native\release\win-x64\vtkmetaio-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtkRenderingCore-9.3.dll" Link="native\release\win-x64\vtkRenderingCore-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtksys-9.3.dll" Link="native\release\win-x64\vtksys-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\vtktoken-9.3.dll" Link="native\release\win-x64\vtktoken-9.3.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\zlib1.dll" Link="native\release\win-x64\zlib1.dll" >
+      <Pack>true</Pack>
+      <PackagePath>runtimes/win-x64/native</PackagePath>
+    </None>
+    <None Include="..\..\x64\Release\zstd.dll" Link="native\release\win-x64\zstd.dll" >
       <Pack>true</Pack>
       <PackagePath>runtimes/win-x64/native</PackagePath>
     </None>

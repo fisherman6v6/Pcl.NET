@@ -86,7 +86,7 @@ namespace Pcl.NET
         public static extern IntPtr std_vector_xyz_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr std_vector_xyz_ctor_count(int count);
+        public static extern IntPtr std_vector_xyz_ctor_count(ulong count);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void std_vector_xyz_delete(ref IntPtr ptr);

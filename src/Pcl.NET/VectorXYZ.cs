@@ -4,7 +4,7 @@ namespace Pcl.NET
 {
     internal class VectorXYZ : Vector<PointXYZ>
     {
-        public unsafe override PointXYZ this[ulong index]
+        public unsafe override PointXYZ this[long index]
         {
             get
             {
@@ -16,7 +16,7 @@ namespace Pcl.NET
             }
         }
 
-        public override ulong Count => Invoke.std_vector_xyz_size(_ptr);
+        public override long Count => (long)Invoke.std_vector_xyz_size(_ptr);
 
         public IntPtr Data => Invoke.std_vector_xyz_data(_ptr);
 
@@ -27,9 +27,9 @@ namespace Pcl.NET
             _ptr = Invoke.std_vector_xyz_ctor();
         }
 
-        public VectorXYZ(int count)
+        public VectorXYZ(long count)
         {
-            _ptr = Invoke.std_vector_xyz_ctor_count(count);
+            _ptr = Invoke.std_vector_xyz_ctor_count((ulong)count);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pcl.NET
         /// <param name="list"></param>
         public unsafe VectorXYZ(PointXYZ[] arr)
         {
-            _ptr = Invoke.std_vector_xyz_ctor_count(arr.Length);
+            _ptr = Invoke.std_vector_xyz_ctor_count((ulong)arr.Length);
             PointXYZ* dptr = (PointXYZ*)(void*)Data;
             for (int i = 0; i < arr.Length; i++)
             {
@@ -57,13 +57,17 @@ namespace Pcl.NET
             Invoke.std_vector_xyz_add(_ptr, item);
         }
 
-        public override void At(ulong idx, ref PointXYZ value)
+        public override void At(long idx, ref PointXYZ value)
         {
-            Invoke.std_vector_xyz_at(_ptr, idx, ref value);
+            Invoke.std_vector_xyz_at(_ptr, (ulong)idx, ref value);
         }
 
         public unsafe override PointXYZ[] ToArray()
         {
+            if (Count > Array.MaxLength)
+            {
+                throw new IndexOutOfRangeException($"{nameof(Array.MaxLength)} is {Array.MaxLength}");
+            }
             PointXYZ[] arr = new PointXYZ[Count];
             fixed (PointXYZ* aptr = arr)
             {
@@ -72,25 +76,37 @@ namespace Pcl.NET
             return arr;
         }
 
+        public unsafe override void CopyTo(PointXYZ[] arr, int idx)
+        {
+            if (Count > Array.MaxLength)
+            {
+                throw new IndexOutOfRangeException($"{nameof(Array.MaxLength)} is {Array.MaxLength}");
+            }
+            fixed (PointXYZ* aptr = arr)
+            {
+                System.Runtime.CompilerServices.Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(System.Runtime.CompilerServices.Unsafe.SizeOf<PointXYZ>() * (uint)Count));
+            }
+        }
+
         public override void Clear()
         {
             Invoke.std_vector_xyz_clear(_ptr);
         }
 
-        public override void Insert(ulong index, PointXYZ item)
+        public override void Insert(long index, PointXYZ item)
         {
-            Invoke.std_vector_xyz_insert(_ptr, index, item);
+            Invoke.std_vector_xyz_insert(_ptr, (ulong)index, item);
         }
 
-        public override void Resize(ulong size)
+        public override void Resize(long size)
         {
-            Invoke.std_vector_xyz_resize(_ptr, size);
+            Invoke.std_vector_xyz_resize(_ptr, (ulong)size);
         }
 
         public override IEnumerator<PointXYZ> GetEnumerator()
         {
-            ulong count = Count;
-            for (ulong i = 0; i < count; i++)
+            long count = Count;
+            for (var i = 0; i < count; i++)
             {
                 yield return this[i];
             }

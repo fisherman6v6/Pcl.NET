@@ -12,7 +12,7 @@ extern "C" {
 
     EXPORT(vector_t*) std_vector_xyz_ctor();
 
-    EXPORT(vector_t*) std_vector_xyz_ctor_count(int count);
+    EXPORT(vector_t*) std_vector_xyz_ctor_count(size_t count);
 
     EXPORT(void) std_vector_xyz_delete(vector<PointXYZ>** ptr);
 

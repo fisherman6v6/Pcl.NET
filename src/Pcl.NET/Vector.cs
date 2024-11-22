@@ -4,21 +4,23 @@ namespace Pcl.NET
 {
     public abstract class Vector<T> : UnmanagedObject, IEnumerable<T>
     {
-        public abstract T this[ulong index] { get; set; }
+        public abstract T this[long index] { get; set; }
 
-        public abstract ulong Count { get; }
+        public abstract long Count { get; }
 
         public abstract void Add(T item);
 
         public abstract PointXYZ[] ToArray();
 
+        public abstract void CopyTo(PointXYZ[] arr, int idx);
+
         public abstract void Clear();
 
-        public abstract void Insert(ulong index, T item);
+        public abstract void Insert(long index, T item);
 
-        public abstract void Resize(ulong size);
+        public abstract void Resize(long size);
 
-        public abstract void At(ulong idx, ref T value);
+        public abstract void At(long idx, ref T value);
 
         public virtual IEnumerator<T> GetEnumerator()
         {

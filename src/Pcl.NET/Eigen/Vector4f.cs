@@ -19,5 +19,21 @@ namespace Pcl.NET.Eigen
 
         [FieldOffset(0)]
         public unsafe fixed float data[4];
+
+        public Vector4f(System.Numerics.Vector4 v)
+        {
+            X = v.X;
+            Y = v.Y;
+            Z = v.Z;
+            W = v.W;
+        }
+
+        public Vector4f()
+        {
+            X = 0;
+            Y = 0;
+            Z = 0;
+            W = 0;
+        }
     }
 }

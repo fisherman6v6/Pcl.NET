@@ -5,9 +5,9 @@ vector_t* std_vector_xyz_ctor()
 	return new vector<PointXYZ>();
 }
 
-vector_t* std_vector_xyz_ctor_count(int count)
+vector_t* std_vector_xyz_ctor_count(size_t count)
 {
-	return new vector<PointXYZ>(count);
+    return new vector<PointXYZ>(count);
 }
 
 void std_vector_xyz_delete(vector<PointXYZ>** ptr)
