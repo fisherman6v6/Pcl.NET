@@ -8,8 +8,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Pcl.NET" Version="0.0.6" />
+    <ProjectReference Include="..\..\src\Pcl.NET\Pcl.NET.csproj" />
   </ItemGroup>
 
 </Project>

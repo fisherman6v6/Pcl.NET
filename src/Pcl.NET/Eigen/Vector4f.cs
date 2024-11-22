@@ -20,12 +20,12 @@ namespace Pcl.NET.Eigen
         [FieldOffset(0)]
         public unsafe fixed float data[4];
 
-        public Vector4f(System.Numerics.Vector4 v)
+        public Vector4f(float x, float y, float z, float w)
         {
-            X = v.X;
-            Y = v.Y;
-            Z = v.Z;
-            W = v.W;
+            X = x; 
+            Y = y; 
+            Z = z; 
+            W = w;
         }
 
         public Vector4f()
@@ -35,5 +35,9 @@ namespace Pcl.NET.Eigen
             Z = 0;
             W = 0;
         }
+
+        public static implicit operator System.Numerics.Vector4(Vector4f v) => new(v.X, v.Y, v.Z, v.W);
+
+        public static implicit operator Vector4f(System.Numerics.Vector4 v) => new(v.X, v.Y, v.Z, v.W);
     }
 }

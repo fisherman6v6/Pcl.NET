@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Pcl.NET.TestConsoleApp": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
