@@ -4,7 +4,8 @@
 
 using namespace std;
 using namespace pcl;
-using vector_t = vector<PointXYZ>;
+using point_t = PointXYZ;
+using vector_t = vector<point_t>;
 
 #ifdef __cplusplus  
 extern "C" {
@@ -14,21 +15,21 @@ extern "C" {
 
     EXPORT(vector_t*) std_vector_xyz_ctor_count(size_t count);
 
-    EXPORT(void) std_vector_xyz_delete(vector<PointXYZ>** ptr);
+    EXPORT(void) std_vector_xyz_delete(vector_t** ptr);
 
-    EXPORT(void) std_vector_xyz_at(vector<PointXYZ>* ptr, size_t idx, PointXYZ* value);
+    EXPORT(void) std_vector_xyz_at(vector_t* ptr, size_t idx, point_t* value);
 
-    EXPORT(size_t) std_vector_xyz_size(vector<PointXYZ>* ptr);
+    EXPORT(size_t) std_vector_xyz_size(vector_t* ptr);
 
-    EXPORT(void) std_vector_xyz_clear(vector<PointXYZ>* ptr);
+    EXPORT(void) std_vector_xyz_clear(vector_t* ptr);
 
-    EXPORT(void) std_vector_xyz_resize(vector<PointXYZ>* ptr, size_t size);
+    EXPORT(void) std_vector_xyz_resize(vector_t* ptr, size_t size);
 
-    EXPORT(void) std_vector_xyz_add(vector<PointXYZ>* ptr, PointXYZ value);
+    EXPORT(void) std_vector_xyz_add(vector_t* ptr, point_t value);
 
-    EXPORT(void) std_vector_xyz_insert(vector<PointXYZ>* ptr, ptrdiff_t index, PointXYZ value);
+    EXPORT(void) std_vector_xyz_insert(vector_t* ptr, ptrdiff_t index, point_t value);
 
-    EXPORT(PointXYZ*) std_vector_xyz_data(vector<PointXYZ>* ptr);
+    EXPORT(PointXYZ*) std_vector_xyz_data(vector_t* ptr);
 
 #ifdef __cplusplus  
 }
