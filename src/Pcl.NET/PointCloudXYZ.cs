@@ -15,7 +15,6 @@
                 Invoke.pointcloud_xyz_width_set(_ptr, value);
             }
         }
-
         public override uint Height
         {
             get
@@ -27,7 +26,6 @@
                 Invoke.pointcloud_xyz_height_set(_ptr, value);
             }
         }
-
         public override bool IsDense
         {
             get
@@ -39,37 +37,9 @@
                 Invoke.pointcloud_xyz_set_is_dense(_ptr, value);
             }
         }
-
         public override Vector<PointXYZ> Points => _points;
-
         public override ulong Count => Invoke.pointcloud_xyz_size(_ptr);
-
         public override bool IsOrganized => Invoke.pointcloud_xyz_is_organized(_ptr);
-
-        public Eigen.Vector4f SensorOrigin
-        {
-            get
-            {
-                return Invoke.pointcloud_xyz_get_sensor_origin(_ptr);
-            }
-            set
-            {
-                Invoke.pointcloud_xyz_set_sensor_origin(_ptr, value);
-            }
-        }
-
-        public Eigen.Quaternionf SensorOrientation
-        {
-            get
-            {
-                return Invoke.pointcloud_xyz_get_sensor_orientation(_ptr);
-            }
-
-            set
-            {
-                Invoke.pointcloud_xyz_set_sensor_orientation(_ptr, value);
-            }
-        }
 
         private PointCloudXYZ(IntPtr ptr)
         {
@@ -93,7 +63,7 @@
         {
         }
 
-        public void Downsample(int factor, PointCloud<PointXYZ> output)
+        public void Downsample(int factor, PointCloudXYZ output)
         {
             Invoke.pointcloud_xyz_downsample(_ptr, factor, output);
         }

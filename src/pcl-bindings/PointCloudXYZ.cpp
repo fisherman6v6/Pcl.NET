@@ -133,23 +133,3 @@ void pointcloud_xyz_concatenate(PointCloud<PointXYZ>* ptr1, PointCloud<PointXYZ>
 {
 	PointCloud<PointXYZ>::concatenate(*ptr1, *ptr2, *ptr_out);
 }
-
-Eigen::Vector4f pointcloud_xyz_get_sensor_origin(PointCloud<PointXYZ>* ptr)
-{
-    return ptr->sensor_origin_;
-}
-
-void pointcloud_xyz_set_sensor_origin(PointCloud<PointXYZ>* ptr, Eigen::Vector4f value)
-{
-    ptr->sensor_origin_ = value;
-}
-
-Eigen::Quaternionf pointcloud_xyz_get_sensor_orientation(PointCloud<PointXYZ>* ptr)
-{
-    return ptr->sensor_orientation_;
-}
-
-void pointcloud_xyz_set_sensor_orientation(PointCloud<PointXYZ>* ptr, Eigen::Quaternionf value)
-{
-    ptr->sensor_orientation_ = value;
-}

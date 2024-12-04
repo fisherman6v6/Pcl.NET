@@ -10,9 +10,9 @@ namespace Pcl.NET
 
         public abstract void Add(T item);
 
-        public abstract PointXYZ[] ToArray();
+        public abstract T[] ToArray();
 
-        public abstract void CopyTo(PointXYZ[] arr, int idx);
+        public abstract void CopyTo(T[] arr, int index);
 
         public abstract void Clear();
 
@@ -20,7 +20,7 @@ namespace Pcl.NET
 
         public abstract void Resize(long size);
 
-        public abstract void At(long idx, ref T value);
+        public abstract void At(long index, ref T value);
 
         public virtual IEnumerator<T> GetEnumerator()
         {

@@ -8,10 +8,21 @@ namespace Pcl.NET
         {
             get
             {
+                // Following trick can reduce the range check by one
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
                 return DataU[index];
             }
             set
             {
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
                 Unsafe.Write(DataU + index, value);
             }
         }
@@ -57,9 +68,14 @@ namespace Pcl.NET
             Invoke.std_vector_xyz_add(_ptr, item);
         }
 
-        public override void At(long idx, ref PointXYZ value)
+        public override void At(long index, ref PointXYZ value)
         {
-            Invoke.std_vector_xyz_at(_ptr, (ulong)idx, ref value);
+            if ((ulong)index >= (ulong)Count)
+            {
+                ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+            }
+
+            Invoke.std_vector_xyz_at(_ptr, (ulong)index, ref value);
         }
 
         public unsafe override PointXYZ[] ToArray()
@@ -76,7 +92,7 @@ namespace Pcl.NET
             return arr;
         }
 
-        public unsafe override void CopyTo(PointXYZ[] arr, int idx)
+        public unsafe override void CopyTo(PointXYZ[] arr, int index)
         {
             if (Count > Array.MaxLength)
             {
@@ -95,6 +111,11 @@ namespace Pcl.NET
 
         public override void Insert(long index, PointXYZ item)
         {
+            if ((ulong)index >= (ulong)Count)
+            {
+                ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+            }
+
             Invoke.std_vector_xyz_insert(_ptr, (ulong)index, item);
         }
 

@@ -143,9 +143,8 @@
     <ClInclude Include="Eigen_VectorXf.h" />
     <ClInclude Include="export.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="IO.h" />
     <ClInclude Include="PointCloudXYZI.h" />
-    <ClInclude Include="PCDReader.h" />
-    <ClInclude Include="PCDWriter.h" />
     <ClInclude Include="PointCloudXYZ.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="VectorXYZ.h" />
@@ -155,8 +154,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Eigen_MatrixXf.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
-    <ClCompile Include="PCDReader.cpp" />
-    <ClCompile Include="PCDWriter.cpp" />
+    <ClCompile Include="IO.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
     <ClCompile Include="VectorXYZ.cpp" />
