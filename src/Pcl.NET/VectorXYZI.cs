@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Pcl.NET
 {
-    internal class VectorXYZI : Vector<PointXYZI>
+    public class VectorXYZI : Vector<PointXYZI>
     {
         public VectorXYZI(IntPtr ptr)
         {

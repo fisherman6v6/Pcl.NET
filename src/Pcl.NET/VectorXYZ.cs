@@ -2,7 +2,7 @@
 
 namespace Pcl.NET
 {
-    internal class VectorXYZ : Vector<PointXYZ>
+    public class VectorXYZ : Vector<PointXYZ>
     {
         public unsafe override PointXYZ this[long index]
         {
