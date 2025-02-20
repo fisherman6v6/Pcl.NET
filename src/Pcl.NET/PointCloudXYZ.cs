@@ -4,26 +4,26 @@
     {
         private readonly VectorXYZ _points;
 
-        public override uint Width
+        public override int Width
         {
             get
             {
-                return Invoke.pointcloud_xyz_width(_ptr);
+                return (int)Invoke.pointcloud_xyz_width(_ptr);
             }
             set
             {
-                Invoke.pointcloud_xyz_width_set(_ptr, value);
+                Invoke.pointcloud_xyz_width_set(_ptr, (uint)value);
             }
         }
-        public override uint Height
+        public override int Height
         {
             get
             {
-                return Invoke.pointcloud_xyz_height(_ptr);
+                return (int)Invoke.pointcloud_xyz_height(_ptr);
             }
             set
             {
-                Invoke.pointcloud_xyz_height_set(_ptr, value);
+                Invoke.pointcloud_xyz_height_set(_ptr, (uint)value);
             }
         }
         public override bool IsDense
@@ -38,7 +38,7 @@
             }
         }
         public override Vector<PointXYZ> Points => _points;
-        public override ulong Count => Invoke.pointcloud_xyz_size(_ptr);
+        public override long Count => (long)Invoke.pointcloud_xyz_size(_ptr);
         public override bool IsOrganized => Invoke.pointcloud_xyz_is_organized(_ptr);
 
         private PointCloudXYZ(IntPtr ptr)
