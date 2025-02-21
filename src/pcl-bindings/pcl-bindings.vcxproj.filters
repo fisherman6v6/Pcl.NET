@@ -45,6 +45,12 @@
     <ClInclude Include="IO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VectorByte.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CropBoxPointXYZ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -69,6 +75,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="IO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorByte.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CropBoxPointXYZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

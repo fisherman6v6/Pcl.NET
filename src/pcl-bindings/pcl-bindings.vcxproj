@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CropBoxPointXYZ.h" />
     <ClInclude Include="Eigen_Matrix4f.h" />
     <ClInclude Include="Eigen_VectorXf.h" />
     <ClInclude Include="export.h" />
@@ -147,16 +148,19 @@
     <ClInclude Include="PointCloudXYZI.h" />
     <ClInclude Include="PointCloudXYZ.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="VectorByte.h" />
     <ClInclude Include="VectorXYZ.h" />
     <ClInclude Include="VectorXYZI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CropBoxPointXYZ.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Eigen_MatrixXf.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
+    <ClCompile Include="VectorByte.cpp" />
     <ClCompile Include="VectorXYZ.cpp" />
     <ClCompile Include="VectorXYZI.cpp" />
   </ItemGroup>

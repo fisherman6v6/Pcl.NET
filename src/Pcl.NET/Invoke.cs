@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using Pcl.NET.Eigen;
+using System.Runtime.InteropServices;
 
 namespace Pcl.NET
 {
@@ -198,6 +199,41 @@ namespace Pcl.NET
 
         #endregion
 
+        #region VectorByte
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_byte_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_byte_ctor_count(ulong count);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_at(IntPtr ptr, ulong idx, ref byte value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ulong std_vector_byte_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_clear(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_resize(IntPtr ptr, ulong size);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_add(IntPtr ptr, byte value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_byte_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_byte_insert(IntPtr ptr, ulong idx, byte value);
+
+
+        #endregion
+
         #region IO
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -218,6 +254,50 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern int io_save_pcd_xyzi_ascii(string fileName, IntPtr cloud);
 
+        #endregion
+
+        #region CropBox
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pcl_cropbox_pointxyz_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pcl_cropbox_pointxyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pcl_cropbox_pointxyz_set_min(IntPtr ptr, Eigen.Vector4f min);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f pcl_cropbox_pointxyz_get_min(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pcl_cropbox_pointxyz_set_max(IntPtr ptr, Eigen.Vector4f max);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f pcl_cropbox_pointxyz_get_max(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_set_translation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyz_get_translation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_set_rotation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyz_get_rotation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr cropbox_pointxyz_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_filter(IntPtr ptr, IntPtr outputCloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_set_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
 
         #endregion
     }

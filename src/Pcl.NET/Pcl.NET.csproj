@@ -8,7 +8,7 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.11</Version>
+    <Version>0.0.12</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
   </PropertyGroup>
 
