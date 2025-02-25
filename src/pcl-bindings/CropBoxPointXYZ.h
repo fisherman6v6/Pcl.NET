@@ -31,10 +31,14 @@ EXPORT(void) cropbox_pointxyz_set_transform(CropBox<PointXYZ>* ptr, Eigen::Affin
 
 EXPORT(Eigen::Affine3f*) cropbox_pointxyz_get_transform(CropBox<PointXYZ>* ptr);
 
-EXPORT(void) cropbox_pointxyz_set_input_cloud(CropBox<PointXYZ>* ptr, PointCloud<PointXYZ>::Ptr* cloud);
+EXPORT(void) cropbox_pointxyz_set_input_cloud(CropBox<PointXYZ>* ptr, PointCloud<PointXYZ>* cloud);
 
 EXPORT(const PointCloud<PointXYZ>*) cropbox_pointxyz_get_input_cloud(CropBox<PointXYZ>* ptr);
 
 EXPORT(void) cropbox_pointxyz_filter(CropBox<PointXYZ>* ptr, PointCloud<PointXYZ>* output);
 
-EXPORT(void) cropbox_pointxyz_filter_indices(CropBox<PointXYZ>* ptr, std::size_t row_start, std::size_t col_start, std::size_t nb_rows, std::size_t nb_cols);
+EXPORT(void) cropbox_pointxyz_set_filter_indices(CropBox<PointXYZ>* ptr, std::size_t row_start, std::size_t col_start, std::size_t nb_rows, std::size_t nb_cols);
+
+EXPORT(void)cropbox_pointxyz_set_filter_indices_vector(CropBox<PointXYZ>* ptr, std::vector<int>* indices);
+
+EXPORT(void)cropbox_pointxyz_get_filter_indices_vector(CropBox<PointXYZ>* ptr, std::vector<int>* indices);

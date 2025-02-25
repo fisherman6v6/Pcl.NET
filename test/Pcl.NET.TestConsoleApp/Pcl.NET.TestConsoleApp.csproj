@@ -20,4 +20,8 @@
     <ProjectReference Include="..\..\src\Pcl.NET\Pcl.NET.csproj" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(SolutionDir)\x64\Debug\*.dll&quot; &quot;$(SolutionDir)\test\Pcl.NET.TestConsoleApp\bin\Debug\net6.0\&quot; /E /I /S /Y&#xD;&#xA;xcopy &quot;$(SolutionDir)\x64\Debug\*.pdb&quot; &quot;$(SolutionDir)\test\Pcl.NET.TestConsoleApp\bin\Debug\net6.0\&quot; /E /I /S /Y" />
+  </Target>
+
 </Project>

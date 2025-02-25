@@ -51,6 +51,9 @@
     <ClInclude Include="CropBoxPointXYZ.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="VectorInt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -81,6 +84,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CropBoxPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorInt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
