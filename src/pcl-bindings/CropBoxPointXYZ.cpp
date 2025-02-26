@@ -84,3 +84,14 @@ EXPORT(void) cropbox_pointxyz_get_filter_indices_vector(CropBox<PointXYZ>* ptr, 
     pcl::IndicesPtr indices_ptr = ptr->getIndices();
     indices->assign(indices_ptr->begin(), indices_ptr->end());
 }
+
+EXPORT(void) cropbox_pointxyz_set_keep_organized(CropBox<PointXYZ>* ptr, int keep_organized)
+{
+    ptr->setKeepOrganized((bool)keep_organized);
+    ptr->setKeepOrganized((bool)keep_organized);
+}
+
+EXPORT(int) cropbox_pointxyz_get_keep_organized(CropBox<PointXYZ>* ptr)
+{
+    return ptr->getKeepOrganized();
+}

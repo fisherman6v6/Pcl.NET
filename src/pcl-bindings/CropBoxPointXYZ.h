@@ -42,3 +42,7 @@ EXPORT(void) cropbox_pointxyz_set_filter_indices(CropBox<PointXYZ>* ptr, std::si
 EXPORT(void)cropbox_pointxyz_set_filter_indices_vector(CropBox<PointXYZ>* ptr, std::vector<int>* indices);
 
 EXPORT(void)cropbox_pointxyz_get_filter_indices_vector(CropBox<PointXYZ>* ptr, std::vector<int>* indices);
+
+EXPORT(void) cropbox_pointxyz_set_keep_organized(CropBox<PointXYZ>* ptr, int keep_organized);
+
+EXPORT(int) cropbox_pointxyz_get_keep_organized(CropBox<PointXYZ>* ptr);

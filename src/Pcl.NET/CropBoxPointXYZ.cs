@@ -64,6 +64,20 @@ namespace Pcl.NET
                 Invoke.cropbox_pointxyz_set_rotation(_ptr, value);
             }
         }
+        
+        public bool KeepOrganized
+        {
+            get
+            {
+                int val = Invoke.cropbox_pointxyz_get_keep_organized(_ptr);
+                return val != 0;
+            }
+            set
+            {
+                int ival = value ? 1 : 0;
+                Invoke.cropbox_pointxyz_set_keep_organized(_ptr, ival);
+            }
+        }
 
         public override PointCloud<PointXYZ>? Input
         {

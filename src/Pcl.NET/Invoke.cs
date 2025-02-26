@@ -339,6 +339,12 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void cropbox_pointxyz_get_filter_indices_vector(IntPtr ptr, IntPtr indices);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int cropbox_pointxyz_get_keep_organized(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyz_set_keep_organized(IntPtr ptr, int keep_organized);
+
         #endregion
     }
 }
