@@ -54,6 +54,15 @@
     <ClInclude Include="VectorInt.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PointCloudXYZRGBA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PointCloud_Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="VectorXYZRGBA.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -87,6 +96,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VectorInt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PointCloudXYZRGBA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="VectorXYZRGBA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -8,22 +8,22 @@
         {
             get
             {
-                return (int)Invoke.pointcloud_xyzi_width(_ptr);
+                return (int)Invoke.pointcloud_xyzi_get_width(_ptr);
             }
             set
             {
-                Invoke.pointcloud_xyzi_width_set(_ptr, (uint)value);
+                Invoke.pointcloud_xyzi_set_width(_ptr, (uint)value);
             }
         }
         public override int Height
         {
             get
             {
-                return (int)Invoke.pointcloud_xyzi_height(_ptr);
+                return (int)Invoke.pointcloud_xyzi_get_height(_ptr);
             }
             set
             {
-                Invoke.pointcloud_xyzi_height_set(_ptr, (uint)value);
+                Invoke.pointcloud_xyzi_set_height(_ptr, (uint)value);
             }
         }
         public override bool IsDense

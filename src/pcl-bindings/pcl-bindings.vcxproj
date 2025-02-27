@@ -147,11 +147,14 @@
     <ClInclude Include="IO.h" />
     <ClInclude Include="PointCloudXYZI.h" />
     <ClInclude Include="PointCloudXYZ.h" />
+    <ClInclude Include="PointCloudXYZRGBA.h" />
+    <ClInclude Include="PointCloud_Common.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="VectorByte.h" />
     <ClInclude Include="VectorInt.h" />
     <ClInclude Include="VectorXYZ.h" />
     <ClInclude Include="VectorXYZI.h" />
+    <ClInclude Include="VectorXYZRGBA.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CropBoxPointXYZ.cpp" />
@@ -161,10 +164,12 @@
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
+    <ClCompile Include="PointCloudXYZRGBA.cpp" />
     <ClCompile Include="VectorByte.cpp" />
     <ClCompile Include="VectorInt.cpp" />
     <ClCompile Include="VectorXYZ.cpp" />
     <ClCompile Include="VectorXYZI.cpp" />
+    <ClCompile Include="VectorXYZRGBA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc" />

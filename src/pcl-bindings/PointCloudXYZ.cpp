@@ -1,39 +1,36 @@
 #include "PointCloudXYZ.h"
+#include "PointCloud_Common.h"
 
-using namespace pcl;
-using namespace std;
-using point_vector = vector<PointXYZ, Eigen::aligned_allocator<PointXYZ>>;
-
-PointCloud<PointXYZ>* pointcloud_xyz_ctor()
+pointcloud_t* pointcloud_xyz_ctor()
 {
-    return new PointCloud<PointXYZ>();
+    return new pointcloud_t();
 }
 
-PointCloud<PointXYZ>* pointcloud_xyz_ctor_wh(uint32_t width, uint32_t height)
+pointcloud_t* pointcloud_xyz_ctor_wh(uint32_t width, uint32_t height)
 {
-	return new PointCloud<PointXYZ>(width, height);
+	return new pointcloud_t(width, height);
 }
 
-PointCloud<PointXYZ>* pointcloud_xyz_ctor_indices(PointCloud<PointXYZ>* cloud, vector<int>* indices)
+pointcloud_t* pointcloud_xyz_ctor_indices(pointcloud_t* cloud, vector<int>* indices)
 {
 	if (indices == NULL)
-		return new PointCloud<PointXYZ>(*cloud);
+		return new pointcloud_t(*cloud);
 	else
-		return new PointCloud<PointXYZ>(*cloud, *indices);
+		return new pointcloud_t(*cloud, *indices);
 }
 
-void pointcloud_xyz_delete(PointCloud<PointXYZ>** ptr)
+void pointcloud_xyz_delete(pointcloud_t** ptr)
 {
 	delete* ptr;
 	*ptr = NULL;
 }
 
-PointXYZ* pointcloud_xyz_at_colrow(PointCloud<PointXYZ>* ptr, size_t col, size_t row)
+point_t* pointcloud_xyz_at_colrow(pointcloud_t* ptr, size_t col, size_t row)
 {
 	return &(*ptr)(col, row);
 }
 
-void pointcloud_xyz_add(PointCloud<PointXYZ>* ptr, PointXYZ* value)
+void pointcloud_xyz_add(pointcloud_t* ptr, point_t* value)
 {
 	//the value needs to be aligned to be pushed into the cloud, so do that.
 	PointXYZ deref;
@@ -41,95 +38,67 @@ void pointcloud_xyz_add(PointCloud<PointXYZ>* ptr, PointXYZ* value)
 	ptr->push_back(deref);
 }
 
-size_t pointcloud_xyz_size(PointCloud<PointXYZ>* ptr)
+size_t pointcloud_xyz_size(pointcloud_t* ptr)
 {
 	return ptr->size();
 }
 
-void pointcloud_xyz_clear(PointCloud<PointXYZ>* ptr)
+void pointcloud_xyz_clear(pointcloud_t* ptr)
 {
 	ptr->clear();
 }
 
-uint32_t pointcloud_xyz_width(PointCloud<PointXYZ>* ptr)
+uint32_t pointcloud_xyz_get_width(pointcloud_t* ptr)
 {
 	return ptr->width;
 }
 
-void pointcloud_xyz_width_set(PointCloud<PointXYZ>* ptr, uint32_t width)
+void pointcloud_xyz_set_width(pointcloud_t* ptr, uint32_t width)
 {
 	ptr->width = width;
 }
 
-uint32_t pointcloud_xyz_height(PointCloud<PointXYZ>* ptr)
+uint32_t pointcloud_xyz_get_height(pointcloud_t* ptr)
 {
 	return ptr->height;
 }
 
-void pointcloud_xyz_height_set(PointCloud<PointXYZ>* ptr, uint32_t height)
+void pointcloud_xyz_set_height(pointcloud_t* ptr, uint32_t height)
 {
 	ptr->height = height;
 }
 
-int32_t pointcloud_xyz_is_organized(PointCloud<PointXYZ>* ptr)
+int32_t pointcloud_xyz_is_organized(pointcloud_t* ptr)
 {
 	return ptr->isOrganized();
 }
 
-point_vector* pointcloud_xyz_points(PointCloud<PointXYZ>* ptr)
+point_vector* pointcloud_xyz_points(pointcloud_t* ptr)
 {
 	return &ptr->points;
 }
 
-PointXYZ* pointcloud_xyz_data(PointCloud<PointXYZ>* ptr)
+point_t* pointcloud_xyz_data(pointcloud_t* ptr)
 {
 	return ptr->points.data();
 }
 
-void pointcloud_xyz_downsample(PointCloud<PointXYZ>* ptr, int factor, PointCloud<PointXYZ>* output)
+void pointcloud_xyz_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output)
 {
-	if (output->width != ptr->width / factor ||
-		output->height != ptr->height / factor)
-	{
-		output->resize(ptr->width / factor * ptr->height / factor);
-		output->width = ptr->width / factor;
-		output->height = ptr->height / factor;
-		output->is_dense = ptr->is_dense;
-	}
-
-	if (factor == 1)
-	{
-		output->points = ptr->points;
-		return;
-	}
-
-	auto ow = output->width;
-	auto oh = output->height;
-	auto iw = ptr->width;
-
-	auto oarr = output->points.data();
-	auto iarr = ptr->points.data();
-
-	for (size_t c = 0; c < ow; c++)
-	{
-		for (size_t r = 0; r < oh; r++)
-		{
-			oarr[r * ow + c] = iarr[r * factor * iw + c * factor];
-		}
-	}
+    downsample<point_t>(ptr, factor, output);
 }
 
-void pointcloud_xyz_set_is_dense(PointCloud<PointXYZ>* ptr, int value)
+void pointcloud_xyz_set_is_dense(pointcloud_t* ptr, int value)
 {
 	ptr->is_dense = value;
 }
 
-int pointcloud_xyz_get_is_dense(PointCloud<PointXYZ>* ptr)
+int pointcloud_xyz_get_is_dense(pointcloud_t* ptr)
 {
 	return ptr->is_dense;
 }
 
-void pointcloud_xyz_concatenate(PointCloud<PointXYZ>* ptr1, PointCloud<PointXYZ>* ptr2, PointCloud<PointXYZ>* ptr_out)
+void pointcloud_xyz_concatenate(pointcloud_t* ptr1, pointcloud_t* ptr2, pointcloud_t* ptr_out)
 {
-	PointCloud<PointXYZ>::concatenate(*ptr1, *ptr2, *ptr_out);
+	pointcloud_t::concatenate(*ptr1, *ptr2, *ptr_out);
 }

@@ -7,43 +7,44 @@
 using namespace pcl;
 using namespace std;
 
-using point_vector = vector<PointXYZ, Eigen::aligned_allocator<PointXYZ>>;
+using point_t = PointXYZ;
+using pointcloud_t = PointCloud<point_t>;
+using point_vector = vector<point_t, Eigen::aligned_allocator<point_t>>;
 
+EXPORT(pointcloud_t*) pointcloud_xyz_ctor();
 
-EXPORT(PointCloud<PointXYZ>*) pointcloud_xyz_ctor();
+EXPORT(pointcloud_t*) pointcloud_xyz_ctor_wh(uint32_t width, uint32_t height);
 
-EXPORT(PointCloud<PointXYZ>*) pointcloud_xyz_ctor_wh(uint32_t width, uint32_t height);
+EXPORT(pointcloud_t*) pointcloud_xyz_ctor_indices(pointcloud_t* cloud, vector<int>* indices);
 
-EXPORT(PointCloud<PointXYZ>*) pointcloud_xyz_ctor_indices(PointCloud<PointXYZ>* cloud, vector<int>* indices);
+EXPORT(void) pointcloud_xyz_delete(pointcloud_t** ptr);
 
-EXPORT(void) pointcloud_xyz_delete(PointCloud<PointXYZ>** ptr);
+EXPORT(point_t*) pointcloud_xyz_at_colrow(pointcloud_t* ptr, size_t col, size_t row);
 
-EXPORT(PointXYZ*) pointcloud_xyz_at_colrow(PointCloud<PointXYZ>* ptr, size_t col, size_t row);
+EXPORT(void) pointcloud_xyz_add(pointcloud_t* ptr, point_t* value);
 
-EXPORT(void) pointcloud_xyz_add(PointCloud<PointXYZ>* ptr, PointXYZ* value);
+EXPORT(size_t) pointcloud_xyz_size(pointcloud_t* ptr);
 
-EXPORT(size_t) pointcloud_xyz_size(PointCloud<PointXYZ>* ptr);
+EXPORT(void) pointcloud_xyz_clear(pointcloud_t* ptr);
 
-EXPORT(void) pointcloud_xyz_clear(PointCloud<PointXYZ>* ptr);
+EXPORT(uint32_t) pointcloud_xyz_get_width(pointcloud_t* ptr);
 
-EXPORT(uint32_t) pointcloud_xyz_width(PointCloud<PointXYZ>* ptr);
+EXPORT(void) pointcloud_xyz_set_width(pointcloud_t* ptr, uint32_t width);
 
-EXPORT(void) pointcloud_xyz_width_set(PointCloud<PointXYZ>* ptr, uint32_t width);
+EXPORT(uint32_t) pointcloud_xyz_get_height(pointcloud_t* ptr);
 
-EXPORT(uint32_t) pointcloud_xyz_height(PointCloud<PointXYZ>* ptr);
+EXPORT(void) pointcloud_xyz_set_height(pointcloud_t* ptr, uint32_t height);
 
-EXPORT(void) pointcloud_xyz_height_set(PointCloud<PointXYZ>* ptr, uint32_t height);
+EXPORT(int32_t) pointcloud_xyz_is_organized(pointcloud_t* ptr);
 
-EXPORT(int32_t) pointcloud_xyz_is_organized(PointCloud<PointXYZ>* ptr);
+EXPORT(point_vector*) pointcloud_xyz_points(pointcloud_t* ptr);
 
-EXPORT(point_vector*) pointcloud_xyz_points(PointCloud<PointXYZ>* ptr);
+EXPORT(point_t*) pointcloud_xyz_data(pointcloud_t* ptr);
 
-EXPORT(PointXYZ*) pointcloud_xyz_data(PointCloud<PointXYZ>* ptr);
+EXPORT(void) pointcloud_xyz_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output);
 
-EXPORT(void) pointcloud_xyz_downsample(PointCloud<PointXYZ>* ptr, int factor, PointCloud<PointXYZ>* output);
+EXPORT(void) pointcloud_xyz_set_is_dense(pointcloud_t* ptr, int value);
 
-EXPORT(void) pointcloud_xyz_set_is_dense(PointCloud<PointXYZ>* ptr, int value);
+EXPORT(int) pointcloud_xyz_get_is_dense(pointcloud_t* ptr);
 
-EXPORT(int) pointcloud_xyz_get_is_dense(PointCloud<PointXYZ>* ptr);
-
-EXPORT(void) pointcloud_xyz_concatenate(PointCloud<PointXYZ>* ptr1, PointCloud<PointXYZ>* ptr2, PointCloud<PointXYZ>* ptr_out);
+EXPORT(void) pointcloud_xyz_concatenate(pointcloud_t* ptr1, pointcloud_t* ptr2, pointcloud_t* ptr_out);

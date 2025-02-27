@@ -52,7 +52,7 @@ void std_vector_xyz_insert(vector_t* ptr, ptrdiff_t index, point_t value)
 	ptr->insert(ptr->begin() + index, deref);
 }
 
-PointXYZ* std_vector_xyz_data(vector_t* ptr)
+point_t* std_vector_xyz_data(vector_t* ptr)
 {
 	return ptr->data();
 }

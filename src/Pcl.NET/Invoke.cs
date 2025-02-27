@@ -40,16 +40,16 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyz_data(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint pointcloud_xyz_width(IntPtr ptr);
+        public static extern uint pointcloud_xyz_get_width(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyz_width_set(IntPtr ptr, uint width);
+        public static extern void pointcloud_xyz_set_width(IntPtr ptr, uint width);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint pointcloud_xyz_height(IntPtr ptr);
+        public static extern uint pointcloud_xyz_get_height(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyz_height_set(IntPtr ptr, uint height);
+        public static extern void pointcloud_xyz_set_height(IntPtr ptr, uint height);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr pointcloud_xyz_points(IntPtr ptr);
@@ -84,7 +84,7 @@ namespace Pcl.NET
         public static extern void pointcloud_xyzi_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern PointXYZ* pointcloud_xyzi_at_colrow(IntPtr ptr, ulong col, ulong row);
+        public unsafe static extern PointXYZI* pointcloud_xyzi_at_colrow(IntPtr ptr, ulong col, ulong row);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzi_clear(IntPtr ptr);
@@ -102,16 +102,16 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyzi_data(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint pointcloud_xyzi_width(IntPtr ptr);
+        public static extern uint pointcloud_xyzi_get_width(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyzi_width_set(IntPtr ptr, uint width);
+        public static extern void pointcloud_xyzi_set_width(IntPtr ptr, uint width);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint pointcloud_xyzi_height(IntPtr ptr);
+        public static extern uint pointcloud_xyzi_get_height(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyzi_height_set(IntPtr ptr, uint height);
+        public static extern void pointcloud_xyzi_set_height(IntPtr ptr, uint height);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr pointcloud_xyzi_points(IntPtr ptr);
@@ -128,6 +128,68 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzi_concatenate(IntPtr ptr1, IntPtr ptr2, IntPtr out_ptr);
+
+        #endregion
+
+        #region PointCloudXYZRGBA
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pointcloud_xyzrgba_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pointcloud_xyzrgba_ctor_indices(IntPtr cloud, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pointcloud_xyzrgba_ctor_wh(long width, long height);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public unsafe static extern PointXYZRGBA* pointcloud_xyzrgba_at_colrow(IntPtr ptr, ulong col, ulong row);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_clear(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public unsafe static extern void pointcloud_xyzrgba_add(IntPtr ptr, PointXYZRGBA* value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_downsample(IntPtr ptr, int factor, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ulong pointcloud_xyzrgba_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pointcloud_xyzrgba_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern uint pointcloud_xyzrgba_get_width(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_set_width(IntPtr ptr, uint width);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern uint pointcloud_xyzrgba_get_height(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_set_height(IntPtr ptr, uint height);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr pointcloud_xyzrgba_points(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_set_is_dense(IntPtr ptr, bool value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool pointcloud_xyzrgba_get_is_dense(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool pointcloud_xyzrgba_is_organized(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void pointcloud_xyzrgba_concatenate(IntPtr ptr1, IntPtr ptr2, IntPtr out_ptr);
 
         #endregion
 
@@ -196,6 +258,40 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void std_vector_xyzi_insert(IntPtr ptr, ulong idx, PointXYZI value);
+
+        #endregion
+
+        #region VectorXYZRGBA
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_xyzrgba_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_xyzrgba_ctor_count(ulong count);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_at(IntPtr ptr, ulong idx, ref PointXYZRGBA value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ulong std_vector_xyzrgba_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_clear(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_resize(IntPtr ptr, ulong size);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_add(IntPtr ptr, PointXYZRGBA value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_xyzrgba_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_xyzrgba_insert(IntPtr ptr, ulong idx, PointXYZRGBA value);
 
         #endregion
 

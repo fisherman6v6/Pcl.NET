@@ -88,15 +88,8 @@ namespace Pcl.NET
 
         public unsafe override PointXYZI[] ToArray()
         {
-            if (Count > Array.MaxLength)
-            {
-                throw new IndexOutOfRangeException($"{nameof(Array.MaxLength)} is {Array.MaxLength}");
-            }
             PointXYZI[] arr = new PointXYZI[Count];
-            fixed (PointXYZI* aptr = arr)
-            {
-                Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(Unsafe.SizeOf<PointXYZI>() * arr.Length));
-            }
+            CopyTo(arr, 0);
             return arr;
         }
 
