@@ -20,10 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pcl.NET", "src\Pcl.NET\Pcl.
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pcl.NET.TestConsoleApp", "test\Pcl.NET.TestConsoleApp\Pcl.NET.TestConsoleApp.csproj", "{A567B5D2-3C14-4290-8117-CC0475A935A4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{56D8B0CA-2921-404C-A80C-27362BE2950C} = {56D8B0CA-2921-404C-A80C-27362BE2950C}
-		{FA3800A9-BCB8-4964-A1E9-BDF8A8B9EC05} = {FA3800A9-BCB8-4964-A1E9-BDF8A8B9EC05}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
