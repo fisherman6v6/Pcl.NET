@@ -53,7 +53,8 @@ EXPORT(Eigen::Vector3f) cropbox_pointxyz_get_rotation(CropBox<PointXYZ>* ptr)
 
 EXPORT(void) cropbox_pointxyz_set_input_cloud(CropBox<PointXYZ>* ptr, PointCloud<PointXYZ>* cloud)
 {
-    ptr->setInputCloud(std::shared_ptr<PointCloud<PointXYZ>>(cloud));
+    pcl::PointCloud<pcl::PointXYZ>::Ptr shared(std::make_shared<PointCloud<pcl::PointXYZ>>(*cloud));
+    ptr->setInputCloud(shared);
 }
 
 EXPORT(const PointCloud<PointXYZ>*) cropbox_pointxyz_get_input_cloud(CropBox<PointXYZ>* ptr)
