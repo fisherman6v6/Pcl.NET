@@ -4,35 +4,6 @@ namespace Pcl.NET
 {
     public class VectorXYZ : Vector<PointXYZ>
     {
-        public unsafe override PointXYZ this[long index]
-        {
-            get
-            {
-                // Following trick can reduce the range check by one
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                return DataU[index];
-            }
-            set
-            {
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                Unsafe.Write(DataU + index, value);
-            }
-        }
-
-        public override long Count => (long)Invoke.std_vector_xyz_size(_ptr);
-
-        public IntPtr Data => Invoke.std_vector_xyz_data(_ptr);
-
-        public unsafe PointXYZ* DataU => (PointXYZ*)(void*)Data;
-
         public VectorXYZ()
         {
             _ptr = Invoke.std_vector_xyz_ctor();
@@ -62,6 +33,35 @@ namespace Pcl.NET
             _suppressDispose = true;
             _ptr = ptr;
         }
+
+        public unsafe override PointXYZ this[long index]
+        {
+            get
+            {
+                // Following trick can reduce the range check by one
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
+                return DataU[index];
+            }
+            set
+            {
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
+                Unsafe.Write(DataU + index, value);
+            }
+        }
+
+        public override long Count => (long)Invoke.std_vector_xyz_size(_ptr);
+
+        public IntPtr Data => Invoke.std_vector_xyz_data(_ptr);
+
+        public unsafe PointXYZ* DataU => (PointXYZ*)(void*)Data;
 
         public override void Add(PointXYZ item)
         {

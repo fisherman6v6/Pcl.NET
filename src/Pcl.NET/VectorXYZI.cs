@@ -8,6 +8,24 @@ namespace Pcl.NET
         public VectorXYZI(IntPtr ptr)
         {
             _ptr = ptr;
+            _suppressDispose = true;
+        }
+        public VectorXYZI()
+        {
+            _ptr = Invoke.std_vector_xyzi_ctor();
+        }
+        public VectorXYZI(long count)
+        {
+            _ptr = Invoke.std_vector_xyzi_ctor_count((ulong)count);
+        }
+        public unsafe VectorXYZI(PointXYZI[] arr)
+        {
+            _ptr = Invoke.std_vector_xyzi_ctor_count((ulong)arr.Length);
+            PointXYZI* dptr = (PointXYZI*)(void*)Data;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                System.Runtime.CompilerServices.Unsafe.Write(dptr + i, arr[i]);
+            }
         }
 
         public unsafe override PointXYZI this[long index]

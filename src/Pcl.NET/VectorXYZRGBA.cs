@@ -9,6 +9,35 @@ namespace Pcl.NET
 {
     public class VectorXYZRGBA : Vector<PointXYZRGBA>
     {
+        public VectorXYZRGBA()
+        {
+            _ptr = Invoke.std_vector_xyzrgba_ctor();
+        }
+
+        public VectorXYZRGBA(long count)
+        {
+            _ptr = Invoke.std_vector_xyzrgba_ctor_count((ulong)count);
+        }
+
+        /// <summary>
+        /// construct as a copy of the list
+        /// </summary>
+        /// <param name="list"></param>
+        public unsafe VectorXYZRGBA(PointXYZRGBA[] arr)
+        {
+            _ptr = Invoke.std_vector_xyzrgba_ctor_count((ulong)arr.Length);
+            PointXYZRGBA* dptr = (PointXYZRGBA*)(void*)Data;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                System.Runtime.CompilerServices.Unsafe.Write(dptr + i, arr[i]);
+            }
+        }
+        internal VectorXYZRGBA(IntPtr ptr)
+        {
+            _ptr = ptr;
+            _suppressDispose = true;
+        }
+
         public unsafe override PointXYZRGBA this[long index]
         {
             get
@@ -37,12 +66,6 @@ namespace Pcl.NET
         public unsafe PointXYZRGBA* DataU => (PointXYZRGBA*)(void*)Data;
 
         public override long Count => (long)Invoke.std_vector_xyzrgba_size(_ptr);
-
-        public VectorXYZRGBA(IntPtr ptr)
-        {
-            _ptr = ptr;
-            _suppressDispose = true;
-        }
 
         public override void Add(PointXYZRGBA item)
         {
