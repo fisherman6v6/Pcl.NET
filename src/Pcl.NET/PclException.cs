@@ -20,9 +20,5 @@ namespace Pcl.NET
         public PclException(string? message, Exception? innerException) : base(message, innerException)
         {
         }
-
-        protected PclException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
     }
 }

@@ -90,7 +90,7 @@ namespace Pcl.NET
             }
             fixed (PointXYZRGBA* aptr = arr)
             {
-                System.Runtime.CompilerServices.Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(System.Runtime.CompilerServices.Unsafe.SizeOf<PointXYZ>() * (uint)Count));
+                System.Runtime.CompilerServices.Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(System.Runtime.CompilerServices.Unsafe.SizeOf<PointXYZRGBA>() * (uint)Count));
             }
         }
 
