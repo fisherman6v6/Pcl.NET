@@ -15,3 +15,5 @@ EXPORT(int) io_save_pcd_xyzi_binary(const char* path, PointCloud<PointXYZI>* clo
 EXPORT(int) io_save_pcd_xyz_ascii(const char* path, PointCloud<PointXYZ>* cloud);
 
 EXPORT(int) io_save_pcd_xyzi_ascii(const char* path, PointCloud<PointXYZI>* cloud);
+
+EXPORT(int) io_save_png_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud, const char* field_name);

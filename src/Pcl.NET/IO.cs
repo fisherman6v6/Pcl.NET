@@ -99,5 +99,10 @@
                 ThrowHelper.ThrowIOException_CannotWriteFile(filename);
             }
         }
+
+        public static void SavePNGFilePointCloudXYZRGBA(string filename, PointCloudXYZRGBA cloud, string fieldName)
+        {
+            Invoke.io_save_png_xyzrgba(filename, cloud, fieldName);
+        }
     }
 }

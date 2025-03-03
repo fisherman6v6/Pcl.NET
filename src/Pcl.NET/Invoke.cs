@@ -403,6 +403,9 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern int io_save_pcd_xyzi_ascii(string fileName, IntPtr cloud);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void io_save_png_xyzrgba(string fileName, IntPtr cloud, string field_name);
+
         #endregion
 
         #region CropBox
