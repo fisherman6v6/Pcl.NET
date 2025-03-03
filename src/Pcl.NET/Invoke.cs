@@ -21,8 +21,14 @@ namespace Pcl.NET
 
         private static nint OnImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
         {
+#if DEBUG
+            // I expect to have libraries under the same folder of the app linking Pcl.NET, so no need to get path depending on arch
+            return NativeLibrary.Load(libraryName, assembly, searchPath);
+#else
+            // Library is linked from nuget, so the path will be runtimes/os-ARCH/native
             var platFormDependantPath = GetLibraryPath(libraryName);
             return NativeLibrary.Load(platFormDependantPath, assembly, searchPath);
+#endif
         }
 
         #region PointCloudXYZ

@@ -8,23 +8,21 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.0.50</Version>
+    <Version>0.0.53</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="..\..\x64\Release\**\*.dll" Condition="'$(Configuration)' == 'Release'">
-      <Link>dependencies\%(RecursiveDir)/%(FileName)%(Extension)</Link>
+      <Link>dependencies\%(RecursiveDir)\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <PackagePath>runtimes/win-x64/native</PackagePath>
+      <PackagePath>runtimes/win-x64/native/</PackagePath>
       <Pack>true</Pack>
     </None>
     <None Include="..\..\x64\Debug\**\*" Condition="'$(Configuration)' == 'Debug'">
-      <Link>dependencies\%(RecursiveDir)/%(FileName)%(Extension)</Link>
+      <Link>dependencies\%(RecursiveDir)\%(FileName)%(Extension)</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <PackagePath>runtimes/win-x64/native</PackagePath>
+      <PackagePath>runtimes/win-x64/native/</PackagePath>
       <Pack>true</Pack>
     </None>
   </ItemGroup>
