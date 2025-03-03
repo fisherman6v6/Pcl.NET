@@ -41,7 +41,7 @@ int io_save_pcd_xyzi_ascii(const char* path, PointCloud<PointXYZI>* cloud)
     return io::savePCDFileASCII(path, *cloud);
 }
 
-int io_save_png_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud, const char* field_name)
+void io_save_png_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud, const char* field_name)
 {
     io::savePNGFile(path, *cloud, field_name);
 }
