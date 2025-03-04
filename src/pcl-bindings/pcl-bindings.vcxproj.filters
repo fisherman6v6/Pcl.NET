@@ -63,6 +63,9 @@
     <ClInclude Include="VectorXYZRGBA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="PCLImage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -102,6 +105,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VectorXYZRGBA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PCLImage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

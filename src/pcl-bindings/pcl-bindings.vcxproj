@@ -145,6 +145,7 @@
     <ClInclude Include="export.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="IO.h" />
+    <ClInclude Include="PCLImage.h" />
     <ClInclude Include="PointCloudXYZI.h" />
     <ClInclude Include="PointCloudXYZ.h" />
     <ClInclude Include="PointCloudXYZRGBA.h" />
@@ -162,6 +163,7 @@
     <ClCompile Include="Eigen_MatrixXf.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
     <ClCompile Include="IO.cpp" />
+    <ClCompile Include="PCLImage.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
     <ClCompile Include="PointCloudXYZRGBA.cpp" />

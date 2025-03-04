@@ -36,6 +36,22 @@ namespace Pcl.NET
 
         public override long Count => (long)Invoke.std_vector_byte_size(_ptr);
 
+        public unsafe VectorByte(byte[] arr)
+        {
+            _ptr = Invoke.std_vector_byte_ctor_count((ulong)arr.Length);
+            byte* dptr = (byte*)(void*)Data;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                System.Runtime.CompilerServices.Unsafe.Write(dptr + i, arr[i]);
+            }
+        }
+
+        internal VectorByte(IntPtr ptr)
+        {
+            _suppressDispose = true;
+            _ptr = ptr;
+        }
+
         public VectorByte()
         {
             _ptr = Invoke.std_vector_byte_ctor();
