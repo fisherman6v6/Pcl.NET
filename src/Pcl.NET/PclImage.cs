@@ -85,4 +85,11 @@ namespace Pcl.NET
             }
         }
     }
+
+    public static class PclImageEncodings
+    {
+        public static readonly string Rgb8 = "rgb8";
+        public static readonly string Mono8 = "mono8";
+        public static readonly string Mono16 = "mono16";
+    }
 }

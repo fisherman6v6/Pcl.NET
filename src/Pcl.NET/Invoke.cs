@@ -80,9 +80,10 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyz_points(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyz_set_is_dense(IntPtr ptr, bool value);
+        public static extern void pointcloud_xyz_set_is_dense(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool value);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool pointcloud_xyz_get_is_dense(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -142,9 +143,10 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyzi_points(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyzi_set_is_dense(IntPtr ptr, bool value);
+        public static extern void pointcloud_xyzi_set_is_dense(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool value);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool pointcloud_xyzi_get_is_dense(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -204,9 +206,10 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyzrgba_points(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void pointcloud_xyzrgba_set_is_dense(IntPtr ptr, bool value);
+        public static extern void pointcloud_xyzrgba_set_is_dense(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool value);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        [return: MarshalAs(UnmanagedType.Bool)]
         public static extern bool pointcloud_xyzrgba_get_is_dense(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -411,6 +414,12 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void io_save_png_xyzrgba(string fileName, IntPtr cloud, string field_name);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int io_load_pcd_xyzrgba(string fileName, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void io_pointcloud_xyzrgba_image_extractor_from_rgb_field(IntPtr cloud, IntPtr image, [MarshalAs(UnmanagedType.Bool)] bool setPaintNaNsWithBlack);
 
         #endregion
 

@@ -102,7 +102,40 @@
 
         public static void SavePNGFilePointCloudXYZRGBA(string filename, PointCloudXYZRGBA cloud, string fieldName)
         {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException($"'{nameof(filename)}' cannot be null or empty.", nameof(filename));
+            }
+
+            ArgumentNullException.ThrowIfNull(cloud, nameof(cloud));
+
             Invoke.io_save_png_xyzrgba(filename, cloud, fieldName);
+        }
+
+        public static PointCloudXYZRGBA LoadPointCloudXYZRGBA(string filename)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException($"'{nameof(filename)}' cannot be null or empty.", nameof(filename));
+            }
+
+            PointCloudXYZRGBA cloud = new();
+            int ret = Invoke.io_load_pcd_xyzrgba(filename, cloud);
+            if (ret != 0)
+            {
+                ThrowHelper.ThrowIOException_CannotWriteFile(filename);
+            }
+            return cloud;
+        }
+
+        public static PclImage ExtractImageFromRGBField(PointCloudXYZRGBA pointCloud, string encoding, bool setPaintNaNsWithBlack)
+        {
+            PclImage image = new PclImage();
+            image.Encoding = encoding;
+
+            Invoke.io_pointcloud_xyzrgba_image_extractor_from_rgb_field(pointCloud, image, setPaintNaNsWithBlack);
+
+            return image;
         }
     }
 }

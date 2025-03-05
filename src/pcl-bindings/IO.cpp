@@ -45,3 +45,15 @@ void io_save_png_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud, cons
 {
     io::savePNGFile(path, *cloud, field_name);
 }
+
+int io_load_pcd_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud)
+{
+    return io::loadPCDFile(path, *cloud);
+}
+
+void io_pointcloud_xyzrgba_image_extractor_from_rgb_field(PointCloud<PointXYZRGBA>* cloud, PCLImage* image, bool setPaintNaNsWithBlack)
+{
+    io::PointCloudImageExtractorFromRGBField<PointXYZRGBA> extractor;
+    extractor.setPaintNaNsWithBlack(setPaintNaNsWithBlack);
+    extractor.extract(*cloud, *image);
+}
