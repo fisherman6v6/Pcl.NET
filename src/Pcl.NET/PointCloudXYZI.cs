@@ -8,10 +8,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return (int)Invoke.pointcloud_xyzi_get_width(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyzi_set_width(_ptr, (uint)value);
             }
         }
@@ -19,10 +21,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return (int)Invoke.pointcloud_xyzi_get_height(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyzi_set_height(_ptr, (uint)value);
             }
         }
@@ -30,16 +34,32 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pointcloud_xyzi_get_is_dense(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyzi_set_is_dense(_ptr, value);
             }
         }
         public override Vector<PointXYZI> Points => _points;
-        public override long Count => (long)Invoke.pointcloud_xyzi_size(_ptr);
-        public override bool IsOrganized => Invoke.pointcloud_xyz_is_organized(_ptr);
+        public override long Count
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return (long)Invoke.pointcloud_xyzi_size(_ptr);
+            }
+        }
+        public override bool IsOrganized
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return Invoke.pointcloud_xyz_is_organized(_ptr);
+            }
+        }
 
         private PointCloudXYZI(IntPtr ptr)
         {
@@ -63,16 +83,19 @@
 
         public unsafe override void Add(PointXYZI value)
         {
+            ThrowIfDisposed();
             Invoke.pointcloud_xyzi_add(_ptr, &value);
         }
 
-        public unsafe override ref PointXYZI At(ulong col, ulong row)
+        public unsafe override ref PointXYZI At(int col, int row)
         {
+            ThrowIfDisposed();
             return ref System.Runtime.CompilerServices.Unsafe.AsRef<PointXYZI>(Invoke.pointcloud_xyzi_at_colrow(_ptr, col, row));
         }
 
         public void Downsample(int factor, PointCloudXYZI output)
         {
+            ThrowIfDisposed();
             Invoke.pointcloud_xyzi_downsample(_ptr, factor, output);
         }
 

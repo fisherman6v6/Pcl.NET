@@ -8,10 +8,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return (int)Invoke.pointcloud_xyz_get_width(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyz_set_width(_ptr, (uint)value);
             }
         }
@@ -19,10 +21,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return (int)Invoke.pointcloud_xyz_get_height(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyz_set_height(_ptr, (uint)value);
             }
         }
@@ -30,16 +34,32 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pointcloud_xyz_get_is_dense(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pointcloud_xyz_set_is_dense(_ptr, value);
             }
         }
         public override Vector<PointXYZ> Points => _points;
-        public override long Count => (long)Invoke.pointcloud_xyz_size(_ptr);
-        public override bool IsOrganized => Invoke.pointcloud_xyz_is_organized(_ptr);
+        public override long Count
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return (long)Invoke.pointcloud_xyz_size(_ptr);
+            }
+        }
+        public override bool IsOrganized
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return Invoke.pointcloud_xyz_is_organized(_ptr);
+            }
+        }
 
         private PointCloudXYZ(IntPtr ptr)
         {
@@ -65,16 +85,19 @@
 
         public void Downsample(int factor, PointCloudXYZ output)
         {
+            ThrowIfDisposed();
             Invoke.pointcloud_xyz_downsample(_ptr, factor, output);
         }
 
         public unsafe override void Add(PointXYZ value)
         {
+            ThrowIfDisposed();
             Invoke.pointcloud_xyz_add(_ptr, &value);
         }
 
-        public unsafe override ref PointXYZ At(ulong col, ulong row)
+        public unsafe override ref PointXYZ At(int col, int row)
         {
+            ThrowIfDisposed();
             return ref System.Runtime.CompilerServices.Unsafe.AsRef<PointXYZ>(Invoke.pointcloud_xyz_at_colrow(_ptr, col, row));
         }
 

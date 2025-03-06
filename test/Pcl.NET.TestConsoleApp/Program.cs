@@ -1,5 +1,7 @@
-﻿using Pcl.NET.Eigen;
+﻿using System.Drawing;
 using System.Numerics;
+using System.Runtime.InteropServices;
+using System.Runtime.Loader;
 
 namespace Pcl.NET.TestConsoleApp
 {
@@ -7,12 +9,26 @@ namespace Pcl.NET.TestConsoleApp
     {
         static void Main(string[] args)
         {
-            using var pc = IO.LoadPointCloudXYZ(@"C:\Users\alessandro.fici\Desktop\PointClouds\simpleXYZ.pcd");
+            var pointcloudxyz = Pcl.NET.IO.LoadPointCloudXYZ(@"C:\Users\alessandro.fici\Desktop\PointClouds\XYZ100.pcd");
+            var pointcloudxyzrgba = new PointCloudXYZRGBA();
+            var s = pointcloudxyz.Points.AsSpan(0, (int)pointcloudxyz.Points.Count);
+            var bar = new PointXYZ[100];
+            pointcloudxyz.Points.CopyTo(bar, 0, bar.Length);
 
-            PointXYZ p = new Vector3(1, 2, 3);
+            for (int i = 0; i < pointcloudxyz.Points.Count; i++)
+            {
+                var p = new PointXYZRGBA();
+                p.X = pointcloudxyz.Points[i].X; 
+                p.Y = pointcloudxyz.Points[i].Y;
+                p.Z = pointcloudxyz.Points[i].Z;
 
-            IO.SavePointCloudXYZAscii(@"C:\Users\alessandro.fici\Desktop\PointClouds\simpleXYZ-mod.pcd", pc);
-            
+                pointcloudxyzrgba.Add(p);
+            }
+
+            foreach (var item in pointcloudxyz.Points)
+            {
+                Console.WriteLine(item.V);
+            }
         }
     }
 }

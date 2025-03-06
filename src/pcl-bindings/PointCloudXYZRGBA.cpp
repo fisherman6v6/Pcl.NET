@@ -25,9 +25,9 @@ void pointcloud_xyzrgba_delete(pointcloud_t** ptr)
     *ptr = NULL;
 }
 
-point_t* pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, size_t col, size_t row)
+point_t* pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, int col, int row)
 {
-    return &(*ptr)(col, row);
+    return &(ptr->at(col, row));
 }
 
 void pointcloud_xyzrgba_add(pointcloud_t* ptr, point_t* value)

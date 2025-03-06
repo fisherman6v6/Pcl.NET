@@ -9,7 +9,7 @@ namespace Pcl.NET.Eigen
 {
     public class Matrix4f : UnmanagedObject
     {
-        public unsafe float* Data => Invoke.eigen_matrix4_f_data(_ptr);
+        public unsafe float* DataU => Invoke.eigen_matrix4_f_data(_ptr);
 
         public float this[int row, int col]
         {
@@ -58,7 +58,10 @@ namespace Pcl.NET.Eigen
 
         protected override void DisposeObject()
         {
-            Invoke.eigen_matrix4_f_delete(ref _ptr);
+            if (!_suppressDispose)
+            {
+                Invoke.eigen_matrix4_f_delete(ref _ptr);
+            }
         }
     }
 }

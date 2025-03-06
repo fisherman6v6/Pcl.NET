@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pcl.NET
 {
-    public abstract class PclBase<PointT> : UnmanagedObject
+    public abstract class PclBase<PointT> : UnmanagedObject where PointT : unmanaged
     {
         public abstract PointCloud<PointT>? Input { get; set; }
 

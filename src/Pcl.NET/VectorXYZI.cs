@@ -51,19 +51,32 @@ namespace Pcl.NET
             }
         }
 
-        public unsafe PointXYZI* DataU => (PointXYZI*)(void*)Data;
+        public override long Count
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return (long)Invoke.std_vector_xyzi_size(_ptr);
+            }
+        }
 
-        public override long Count => (long)Invoke.std_vector_xyzi_size(_ptr);
-
-        public IntPtr Data => Invoke.std_vector_xyzi_data(_ptr);
+        public override IntPtr Data
+        {
+            get
+            {
+                return Invoke.std_vector_xyzi_data(_ptr);
+            }
+        }
 
         public override void Add(PointXYZI item)
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyzi_add(_ptr, item);
         }
 
         public override void At(long index, ref PointXYZI value)
         {
+            ThrowIfDisposed();
             if ((ulong)index >= (ulong)Count)
             {
                 ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
@@ -74,23 +87,13 @@ namespace Pcl.NET
 
         public override void Clear()
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyzi_clear(_ptr);
-        }
-
-        public unsafe override void CopyTo(PointXYZI[] arr, int index)
-        {
-            if (Count > Array.MaxLength)
-            {
-                throw new IndexOutOfRangeException($"{nameof(Array.MaxLength)} is {Array.MaxLength}");
-            }
-            fixed (PointXYZI* aptr = arr)
-            {
-                System.Runtime.CompilerServices.Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(System.Runtime.CompilerServices.Unsafe.SizeOf<PointXYZI>() * (uint)Count));
-            }
         }
 
         public override void Insert(long index, PointXYZI item)
         {
+            ThrowIfDisposed();
             if ((ulong)index >= (ulong)Count)
             {
                 ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
@@ -101,14 +104,8 @@ namespace Pcl.NET
 
         public override void Resize(long size)
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyzi_resize(_ptr, (ulong)size);
-        }
-
-        public unsafe override PointXYZI[] ToArray()
-        {
-            PointXYZI[] arr = new PointXYZI[Count];
-            CopyTo(arr, 0);
-            return arr;
         }
 
         public override IEnumerator<PointXYZI> GetEnumerator()

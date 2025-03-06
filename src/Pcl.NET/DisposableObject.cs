@@ -9,6 +9,18 @@
 
         private int _disposed;
 
+        protected void ThrowIfDisposed()
+        {
+#if NET8_0
+            ObjectDisposedException.ThrowIf(_disposed != 0, this);
+#else
+            if (_disposed != 0)
+            {
+                throw new ObjectDisposedException(this.ToString());
+            }
+#endif
+        }
+
         public void Dispose()
         {
             Dispose(disposing: true);

@@ -47,7 +47,7 @@ namespace Pcl.NET
         public static extern void pointcloud_xyz_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern PointXYZ* pointcloud_xyz_at_colrow(IntPtr ptr, ulong col, ulong row);
+        public unsafe static extern PointXYZ* pointcloud_xyz_at_colrow(IntPtr ptr, int col, int row);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyz_clear(IntPtr ptr);
@@ -110,7 +110,7 @@ namespace Pcl.NET
         public static extern void pointcloud_xyzi_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern PointXYZI* pointcloud_xyzi_at_colrow(IntPtr ptr, ulong col, ulong row);
+        public unsafe static extern PointXYZI* pointcloud_xyzi_at_colrow(IntPtr ptr, int col, int row);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzi_clear(IntPtr ptr);
@@ -173,7 +173,7 @@ namespace Pcl.NET
         public static extern void pointcloud_xyzrgba_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern PointXYZRGBA* pointcloud_xyzrgba_at_colrow(IntPtr ptr, ulong col, ulong row);
+        public unsafe static extern PointXYZRGBA* pointcloud_xyzrgba_at_colrow(IntPtr ptr, int col, int row);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzrgba_clear(IntPtr ptr);

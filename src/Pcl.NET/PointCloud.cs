@@ -1,6 +1,6 @@
 ﻿namespace Pcl.NET
 {
-    public abstract class PointCloud<PointT> : UnmanagedObject
+    public abstract class PointCloud<PointT> : UnmanagedObject where PointT : unmanaged
     {
         public abstract int Width { get; set; }
 
@@ -14,7 +14,7 @@
 
         public abstract bool IsOrganized { get; }
 
-        public abstract ref PointT At(ulong col, ulong row);
+        public abstract ref PointT At(int col, int row);
 
         public abstract void Add(PointT value);
     }

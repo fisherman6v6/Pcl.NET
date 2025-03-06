@@ -57,19 +57,32 @@ namespace Pcl.NET
             }
         }
 
-        public override long Count => (long)Invoke.std_vector_xyz_size(_ptr);
+        public override long Count
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return (long)Invoke.std_vector_xyz_size(_ptr);
+            }
+        }
 
-        public IntPtr Data => Invoke.std_vector_xyz_data(_ptr);
-
-        public unsafe PointXYZ* DataU => (PointXYZ*)(void*)Data;
+        public override IntPtr Data
+        {
+            get
+            {
+                return Invoke.std_vector_xyz_data(_ptr);
+            }
+        }
 
         public override void Add(PointXYZ item)
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyz_add(_ptr, item);
         }
 
         public override void At(long index, ref PointXYZ value)
         {
+            ThrowIfDisposed();
             if ((ulong)index >= (ulong)Count)
             {
                 ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
@@ -78,32 +91,15 @@ namespace Pcl.NET
             Invoke.std_vector_xyz_at(_ptr, (ulong)index, ref value);
         }
 
-        public unsafe override PointXYZ[] ToArray()
-        {
-            PointXYZ[] arr = new PointXYZ[Count];
-            CopyTo(arr, 0);
-            return arr;
-        }
-
-        public unsafe override void CopyTo(PointXYZ[] arr, int index)
-        {
-            if (Count > Array.MaxLength)
-            {
-                throw new IndexOutOfRangeException($"{nameof(Array.MaxLength)} is {Array.MaxLength}");
-            }
-            fixed (PointXYZ* aptr = arr)
-            {
-                System.Runtime.CompilerServices.Unsafe.CopyBlockUnaligned((void*)aptr, (void*)DataU, (uint)(System.Runtime.CompilerServices.Unsafe.SizeOf<PointXYZ>() * (uint)Count));
-            }
-        }
-
         public override void Clear()
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyz_clear(_ptr);
         }
 
         public override void Insert(long index, PointXYZ item)
         {
+            ThrowIfDisposed();
             if ((ulong)index >= (ulong)Count)
             {
                 ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
@@ -114,6 +110,7 @@ namespace Pcl.NET
 
         public override void Resize(long size)
         {
+            ThrowIfDisposed();
             Invoke.std_vector_xyz_resize(_ptr, (ulong)size);
         }
 

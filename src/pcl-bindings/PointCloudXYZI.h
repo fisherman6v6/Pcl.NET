@@ -19,7 +19,7 @@ EXPORT(pointcloud_t*) pointcloud_xyzi_ctor_indices(pointcloud_t* cloud, vector<i
 
 EXPORT(void) pointcloud_xyzi_delete(pointcloud_t** ptr);
 
-EXPORT(point_t*) pointcloud_xyzi_at_colrow(pointcloud_t* ptr, size_t col, size_t row);
+EXPORT(point_t*) pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row);
 
 EXPORT(void) pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value);
 

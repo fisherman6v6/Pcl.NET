@@ -17,10 +17,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pclimage_get_width(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pclimage_set_width(_ptr, value);
             }
         }
@@ -31,10 +33,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pclimage_get_height(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pclimage_set_height(_ptr, value);
             }
         }
@@ -45,10 +49,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pclimage_get_encoding(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pclimage_set_encoding(_ptr, value);
             }
         }
@@ -59,10 +65,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return Invoke.pclimage_get_step(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.pclimage_set_step(_ptr, value);
             }
         }
