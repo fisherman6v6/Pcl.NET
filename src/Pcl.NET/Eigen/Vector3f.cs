@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Pcl.NET.Eigen
 {
     [DebuggerDisplay("{X}, {Y}, {Z}")]
-    [StructLayout(LayoutKind.Explicit, Size = 16)]
+    [StructLayout(LayoutKind.Explicit, Size = 12)]
     public unsafe struct Vector3f
     {
         [FieldOffset(0)]
@@ -20,6 +20,13 @@ namespace Pcl.NET.Eigen
         public float Z;
 
         [FieldOffset(0)]
-        public fixed int data[4];
+        public fixed int data[3];
+
+        public Vector3f(float x, float y, float z) : this()
+        {
+            X = x;
+            Y = y;
+            Z = z;
+        }
     }
 }

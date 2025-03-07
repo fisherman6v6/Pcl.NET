@@ -1,7 +1,9 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Pcl.NET.Eigen
 {
+    [DebuggerDisplay("{X}, {Y}, {Z}, {W}")]
     [StructLayout(LayoutKind.Explicit, Size = 16)]
     public struct Vector4f
     {
@@ -20,20 +22,12 @@ namespace Pcl.NET.Eigen
         [FieldOffset(0)]
         public unsafe fixed float data[4];
 
-        public Vector4f(float x, float y, float z, float w)
+        public Vector4f(float x, float y, float z, float w) : this()
         {
             X = x; 
             Y = y; 
             Z = z; 
             W = w;
-        }
-
-        public Vector4f()
-        {
-            X = 0;
-            Y = 0;
-            Z = 0;
-            W = 0;
         }
 
         public static implicit operator System.Numerics.Vector4(Vector4f v) => new(v.X, v.Y, v.Z, v.W);
