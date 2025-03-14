@@ -21,34 +21,7 @@ namespace Pcl.NET
         public unsafe VectorXYZI(PointXYZI[] arr)
         {
             _ptr = Invoke.std_vector_xyzi_ctor_count((ulong)arr.Length);
-            PointXYZI* dptr = (PointXYZI*)(void*)Data;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                System.Runtime.CompilerServices.Unsafe.Write(dptr + i, arr[i]);
-            }
-        }
-
-        public unsafe override PointXYZI this[long index]
-        {
-            get
-            {
-                // Following trick can reduce the range check by one
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                return DataU[index];
-            }
-            set
-            {
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                Unsafe.Write(DataU + index, value);
-            }
+            CopyFromArray(arr, DataU);
         }
 
         public override long Count

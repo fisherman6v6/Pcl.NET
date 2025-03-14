@@ -10,7 +10,7 @@ namespace Pcl.NET.Eigen
 {
     [DebuggerDisplay("{X}, {Y}, {Z}")]
     [StructLayout(LayoutKind.Explicit, Size = 12)]
-    public unsafe struct Vector3f
+    public unsafe struct Vector3f : IEquatable<Vector3f>
     {
         [FieldOffset(0)]
         public float X;
@@ -27,6 +27,33 @@ namespace Pcl.NET.Eigen
             X = x;
             Y = y;
             Z = z;
+        }
+
+        public override readonly bool Equals(object? obj)
+        {
+            return obj is Vector3f f && Equals(f);
+        }
+
+        public readonly bool Equals(Vector3f other)
+        {
+            return X == other.X &&
+                   Y == other.Y &&
+                   Z == other.Z;
+        }
+
+        public override readonly int GetHashCode()
+        {
+            return HashCode.Combine(X, Y, Z);
+        }
+
+        public static bool operator ==(Vector3f left, Vector3f right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(Vector3f left, Vector3f right)
+        {
+            return !(left == right);
         }
     }
 }

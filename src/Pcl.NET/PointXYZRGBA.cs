@@ -11,7 +11,7 @@ namespace Pcl.NET
 {
     [DebuggerDisplay("{V}, {RGBA.ToString(\"X8\")}")]
     [StructLayout(LayoutKind.Explicit, Size = 32)]
-    public unsafe struct PointXYZRGBA
+    public unsafe struct PointXYZRGBA : IEquatable<PointXYZRGBA>
     {
         [FieldOffset(0)]
         public float X;
@@ -38,5 +38,36 @@ namespace Pcl.NET
         public uint RGBA;
         [FieldOffset(16)]
         public fixed float data_c[4];
+
+        public override readonly bool Equals(object? obj)
+        {
+            return obj is PointXYZRGBA xYZRGBA && Equals(xYZRGBA);
+        }
+
+        public readonly bool Equals(PointXYZRGBA other)
+        {
+            return X == other.X &&
+                   Y == other.Y &&
+                   Z == other.Z &&
+                   B == other.B &&
+                   G == other.G &&
+                   R == other.R &&
+                   A == other.A;
+        }
+
+        public override readonly int GetHashCode()
+        {
+            return HashCode.Combine(X, Y, Z, B, G, R, A);
+        }
+
+        public static bool operator ==(PointXYZRGBA left, PointXYZRGBA right)
+        {
+            return left.Equals(right);
+        }
+
+        public static bool operator !=(PointXYZRGBA left, PointXYZRGBA right)
+        {
+            return !(left == right);
+        }
     }
 }

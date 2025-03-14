@@ -16,7 +16,7 @@ void std_vector_int_delete(vector_t** ptr)
     *ptr = NULL;
 }
 
-void std_vector_int_at(vector_t* ptr, size_t idx, int* value)
+void std_vector_int_at(vector_t* ptr, size_t idx, type* value)
 {
     *value = ptr->at(idx);
 }
@@ -36,12 +36,12 @@ void std_vector_int_resize(vector_t* ptr, size_t size)
     ptr->resize(size);
 }
 
-void std_vector_int_add(vector_t* ptr, int value)
+void std_vector_int_add(vector_t* ptr, type value)
 {
     ptr->push_back(value);
 }
 
-void std_vector_int_insert(vector_t* ptr, ptrdiff_t index, int value)
+void std_vector_int_insert(vector_t* ptr, ptrdiff_t index, type value)
 {
     ptr->insert(ptr->begin() + index, value);
 }

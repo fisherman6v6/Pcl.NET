@@ -34,7 +34,6 @@ namespace Pcl.NET
         #region PointCloudXYZ
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-
         public static extern IntPtr pointcloud_xyz_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -389,6 +388,39 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void std_vector_int_insert(IntPtr ptr, ulong idx, int value);
 
+        #endregion
+
+        #region VectorFloat
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_float_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_float_ctor_count(ulong count);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_at(IntPtr ptr, ulong idx, ref float value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern ulong std_vector_float_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_clear(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_resize(IntPtr ptr, ulong size);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_add(IntPtr ptr, float value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr std_vector_float_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void std_vector_float_insert(IntPtr ptr, ulong idx, float value);
 
         #endregion
 

@@ -25,16 +25,16 @@ void pointcloud_xyzrgba_delete(pointcloud_t** ptr)
     *ptr = NULL;
 }
 
-point_t* pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, int col, int row)
+type* pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, int col, int row)
 {
     return &(ptr->at(col, row));
 }
 
-void pointcloud_xyzrgba_add(pointcloud_t* ptr, point_t* value)
+void pointcloud_xyzrgba_add(pointcloud_t* ptr, type* value)
 {
     //the value needs to be aligned to be pushed into the cloud, so do that.
-    point_t deref;
-    memcpy(&deref, value, sizeof(point_t));
+    type deref;
+    memcpy(&deref, value, sizeof(type));
     ptr->push_back(deref);
 }
 
@@ -78,14 +78,14 @@ point_vector* pointcloud_xyzrgba_points(pointcloud_t* ptr)
     return &ptr->points;
 }
 
-point_t* pointcloud_xyzrgba_data(pointcloud_t* ptr)
+type* pointcloud_xyzrgba_data(pointcloud_t* ptr)
 {
     return ptr->points.data();
 }
 
 void pointcloud_xyzrgba_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output)
 {
-    downsample<point_t>(ptr, factor, output);
+    downsample<type>(ptr, factor, output);
 }
 
 void pointcloud_xyzrgba_set_is_dense(pointcloud_t* ptr, int value)

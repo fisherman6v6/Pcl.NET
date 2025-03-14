@@ -152,6 +152,7 @@
     <ClInclude Include="PointCloud_Common.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="VectorByte.h" />
+    <ClInclude Include="VectorFloat.h" />
     <ClInclude Include="VectorInt.h" />
     <ClInclude Include="VectorXYZ.h" />
     <ClInclude Include="VectorXYZI.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="PointCloudXYZI.cpp" />
     <ClCompile Include="PointCloudXYZRGBA.cpp" />
     <ClCompile Include="VectorByte.cpp" />
+    <ClCompile Include="VectorFloat.cpp" />
     <ClCompile Include="VectorInt.cpp" />
     <ClCompile Include="VectorXYZ.cpp" />
     <ClCompile Include="VectorXYZI.cpp" />

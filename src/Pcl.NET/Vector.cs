@@ -1,10 +1,32 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Pcl.NET
 {
     public abstract class Vector<T> : UnmanagedObject, IEnumerable<T> where T : unmanaged
     {
-        public abstract T this[long index] { get; set; }
+        public unsafe virtual T this[long index]
+        {
+            get
+            {
+                // Following trick can reduce the range check by one
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
+                return DataU[index];
+            }
+            set
+            {
+                if ((ulong)index >= (ulong)Count)
+                {
+                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
+                }
+
+                Unsafe.Write(DataU + index, value);
+            }
+        }
 
         public abstract long Count { get; }
 
@@ -67,6 +89,14 @@ namespace Pcl.NET
         IEnumerator IEnumerable.GetEnumerator()
         {
             return this.GetEnumerator();
+        }
+
+        internal unsafe static void CopyFromArray(T[] arr, T* dptr)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Unsafe.Write(dptr + i, arr[i]);
+            }
         }
     }
 }

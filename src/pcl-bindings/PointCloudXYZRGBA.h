@@ -7,9 +7,9 @@
 using namespace pcl;
 using namespace std;
 
-using point_t = PointXYZRGBA;
-using pointcloud_t = PointCloud<point_t>;
-using point_vector = vector<point_t, Eigen::aligned_allocator<point_t>>;
+using type = PointXYZRGBA;
+using pointcloud_t = PointCloud<type>;
+using point_vector = vector<type, Eigen::aligned_allocator<type>>;
 
 
 EXPORT(pointcloud_t*) pointcloud_xyzrgba_ctor();
@@ -20,9 +20,9 @@ EXPORT(pointcloud_t*) pointcloud_xyzrgba_ctor_indices(pointcloud_t* cloud, vecto
 
 EXPORT(void) pointcloud_xyzrgba_delete(pointcloud_t** ptr);
 
-EXPORT(point_t*) pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, int col, int row);
+EXPORT(type*) pointcloud_xyzrgba_at_colrow(pointcloud_t* ptr, int col, int row);
 
-EXPORT(void) pointcloud_xyzrgba_add(pointcloud_t* ptr, point_t* value);
+EXPORT(void) pointcloud_xyzrgba_add(pointcloud_t* ptr, type* value);
 
 EXPORT(size_t) pointcloud_xyzrgba_size(pointcloud_t* ptr);
 
@@ -40,7 +40,7 @@ EXPORT(int32_t) pointcloud_xyzrgba_is_organized(pointcloud_t* ptr);
 
 EXPORT(point_vector*) pointcloud_xyzrgba_points(pointcloud_t* ptr);
 
-EXPORT(point_t*) pointcloud_xyzrgba_data(pointcloud_t* ptr);
+EXPORT(type*) pointcloud_xyzrgba_data(pointcloud_t* ptr);
 
 EXPORT(void) pointcloud_xyzrgba_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output);
 

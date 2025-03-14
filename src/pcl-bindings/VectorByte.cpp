@@ -16,7 +16,7 @@ void std_vector_byte_delete(vector_t** ptr)
     *ptr = NULL;
 }
 
-void std_vector_byte_at(vector_t* ptr, size_t idx, byte* value)
+void std_vector_byte_at(vector_t* ptr, size_t idx, type* value)
 {
     *value = ptr->at(idx);
 }
@@ -36,17 +36,17 @@ void std_vector_byte_resize(vector_t* ptr, size_t size)
     ptr->resize(size);
 }
 
-void std_vector_byte_add(vector_t* ptr, byte value)
+void std_vector_byte_add(vector_t* ptr, type value)
 {
     ptr->push_back(value);
 }
 
-void std_vector_byte_insert(vector_t* ptr, ptrdiff_t index, byte value)
+void std_vector_byte_insert(vector_t* ptr, ptrdiff_t index, type value)
 {
     ptr->insert(ptr->begin() + index, value);
 }
 
-byte* std_vector_byte_data(vector_t* ptr)
+type* std_vector_byte_data(vector_t* ptr)
 {
     return ptr->data();
 }

@@ -9,29 +9,6 @@ namespace Pcl.NET
 {
     public class VectorByte : Vector<byte>
     {
-        public unsafe override byte this[long index]
-        {
-            get
-            {
-                // Following trick can reduce the range check by one
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                return DataU[index];
-            }
-            set
-            {
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                Unsafe.Write(DataU + index, value);
-            }
-        }
-
         public override IntPtr Data
         {
             get
@@ -51,13 +28,8 @@ namespace Pcl.NET
 
         public unsafe VectorByte(byte[] arr)
         {
-            ThrowIfDisposed();
             _ptr = Invoke.std_vector_byte_ctor_count((ulong)arr.Length);
-            byte* dptr = (byte*)(void*)Data;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                System.Runtime.CompilerServices.Unsafe.Write(dptr + i, arr[i]);
-            }
+            CopyFromArray(arr, DataU);
         }
 
         internal VectorByte(IntPtr ptr)

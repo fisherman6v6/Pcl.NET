@@ -9,28 +9,6 @@ namespace Pcl.NET
 {
     public class VectorInt : Vector<int>
     {
-        public unsafe override int this[long index]
-        {
-            get
-            {
-                // Following trick can reduce the range check by one
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                return DataU[index];
-            }
-            set
-            {
-                if ((ulong)index >= (ulong)Count)
-                {
-                    ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
-                }
-
-                Unsafe.Write(DataU + index, value);
-            }
-        }
         public override IntPtr Data
         {
             get
@@ -56,7 +34,16 @@ namespace Pcl.NET
         {
             _ptr = Invoke.std_vector_int_ctor_count((ulong)count);
         }
-
+        internal VectorInt(IntPtr ptr)
+        {
+            _ptr = ptr;
+            _suppressDispose = true;
+        }
+        public unsafe VectorInt(int[] array)
+        {
+            _ptr = Invoke.std_vector_int_ctor_count((ulong)array.Length);
+            CopyFromArray(array, DataU);
+        }
         public override void Add(int item)
         {
             ThrowIfDisposed();
