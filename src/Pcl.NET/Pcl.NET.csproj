@@ -8,8 +8,10 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.2.3</Version>
+    <Version>0.2.5</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
+    <PackageIcon>Pcl.NET.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +26,17 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <PackagePath>runtimes/win-x64/native/</PackagePath>
       <Pack>true</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\assets\Pcl.NET.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
