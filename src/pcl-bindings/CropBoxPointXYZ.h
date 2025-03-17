@@ -7,25 +7,40 @@
 using namespace pcl;
 using namespace std;
 
+typedef struct
+{
+    float x;
+    float y;
+    float z;
+    float w;
+}eigen_vector4f_t;
+
+typedef struct
+{
+    float x;
+    float y;
+    float z;
+}eigen_vector3f_t;
+
 EXPORT(CropBox<PointXYZ>*) cropbox_pointxyz_ctor();
 
 EXPORT(void) cropbox_pointxyz_delete(CropBox<PointXYZ>** ptr);
 
-EXPORT(void) cropbox_pointxyz_set_min(CropBox<PointXYZ>* ptr, Eigen::Vector4f min);
+EXPORT(void) cropbox_pointxyz_set_min(CropBox<PointXYZ>* ptr, eigen_vector4f_t min);
 
-EXPORT(Eigen::Vector4f) cropbox_pointxyz_get_min(CropBox<PointXYZ>* ptr);
+EXPORT(eigen_vector4f_t) cropbox_pointxyz_get_min(CropBox<PointXYZ>* ptr);
 
-EXPORT(void) cropbox_pointxyz_set_max(CropBox<PointXYZ>* ptr, Eigen::Vector4f max);
+EXPORT(void) cropbox_pointxyz_set_max(CropBox<PointXYZ>* ptr, eigen_vector4f_t max);
 
-EXPORT(Eigen::Vector4f) cropbox_pointxyz_get_max(CropBox<PointXYZ>* ptr);
+EXPORT(eigen_vector4f_t) cropbox_pointxyz_get_max(CropBox<PointXYZ>* ptr);
 
-EXPORT(void) cropbox_pointxyz_set_translation(CropBox<PointXYZ>* ptr, Eigen::Vector3f translation);
+EXPORT(void) cropbox_pointxyz_set_translation(CropBox<PointXYZ>* ptr, eigen_vector3f_t translation);
 
-EXPORT(Eigen::Vector3f) cropbox_pointxyz_get_translation(CropBox<PointXYZ>* ptr);
+EXPORT(eigen_vector3f_t) cropbox_pointxyz_get_translation(CropBox<PointXYZ>* ptr);
 
-EXPORT(void) cropbox_pointxyz_set_rotation(CropBox<PointXYZ>* ptr, Eigen::Vector3f rotation);
+EXPORT(void) cropbox_pointxyz_set_rotation(CropBox<PointXYZ>* ptr, eigen_vector3f_t rotation);
 
-EXPORT(Eigen::Vector3f) cropbox_pointxyz_get_rotation(CropBox<PointXYZ>* ptr);
+EXPORT(eigen_vector3f_t) cropbox_pointxyz_get_rotation(CropBox<PointXYZ>* ptr);
 
 EXPORT(void) cropbox_pointxyz_set_transform(CropBox<PointXYZ>* ptr, Eigen::Affine3f* transform);
 

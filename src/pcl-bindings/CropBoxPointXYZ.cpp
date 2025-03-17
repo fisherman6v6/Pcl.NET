@@ -11,44 +11,84 @@ void cropbox_pointxyz_delete(CropBox<PointXYZ>** ptr)
     *ptr = NULL;
 }
 
-void cropbox_pointxyz_set_min(CropBox<PointXYZ>* ptr, Eigen::Vector4f min) 
+void cropbox_pointxyz_set_min(CropBox<PointXYZ>* ptr, eigen_vector4f_t min)
 {
-    ptr->setMin(min);
+    Eigen::Vector4f v;
+    v.x() = min.x;
+    v.y() = min.y;
+    v.z() = min.z;
+    v.w() = min.w;
+    ptr->setMin(v);
 }
 
-Eigen::Vector4f cropbox_pointxyz_get_min(CropBox<PointXYZ>* ptr) 
+eigen_vector4f_t cropbox_pointxyz_get_min(CropBox<PointXYZ>* ptr) 
 {
-    return ptr->getMin();
+    eigen_vector4f_t cvec{};
+    Eigen::Vector4f val = ptr->getMin();
+    cvec.x = val.x();
+    cvec.y = val.y();
+    cvec.z = val.z();
+    cvec.w = val.w();
+    return cvec;
 }
 
-void cropbox_pointxyz_set_max(CropBox<PointXYZ>* ptr, Eigen::Vector4f max) 
+void cropbox_pointxyz_set_max(CropBox<PointXYZ>* ptr, eigen_vector4f_t max)
 {
-    ptr->setMax(max);
+    Eigen::Vector4f val;
+    val.x() = max.x;
+    val.y() = max.y;
+    val.z() = max.z;
+    val.w() = max.w;
+    ptr->setMax(val);
 }
 
-Eigen::Vector4f cropbox_pointxyz_get_max(CropBox<PointXYZ>* ptr) 
+eigen_vector4f_t cropbox_pointxyz_get_max(CropBox<PointXYZ>* ptr)
 {
-    return ptr->getMax();
+    eigen_vector4f_t cvec{};
+    Eigen::Vector4f val = ptr->getMax();
+    cvec.x = val.x();
+    cvec.y = val.y();
+    cvec.z = val.z();
+    cvec.w = val.w();
+    return cvec;
 }
 
-void cropbox_pointxyz_set_translation(CropBox<PointXYZ>* ptr, Eigen::Vector3f translation) 
+void cropbox_pointxyz_set_translation(CropBox<PointXYZ>* ptr, eigen_vector3f_t translation)
 {
-    ptr->setTranslation(translation);
+    Eigen::Vector3f val;
+    val.x() = translation.x;
+    val.y() = translation.y;
+    val.z() = translation.z;
+    ptr->setTranslation(val);
 }
 
-Eigen::Vector3f cropbox_pointxyz_get_translation(CropBox<PointXYZ>* ptr) 
+eigen_vector3f_t cropbox_pointxyz_get_translation(CropBox<PointXYZ>* ptr)
 {
-    return ptr->getTranslation();
+    eigen_vector3f_t cvec{};
+    Eigen::Vector3f val = ptr->getTranslation();
+    cvec.x = val.x();
+    cvec.y = val.y();
+    cvec.z = val.z();
+    return cvec;
 }
 
-void cropbox_pointxyz_set_rotation(CropBox<PointXYZ>* ptr, Eigen::Vector3f rotation) 
+void cropbox_pointxyz_set_rotation(CropBox<PointXYZ>* ptr, eigen_vector3f_t rotation)
 {
-    ptr->setRotation(rotation);
+    Eigen::Vector3f val;
+    val.x() = rotation.x;
+    val.y() = rotation.y;
+    val.z() = rotation.z;
+    ptr->setRotation(val);
 }
 
-Eigen::Vector3f cropbox_pointxyz_get_rotation(CropBox<PointXYZ>* ptr) 
+eigen_vector3f_t cropbox_pointxyz_get_rotation(CropBox<PointXYZ>* ptr)
 {
-    return ptr->getRotation();
+    eigen_vector3f_t cvec{};
+    Eigen::Vector3f val = ptr->getRotation();
+    cvec.x = val.x();
+    cvec.y = val.y();
+    cvec.z = val.z();
+    return cvec;
 }
 
 void cropbox_pointxyz_set_input_cloud(CropBox<PointXYZ>* ptr, PointCloud<PointXYZ>* cloud)
