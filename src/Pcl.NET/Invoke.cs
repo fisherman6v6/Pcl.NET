@@ -553,6 +553,40 @@ namespace Pcl.NET
 
         #endregion
 
+        #region Affine3f
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_affine3f_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_affine3f_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_affine3f_ctor_identity();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_affine3f_get_matrix(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_affine3f_set_matrix(IntPtr ptr, IntPtr matrix);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_affine3f_rotate_xyz(IntPtr ptr, float rx, float ry, float rz);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_affine3f_translate_xyz(IntPtr ptr, float tx, float ty, float tz);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_affine3f_scale(IntPtr ptr, float scale);
+
+        #endregion
+
+        #region Transform
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void transform_pointcloud_xyz(IntPtr affineTransform, IntPtr input, IntPtr output);
+
+        #endregion
+
         #region Quaternionf
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]

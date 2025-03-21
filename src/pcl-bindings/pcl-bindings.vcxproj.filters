@@ -69,6 +69,12 @@
     <ClInclude Include="VectorFloat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="cstructs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Eigen_Affine3f.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -114,6 +120,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="VectorFloat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eigen_Affine3f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

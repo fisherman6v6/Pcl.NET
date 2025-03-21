@@ -3,24 +3,10 @@
 #include "pcl/pcl_base.h"
 #include "pcl/point_types.h"
 #include <pcl/filters/crop_box.h>
+#include "cstructs.h"
 
 using namespace pcl;
 using namespace std;
-
-typedef struct
-{
-    float x;
-    float y;
-    float z;
-    float w;
-}eigen_vector4f_t;
-
-typedef struct
-{
-    float x;
-    float y;
-    float z;
-}eigen_vector3f_t;
 
 EXPORT(CropBox<PointXYZ>*) cropbox_pointxyz_ctor();
 
