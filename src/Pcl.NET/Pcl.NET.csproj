@@ -8,10 +8,12 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.4.1</Version>
+    <Version>0.5.1</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
     <PackageIcon>Pcl.NET.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/fisherman6v6/Pcl.NET</RepositoryUrl>
+    <PackageId>Pcl.NET</PackageId>
     <Description>Pcl.NET is a C# wrapper on Pcl library that allows to use most common pcl (Point Cloud Library) functions in C#</Description>
   </PropertyGroup>
 

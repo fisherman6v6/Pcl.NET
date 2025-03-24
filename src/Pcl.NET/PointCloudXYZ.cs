@@ -83,10 +83,12 @@
         {
         }
 
-        public void Downsample(int factor, PointCloudXYZ output)
+        public PointCloudXYZ Downsample(int factor)
         {
             ThrowIfDisposed();
+            PointCloudXYZ output = new PointCloudXYZ(this.Width, this.Height);
             Invoke.pointcloud_xyz_downsample(_ptr, factor, output);
+            return output;
         }
 
         public unsafe override void Add(PointXYZ value)

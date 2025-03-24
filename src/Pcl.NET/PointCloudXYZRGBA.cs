@@ -104,10 +104,12 @@ namespace Pcl.NET
             return ref System.Runtime.CompilerServices.Unsafe.AsRef<PointXYZRGBA>(Invoke.pointcloud_xyzi_at_colrow(_ptr, col, row));
         }
 
-        public void Downsample(int factor, PointCloudXYZRGBA output)
+        public PointCloudXYZRGBA Downsample(int factor)
         {
+            PointCloudXYZRGBA output = new PointCloudXYZRGBA(this.Width, this.Height);
             ThrowIfDisposed();
             Invoke.pointcloud_xyzrgba_downsample(_ptr, factor, output);
+            return output;
         }
 
         public static PointCloudXYZRGBA operator +(PointCloudXYZRGBA a, PointCloudXYZRGBA b)

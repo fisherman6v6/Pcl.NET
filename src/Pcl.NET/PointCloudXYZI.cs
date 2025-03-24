@@ -93,10 +93,12 @@
             return ref System.Runtime.CompilerServices.Unsafe.AsRef<PointXYZI>(Invoke.pointcloud_xyzi_at_colrow(_ptr, col, row));
         }
 
-        public void Downsample(int factor, PointCloudXYZI output)
+        public PointCloudXYZI Downsample(int factor)
         {
             ThrowIfDisposed();
+            PointCloudXYZI output = new(this.Width, this.Height);
             Invoke.pointcloud_xyzi_downsample(_ptr, factor, output);
+            return output;
         }
 
         public static PointCloudXYZI operator +(PointCloudXYZI a, PointCloudXYZI b)
