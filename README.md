@@ -1,9 +1,12 @@
 # Pcl.NET
-PCL (PointCloud library) C# wrapper. Inspired by https://github.com/jbruening/PclSharp
+PCL (PointCloud library) C# wrapper.
 
 ## Description
 
-TODO
+Pcl.NET is a simpe C# wrapper over the huge PointCloudLibrary. It is designed to be simple to use but to keep it as similar as possibile to the usage of the 
+original C++ PCL. It was inspired by the existing [PclSharp](https://github.com/jbruening/PclSharp) but insted of using code generators everything is 
+coded. This choice was made in order to have a higher degree of flexibility and to make it possible to modify and improve it in a simpler way, even 
+if more code has to be written. Right now a lot of stuff is missing but it is already in an usable state.
 
 ## Getting Started
 
