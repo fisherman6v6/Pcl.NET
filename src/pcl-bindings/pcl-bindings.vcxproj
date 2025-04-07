@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CropBoxPointXYZ.h" />
+    <ClInclude Include="CropBoxPointXYZI.h" />
     <ClInclude Include="cstructs.h" />
     <ClInclude Include="Eigen_Affine3f.h" />
     <ClInclude Include="Eigen_Matrix4f.h" />
@@ -162,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CropBoxPointXYZ.cpp" />
+    <ClCompile Include="CropBoxPointXYZI.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Eigen_Affine3f.cpp" />
     <ClCompile Include="Eigen_MatrixXf.cpp" />

@@ -455,7 +455,8 @@ namespace Pcl.NET
 
         #endregion
 
-        #region CropBox
+        #region CropBoxXYZ
+
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr cropbox_pointxyz_ctor();
 
@@ -509,6 +510,64 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void cropbox_pointxyz_set_keep_organized(IntPtr ptr, int keep_organized);
+
+        #endregion
+
+        #region CropBoxXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr cropbox_pointxyzi_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_min(IntPtr ptr, Eigen.Vector4f min);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f cropbox_pointxyzi_get_min(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_max(IntPtr ptr, Eigen.Vector4f max);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f cropbox_pointxyzi_get_max(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_translation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyzi_get_translation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_rotation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyzi_get_rotation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr cropbox_pointxyzi_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_filter(IntPtr ptr, IntPtr outputCloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_filter_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_get_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int cropbox_pointxyzi_get_keep_organized(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzi_set_keep_organized(IntPtr ptr, int keep_organized);
 
         #endregion
 

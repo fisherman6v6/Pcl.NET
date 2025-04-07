@@ -25,15 +25,15 @@ void pointcloud_xyzi_delete(pointcloud_t** ptr)
     *ptr = NULL;
 }
 
-type* pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row)
+point_t* pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row)
 {
     return &(ptr->at(col, row));
 }
 
-void pointcloud_xyzi_add(pointcloud_t* ptr, type* value)
+void pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value)
 {
     //the value needs to be aligned to be pushed into the cloud, so do that.
-    type deref;
+    point_t deref;
     memcpy(&deref, value, sizeof(PointXYZ));
     ptr->push_back(deref);
 }
@@ -78,14 +78,14 @@ point_vector* pointcloud_xyzi_points(pointcloud_t* ptr)
     return &ptr->points;
 }
 
-type* pointcloud_xyzi_data(pointcloud_t* ptr)
+point_t* pointcloud_xyzi_data(pointcloud_t* ptr)
 {
     return ptr->points.data();
 }
 
 void pointcloud_xyzi_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output)
 {
-    downsample<type>(ptr, factor, output);
+    downsample<point_t>(ptr, factor, output);
 }
 
 void pointcloud_xyzi_set_is_dense(pointcloud_t* ptr, int value)

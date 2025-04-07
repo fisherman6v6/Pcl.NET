@@ -6,9 +6,9 @@
 using namespace pcl;
 using namespace std;
 
-using type = PointXYZI;
-using pointcloud_t = PointCloud<type>;
-using point_vector = vector<type, Eigen::aligned_allocator<type>>;
+using point_t = PointXYZI;
+using pointcloud_t = PointCloud<point_t>;
+using point_vector = vector<point_t, Eigen::aligned_allocator<point_t>>;
 
 
 EXPORT(pointcloud_t*) pointcloud_xyzi_ctor();
@@ -19,9 +19,9 @@ EXPORT(pointcloud_t*) pointcloud_xyzi_ctor_indices(pointcloud_t* cloud, vector<i
 
 EXPORT(void) pointcloud_xyzi_delete(pointcloud_t** ptr);
 
-EXPORT(type*) pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row);
+EXPORT(point_t*) pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row);
 
-EXPORT(void) pointcloud_xyzi_add(pointcloud_t* ptr, type* value);
+EXPORT(void) pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value);
 
 EXPORT(size_t) pointcloud_xyzi_size(pointcloud_t* ptr);
 
@@ -39,7 +39,7 @@ EXPORT(int32_t) pointcloud_xyzi_is_organized(pointcloud_t* ptr);
 
 EXPORT(point_vector*) pointcloud_xyzi_points(pointcloud_t* ptr);
 
-EXPORT(type*) pointcloud_xyzi_data(pointcloud_t* ptr);
+EXPORT(point_t*) pointcloud_xyzi_data(pointcloud_t* ptr);
 
 EXPORT(void) pointcloud_xyzi_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output);
 

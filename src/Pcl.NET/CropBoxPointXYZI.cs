@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
-    public class CropBoxPointXYZ : Filter<PointXYZ>
+    public class CropBoxPointXYZI : Filter<PointXYZI>
     {
         private readonly VectorInt _indices;
-        private PointCloud<PointXYZ>? _input = null;
+        private PointCloud<PointXYZI>? _input = null;
 
-        public CropBoxPointXYZ()
+        public CropBoxPointXYZI()
         {
             _indices = new VectorInt();
-            _ptr = Invoke.cropbox_pointxyz_ctor();
+            _ptr = Invoke.cropbox_pointxyzi_ctor();
         }
 
         public Eigen.Vector4f Min
@@ -22,12 +16,12 @@ namespace Pcl.NET
             get
             {
                 ThrowIfDisposed();
-                return Invoke.cropbox_pointxyz_get_min(_ptr);
+                return Invoke.cropbox_pointxyzi_get_min(_ptr);
             }
             set
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_set_min(_ptr, value);
+                Invoke.cropbox_pointxyzi_set_min(_ptr, value);
             }
         }
 
@@ -36,12 +30,12 @@ namespace Pcl.NET
             get
             {
                 ThrowIfDisposed();
-                return Invoke.cropbox_pointxyz_get_max(_ptr);
+                return Invoke.cropbox_pointxyzi_get_max(_ptr);
             }
             set
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_set_max(_ptr, value);
+                Invoke.cropbox_pointxyzi_set_max(_ptr, value);
             }
         }
 
@@ -50,12 +44,12 @@ namespace Pcl.NET
             get
             {
                 ThrowIfDisposed();
-                return Invoke.cropbox_pointxyz_get_translation(_ptr);
+                return Invoke.cropbox_pointxyzi_get_translation(_ptr);
             }
             set
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_set_translation(_ptr, value);
+                Invoke.cropbox_pointxyzi_set_translation(_ptr, value);
             }
         }
 
@@ -64,32 +58,32 @@ namespace Pcl.NET
             get
             {
                 ThrowIfDisposed();
-                return Invoke.cropbox_pointxyz_get_rotation(_ptr);
+                return Invoke.cropbox_pointxyzi_get_rotation(_ptr);
             }
             set
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_set_rotation(_ptr, value);
+                Invoke.cropbox_pointxyzi_set_rotation(_ptr, value);
             }
         }
-        
+
         public bool KeepOrganized
         {
             get
             {
                 ThrowIfDisposed();
-                int val = Invoke.cropbox_pointxyz_get_keep_organized(_ptr);
+                int val = Invoke.cropbox_pointxyzi_get_keep_organized(_ptr);
                 return val != 0;
             }
             set
             {
                 ThrowIfDisposed();
                 int ival = value ? 1 : 0;
-                Invoke.cropbox_pointxyz_set_keep_organized(_ptr, ival);
+                Invoke.cropbox_pointxyzi_set_keep_organized(_ptr, ival);
             }
         }
 
-        public override PointCloud<PointXYZ>? Input
+        public override PointCloud<PointXYZI>? Input
         {
             get
             {
@@ -100,16 +94,16 @@ namespace Pcl.NET
             {
                 ThrowIfDisposed();
                 ArgumentNullException.ThrowIfNull(value, nameof(value));
-                Invoke.cropbox_pointxyz_set_input_cloud(_ptr, value!);
+                Invoke.cropbox_pointxyzi_set_input_cloud(_ptr, value!);
                 _input = value;
             }
         }
 
-        public override PointCloud<PointXYZ> ApplyFilter()
+        public override PointCloud<PointXYZI> ApplyFilter()
         {
             ThrowIfDisposed();
-            PointCloudXYZ output = new PointCloudXYZ();
-            Invoke.cropbox_pointxyz_filter(_ptr, output);
+            PointCloudXYZI output = new PointCloudXYZI();
+            Invoke.cropbox_pointxyzi_filter(_ptr, output);
             return output;
         }
 
@@ -145,7 +139,7 @@ namespace Pcl.NET
                 return;
             }
 
-            Invoke.cropbox_pointxyz_set_filter_indices(_ptr, (ulong)row_start, (ulong)col_start, (ulong)nb_rows, (ulong)nb_cols);
+            Invoke.cropbox_pointxyzi_set_filter_indices(_ptr, (ulong)row_start, (ulong)col_start, (ulong)nb_rows, (ulong)nb_cols);
         }
 
         public override VectorInt Indices
@@ -153,26 +147,26 @@ namespace Pcl.NET
             get
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_get_filter_indices_vector(_ptr, _indices);
+                Invoke.cropbox_pointxyzi_get_filter_indices_vector(_ptr, _indices);
                 return _indices;
             }
 
             set
             {
                 ThrowIfDisposed();
-                Invoke.cropbox_pointxyz_set_filter_indices_vector(_ptr, value);
+                Invoke.cropbox_pointxyzi_set_filter_indices_vector(_ptr, value);
             }
         }
 
         #region Dispose
-        
+
         protected override void DisposeObject()
         {
             if (!_suppressDispose)
             {
-                Invoke.cropbox_pointxyz_delete(ref _ptr);
+                Invoke.cropbox_pointxyzi_delete(ref _ptr);
             }
-        } 
+        }
 
         #endregion
     }
