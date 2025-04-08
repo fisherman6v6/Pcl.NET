@@ -1,5 +1,5 @@
 # Pcl.NET
-PCL (PointCloudLibrary) C# wrapper.
+PCL (PointCloudLibrary) C# wrapper. Contributions are welcome!
 
 ## Description
 
