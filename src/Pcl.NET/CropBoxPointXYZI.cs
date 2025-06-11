@@ -1,17 +1,19 @@
 ﻿namespace Pcl.NET
 {
-    public class CropBoxPointXYZI : Filter<PointXYZI>
+    public class CropBoxPointXYZI : CropBox<PointXYZI>
     {
         private readonly VectorInt _indices;
         private PointCloud<PointXYZI>? _input = null;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CropBoxPointXYZI"/> class.
+        /// </summary>
         public CropBoxPointXYZI()
         {
             _indices = new VectorInt();
             _ptr = Invoke.cropbox_pointxyzi_ctor();
         }
 
-        public Eigen.Vector4f Min
+        public override Eigen.Vector4f Min
         {
             get
             {
@@ -25,7 +27,7 @@
             }
         }
 
-        public Eigen.Vector4f Max
+        public override Eigen.Vector4f Max
         {
             get
             {
@@ -39,7 +41,7 @@
             }
         }
 
-        public Eigen.Vector3f Translation
+        public override Eigen.Vector3f Translation
         {
             get
             {
@@ -53,7 +55,7 @@
             }
         }
 
-        public Eigen.Vector3f Rotation
+        public override Eigen.Vector3f Rotation
         {
             get
             {
@@ -67,7 +69,7 @@
             }
         }
 
-        public bool KeepOrganized
+        public override bool KeepOrganized
         {
             get
             {

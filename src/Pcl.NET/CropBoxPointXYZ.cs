@@ -6,18 +6,19 @@ using System.Threading.Tasks;
 
 namespace Pcl.NET
 {
-    public class CropBoxPointXYZ : Filter<PointXYZ>
+    public class CropBoxPointXYZ : CropBox<PointXYZ>
     {
         private readonly VectorInt _indices;
         private PointCloud<PointXYZ>? _input = null;
-
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CropBoxPointXYZ"/> class.
+        /// </summary>
         public CropBoxPointXYZ()
         {
             _indices = new VectorInt();
             _ptr = Invoke.cropbox_pointxyz_ctor();
         }
-
-        public Eigen.Vector4f Min
+        public override Eigen.Vector4f Min
         {
             get
             {
@@ -30,8 +31,7 @@ namespace Pcl.NET
                 Invoke.cropbox_pointxyz_set_min(_ptr, value);
             }
         }
-
-        public Eigen.Vector4f Max
+        public override Eigen.Vector4f Max
         {
             get
             {
@@ -44,8 +44,7 @@ namespace Pcl.NET
                 Invoke.cropbox_pointxyz_set_max(_ptr, value);
             }
         }
-
-        public Eigen.Vector3f Translation
+        public override Eigen.Vector3f Translation
         {
             get
             {
@@ -58,8 +57,7 @@ namespace Pcl.NET
                 Invoke.cropbox_pointxyz_set_translation(_ptr, value);
             }
         }
-
-        public Eigen.Vector3f Rotation
+        public override Eigen.Vector3f Rotation
         {
             get
             {
@@ -72,8 +70,7 @@ namespace Pcl.NET
                 Invoke.cropbox_pointxyz_set_rotation(_ptr, value);
             }
         }
-        
-        public bool KeepOrganized
+        public override bool KeepOrganized
         {
             get
             {
@@ -104,7 +101,6 @@ namespace Pcl.NET
                 _input = value;
             }
         }
-
         public override PointCloud<PointXYZ> ApplyFilter()
         {
             ThrowIfDisposed();
@@ -112,7 +108,13 @@ namespace Pcl.NET
             Invoke.cropbox_pointxyz_filter(_ptr, output);
             return output;
         }
-
+        /// <summary>
+        /// Sets the indices of the crop box filter based on the specified starting row, column, number of rows, and number of columns.
+        /// </summary>
+        /// <param name="row_start"></param>
+        /// <param name="col_start"></param>
+        /// <param name="nb_rows"></param>
+        /// <param name="nb_cols"></param>
         public override void SetIndices(long row_start, long col_start, long nb_rows, long nb_cols)
         {
             ThrowIfDisposed();
@@ -147,7 +149,9 @@ namespace Pcl.NET
 
             Invoke.cropbox_pointxyz_set_filter_indices(_ptr, (ulong)row_start, (ulong)col_start, (ulong)nb_rows, (ulong)nb_cols);
         }
-
+        /// <summary>
+        /// Gets or sets the indices of the crop box filter. This property allows you to specify which points in the input point cloud should be considered for filtering.
+        /// </summary>
         public override VectorInt Indices
         {
             get
@@ -165,14 +169,14 @@ namespace Pcl.NET
         }
 
         #region Dispose
-        
+
         protected override void DisposeObject()
         {
             if (!_suppressDispose)
             {
                 Invoke.cropbox_pointxyz_delete(ref _ptr);
             }
-        } 
+        }
 
         #endregion
     }

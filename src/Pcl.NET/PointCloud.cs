@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
     public abstract class PointCloud<PointT> : UnmanagedObject where PointT : unmanaged
     {

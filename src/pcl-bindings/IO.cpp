@@ -1,6 +1,6 @@
 #include "export.h"  
 #include <pcl/io/pcd_io.h>  
-#include <pcl/io/png_io.h> // Include the correct header for PNG file operations  
+#include <pcl/io/png_io.h>
 
 using namespace pcl;  
 
