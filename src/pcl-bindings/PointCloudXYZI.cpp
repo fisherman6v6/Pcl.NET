@@ -1,17 +1,26 @@
-#include "PointCloudXYZI.h"
 #include "PointCloud_Common.h"
+#include "export.h"
+#include "pcl/pcl_base.h"
+#include "pcl/point_types.h"
 
-pointcloud_t* pointcloud_xyzi_ctor()
+using namespace pcl;
+using namespace std;
+
+using point_t = PointXYZI;
+using pointcloud_t = PointCloud<point_t>;
+using point_vector = vector<point_t, Eigen::aligned_allocator<point_t>>;
+
+EXPORT(pointcloud_t*) pointcloud_xyzi_ctor()
 {
     return new pointcloud_t();
 }
 
-pointcloud_t* pointcloud_xyzi_ctor_wh(uint32_t width, uint32_t height)
+EXPORT(pointcloud_t*) pointcloud_xyzi_ctor_wh(uint32_t width, uint32_t height)
 {
     return new pointcloud_t(width, height);
 }
 
-pointcloud_t* pointcloud_xyzi_ctor_indices(pointcloud_t* cloud, vector<int>* indices)
+EXPORT(pointcloud_t*) pointcloud_xyzi_ctor_indices(pointcloud_t* cloud, vector<int>* indices)
 {
     if (indices == NULL)
         return new pointcloud_t(*cloud);
@@ -19,18 +28,18 @@ pointcloud_t* pointcloud_xyzi_ctor_indices(pointcloud_t* cloud, vector<int>* ind
         return new pointcloud_t(*cloud, *indices);
 }
 
-void pointcloud_xyzi_delete(pointcloud_t** ptr)
+EXPORT(void) pointcloud_xyzi_delete(pointcloud_t** ptr)
 {
     delete* ptr;
     *ptr = NULL;
 }
 
-point_t* pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row)
+EXPORT(point_t*) pointcloud_xyzi_at_colrow(pointcloud_t* ptr, int col, int row)
 {
     return &(ptr->at(col, row));
 }
 
-void pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value)
+EXPORT(void) pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value)
 {
     //the value needs to be aligned to be pushed into the cloud, so do that.
     point_t deref;
@@ -38,67 +47,67 @@ void pointcloud_xyzi_add(pointcloud_t* ptr, point_t* value)
     ptr->push_back(deref);
 }
 
-size_t pointcloud_xyzi_size(pointcloud_t* ptr)
+EXPORT(size_t) pointcloud_xyzi_size(pointcloud_t* ptr)
 {
     return ptr->size();
 }
 
-void pointcloud_xyzi_clear(pointcloud_t* ptr)
+EXPORT(void) pointcloud_xyzi_clear(pointcloud_t* ptr)
 {
     ptr->clear();
 }
 
-uint32_t pointcloud_xyzi_get_width(pointcloud_t* ptr)
+EXPORT(uint32_t) pointcloud_xyzi_get_width(pointcloud_t* ptr)
 {
     return ptr->width;
 }
 
-void pointcloud_xyzi_set_width(pointcloud_t* ptr, uint32_t width)
+EXPORT(void) pointcloud_xyzi_set_width(pointcloud_t* ptr, uint32_t width)
 {
     ptr->width = width;
 }
 
-uint32_t pointcloud_xyzi_get_height(pointcloud_t* ptr)
+EXPORT(uint32_t) pointcloud_xyzi_get_height(pointcloud_t* ptr)
 {
     return ptr->height;
 }
 
-void pointcloud_xyzi_set_height(pointcloud_t* ptr, uint32_t height)
+EXPORT(void) pointcloud_xyzi_set_height(pointcloud_t* ptr, uint32_t height)
 {
     ptr->height = height;
 }
 
-int32_t pointcloud_xyzi_is_organized(pointcloud_t* ptr)
+EXPORT(int32_t) pointcloud_xyzi_is_organized(pointcloud_t* ptr)
 {
     return ptr->isOrganized();
 }
 
-point_vector* pointcloud_xyzi_points(pointcloud_t* ptr)
+EXPORT(point_vector*) pointcloud_xyzi_points(pointcloud_t* ptr)
 {
     return &ptr->points;
 }
 
-point_t* pointcloud_xyzi_data(pointcloud_t* ptr)
+EXPORT(point_t*) pointcloud_xyzi_data(pointcloud_t* ptr)
 {
     return ptr->points.data();
 }
 
-void pointcloud_xyzi_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output)
+EXPORT(void) pointcloud_xyzi_downsample(pointcloud_t* ptr, int factor, pointcloud_t* output)
 {
     downsample<point_t>(ptr, factor, output);
 }
 
-void pointcloud_xyzi_set_is_dense(pointcloud_t* ptr, int value)
+EXPORT(void) pointcloud_xyzi_set_is_dense(pointcloud_t* ptr, int value)
 {
     ptr->is_dense = value;
 }
 
-int pointcloud_xyzi_get_is_dense(pointcloud_t* ptr)
+EXPORT(int) pointcloud_xyzi_get_is_dense(pointcloud_t* ptr)
 {
     return ptr->is_dense;
 }
 
-void pointcloud_xyzi_concatenate(pointcloud_t* ptr1, pointcloud_t* ptr2, pointcloud_t* ptr_out)
+EXPORT(void) pointcloud_xyzi_concatenate(pointcloud_t* ptr1, pointcloud_t* ptr2, pointcloud_t* ptr_out)
 {
     pointcloud_t::concatenate(*ptr1, *ptr2, *ptr_out);
 }

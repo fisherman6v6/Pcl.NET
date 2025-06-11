@@ -21,67 +21,13 @@
     <ClInclude Include="export.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PointCloudXYZ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorXYZ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eigen_Matrix4f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eigen_VectorXf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PointCloudXYZI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorXYZI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IO.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorByte.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CropBoxPointXYZ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorInt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PointCloudXYZRGBA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PointCloud_Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="VectorXYZRGBA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="PCLImage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="VectorFloat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="cstructs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eigen_Affine3f.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="CropBoxPointXYZI.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ConvolutionPointXYZPointXYZ.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Eigen_ArrayXf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
