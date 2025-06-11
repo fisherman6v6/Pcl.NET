@@ -574,41 +574,44 @@ namespace Pcl.NET
         #region Matrix4f
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr eigen_matrix4_f_ctor();
+        public static extern IntPtr eigen_matrix4f_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void eigen_matrix4_f_delete(ref IntPtr ptr);
+        public static extern void eigen_matrix4f_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern float eigen_matrix4_f_get_index(IntPtr ptr, int row, int col);
+        public static extern float eigen_matrix4f_get_index(IntPtr ptr, int row, int col);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void eigen_matrix4_f_set_index(IntPtr ptr, int row, int col, float value);
+        public static extern void eigen_matrix4f_set_index(IntPtr ptr, int row, int col, float value);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern float* eigen_matrix4_f_data(IntPtr ptr);
+        public unsafe static extern float* eigen_matrix4f_data(IntPtr ptr);
 
         #endregion
 
-        #region Vector4f
+        #region VectorXf
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr eigen_vectorx_f_ctor();
+        public static extern IntPtr eigen_vectorxf_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void eigen_vectorx_f_delete(ref IntPtr ptr);
+        public static extern void eigen_vectorxf_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern float eigen_vectorx_f_get_index(IntPtr ptr, long index);
+        public static extern float eigen_vectorxf_get_index(IntPtr ptr, long index);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void eigen_vectorx_f_set_index(IntPtr ptr, long index);
+        public static extern void eigen_vectorxf_set_index(IntPtr ptr, long index, float value);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public unsafe static extern float* eigen_vectorx_f_data(IntPtr ptr);
+        public unsafe static extern IntPtr eigen_vectorxf_data(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void eigen_vectorx_f_normalize(IntPtr ptr);
+        public static extern void eigen_vectorxf_normalize(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern long eigen_vectorxf_size(IntPtr ptr);
 
         #endregion
 
@@ -691,5 +694,93 @@ namespace Pcl.NET
         public static extern void pclimage_set_step(IntPtr ptr, uint value);
 
         #endregion
+
+
+        #region ArrayXf
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_ctor_size(long size);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern float eigen_arrayxf_get_index(IntPtr ptr, long index);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern long eigen_arrayxf_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_arrayxf_set_index(IntPtr ptr, long index, float value);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void eigen_arrayxf_delete(ref IntPtr ptr);
+
+        #endregion
+
+        #region ConvolutionPointXYZPointXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr convolution_pointxyz_pointxyz_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_set_kernel(IntPtr ptr, IntPtr kernel);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_set_borders_policy(IntPtr ptr, int policy);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int convolution_pointxyz_pointxyz_get_borders_policy(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_set_distance_threshold(IntPtr ptr, float threshold);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern float convolution_pointxyz_pointxyz_get_distance_threshold(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_convolve_rows(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_convolve_cols(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_convolve(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_pointxyz_pointxyz_set_threads(IntPtr ptr, int threads);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_vectorxf_ctor_size(long size);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_sin(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_cos(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_tan(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_exp(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_log(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_sqrt(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_abs(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr eigen_arrayxf_data(IntPtr ptr);
+
+        #endregion
+
     }
 }

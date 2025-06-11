@@ -78,6 +78,12 @@
     <ClInclude Include="CropBoxPointXYZI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ConvolutionPointXYZPointXYZ.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Eigen_ArrayXf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -89,7 +95,7 @@
     <ClCompile Include="VectorXYZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Eigen_MatrixXf.cpp">
+    <ClCompile Include="Eigen_Matrix4f.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Eigen_VectorXf.cpp">
@@ -129,6 +135,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CropBoxPointXYZI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvolutionPointXYZPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eigen_ArrayXf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

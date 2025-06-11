@@ -1,32 +1,37 @@
 #include "Eigen_VectorXf.h"
 
-VectorXf* eigen_vectorx_f_ctor()
+vector_t* eigen_vectorxf_ctor()
 {
-    return new VectorXf();
+    return new vector_t();
 }
 
-void eigen_vectorx_f_delete(VectorXf** ptr)
+vector_t* eigen_vectorxf_ctor_size(size_t size)
+{
+    return new vector_t(size);
+}
+
+void eigen_vectorxf_delete(vector_t** ptr)
 {
     delete* ptr;
     *ptr = NULL;
 }
 
-void eigen_vectorx_f_set_index(VectorXf* ptr, size_t index, float value)
+void eigen_vectorxf_set_index(vector_t* ptr, size_t index, float value)
 {
     ptr->operator()(index) = value;
 }
 
-float eigen_vectorx_f_get_index(VectorXf* ptr, size_t index)
+float eigen_vectorxf_get_index(vector_t* ptr, size_t index)
 {
     return ptr->operator()(index);
 }
 
-float* eigen_vectorx_f_data(VectorXf* ptr)
+float* eigen_vectorxf_data(vector_t* ptr)
 {
     return ptr->data();
 }
 
-void eigen_vectorx_f_normalize(VectorXf* ptr)
+void eigen_vectorxf_normalize(vector_t* ptr)
 {
     ptr->normalize();
 }

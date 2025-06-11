@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ConvolutionPointXYZPointXYZ.h" />
     <ClInclude Include="CropBoxPointXYZ.h" />
     <ClInclude Include="CropBoxPointXYZI.h" />
     <ClInclude Include="cstructs.h" />
     <ClInclude Include="Eigen_Affine3f.h" />
+    <ClInclude Include="Eigen_ArrayXf.h" />
     <ClInclude Include="Eigen_Matrix4f.h" />
     <ClInclude Include="Eigen_VectorXf.h" />
     <ClInclude Include="export.h" />
@@ -162,11 +164,13 @@
     <ClInclude Include="VectorXYZRGBA.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ConvolutionPointXYZPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZI.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Eigen_Affine3f.cpp" />
-    <ClCompile Include="Eigen_MatrixXf.cpp" />
+    <ClCompile Include="Eigen_ArrayXf.cpp" />
+    <ClCompile Include="Eigen_Matrix4f.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="PCLImage.cpp" />

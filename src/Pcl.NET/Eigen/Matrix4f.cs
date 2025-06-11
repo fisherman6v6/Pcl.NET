@@ -9,7 +9,7 @@ namespace Pcl.NET.Eigen
 {
     public class Matrix4f : UnmanagedObject
     {
-        public unsafe float* DataU => Invoke.eigen_matrix4_f_data(_ptr);
+        public unsafe float* DataU => Invoke.eigen_matrix4f_data(_ptr);
 
         public float this[int row, int col]
         {
@@ -19,7 +19,7 @@ namespace Pcl.NET.Eigen
                 {
                     ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
                 }
-                return Invoke.eigen_matrix4_f_get_index(_ptr, row, col);
+                return Invoke.eigen_matrix4f_get_index(_ptr, row, col);
             }
             set
             {
@@ -27,13 +27,13 @@ namespace Pcl.NET.Eigen
                 {
                     ThrowHelper.ThrowArgumentOutOfRange_IndexMustBeLessException();
                 }
-                Invoke.eigen_matrix4_f_set_index(_ptr, row, col, value);
+                Invoke.eigen_matrix4f_set_index(_ptr, row, col, value);
             }
         }
 
         public Matrix4f()
         {
-            _ptr = Invoke.eigen_matrix4_f_ctor();
+            _ptr = Invoke.eigen_matrix4f_ctor();
         }
 
         internal Matrix4f(IntPtr ptr, bool suppressDispose)
@@ -261,7 +261,7 @@ namespace Pcl.NET.Eigen
         {
             if (!_suppressDispose)
             {
-                Invoke.eigen_matrix4_f_delete(ref _ptr);
+                Invoke.eigen_matrix4f_delete(ref _ptr);
             }
         }
 
