@@ -14,7 +14,7 @@ namespace Pcl.NET
         /// </summary>
         public abstract float DistanceThreshold { get; set; }
         /// <summary>
-        /// Initialize the scheduler and set the number of threads to use.nr_threads the number of hardware threads to use(0 sets the value back to automatic)
+        /// Initialize the scheduler and set the number of threads to use (0 sets the value back to automatic)
         /// </summary>
         public abstract int NumberOfThreads { get; set; }
         /// <summary>

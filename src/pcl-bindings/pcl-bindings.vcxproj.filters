@@ -89,6 +89,12 @@
     <ClCompile Include="Eigen_ArrayXf.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Convolution3DGaussianKernelPointXYZPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianKernelPointXYZPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc">

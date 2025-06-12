@@ -146,6 +146,7 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Convolution3DGaussianKernelPointXYZPointXYZ.cpp" />
     <ClCompile Include="ConvolutionPointXYZPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZI.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="Eigen_ArrayXf.cpp" />
     <ClCompile Include="Eigen_Matrix4f.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
+    <ClCompile Include="GaussianKernelPointXYZPointXYZ.cpp" />
     <ClCompile Include="IO.cpp" />
     <ClCompile Include="PCLImage.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
