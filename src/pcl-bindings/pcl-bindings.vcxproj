@@ -167,6 +167,7 @@
     <ClCompile Include="VectorXYZ.cpp" />
     <ClCompile Include="VectorXYZI.cpp" />
     <ClCompile Include="VectorXYZRGBA.cpp" />
+    <ClCompile Include="VoxelGridPointXYZ.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc" />

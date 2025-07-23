@@ -14,3 +14,10 @@ typedef struct
     float y;
     float z;
 }eigen_vector3f_t;
+
+typedef struct
+{
+    int x;
+    int y;
+    int z;
+}eigen_vector3i_t;

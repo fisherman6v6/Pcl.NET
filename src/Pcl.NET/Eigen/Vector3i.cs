@@ -3,33 +3,28 @@ using System.Runtime.InteropServices;
 
 namespace Pcl.NET.Eigen
 {
-    [DebuggerDisplay("{X}, {Y}, {Z}")]
     [StructLayout(LayoutKind.Explicit, Size = 16)]
-    public struct Vector3f : IEquatable<Vector3f>
+    [DebuggerDisplay("{X}, {Y}, {Z}")]
+    public struct Vector3i : IEquatable<Vector3i>
     {
         [FieldOffset(0)]
-        public float X;
+        public int X;
+
         [FieldOffset(4)]
-        public float Y;
+        public int Y;
+
         [FieldOffset(8)]
-        public float Z;
+        public int Z;
 
         [FieldOffset(0)]
         public unsafe fixed int data[4];
 
-        public Vector3f(float x, float y, float z) : this()
+        public override bool Equals(object? obj)
         {
-            X = x;
-            Y = y;
-            Z = z;
+            return obj is Vector3i i && Equals(i);
         }
 
-        public override readonly bool Equals(object? obj)
-        {
-            return obj is Vector3f f && Equals(f);
-        }
-
-        public readonly bool Equals(Vector3f other)
+        public readonly bool Equals(Vector3i other)
         {
             return X == other.X &&
                    Y == other.Y &&
@@ -41,12 +36,12 @@ namespace Pcl.NET.Eigen
             return HashCode.Combine(X, Y, Z);
         }
 
-        public static bool operator ==(Vector3f left, Vector3f right)
+        public static bool operator ==(Vector3i left, Vector3i right)
         {
             return left.Equals(right);
         }
 
-        public static bool operator !=(Vector3f left, Vector3f right)
+        public static bool operator !=(Vector3i left, Vector3i right)
         {
             return !(left == right);
         }

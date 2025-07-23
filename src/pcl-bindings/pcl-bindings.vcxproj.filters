@@ -95,6 +95,9 @@
     <ClCompile Include="GaussianKernelPointXYZPointXYZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="VoxelGridPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc">
