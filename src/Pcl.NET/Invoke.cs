@@ -32,6 +32,13 @@ namespace Pcl.NET
             return handle;
         }
 
+        #region Common
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void common_get_min_max_3d_pointxyz(IntPtr cloud, ref PointXYZ min, ref PointXYZ max);
+
+        #endregion
+
         #region PointCloudXYZ
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -937,5 +944,48 @@ namespace Pcl.NET
 
         #endregion
 
+        #region KdTreePointXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr kdtree_pointxyz_ctor(int sorted);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void kdtree_pointxyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void kdtree_pointxyz_set_input_cloud(IntPtr kdtree, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void kdtree_pointxyz_set_epsilon(IntPtr kdtree, float eps);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int kdtree_pointxyz_nearest_k_search(
+            IntPtr kdtree,
+            ref PointXYZ point,
+            int k,
+            IntPtr indices, // std::vector<int>*
+            IntPtr distances // std::vector<float>*
+        );
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int kdtree_pointxyz_radius_search(
+            IntPtr kdtree,
+            ref PointXYZ point,
+            double radius,
+            int max_nn,
+            IntPtr indices, // std::vector<int>*
+            IntPtr distances // std::vector<float>*
+        );
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void kdtree_pointxyz_set_sorted_results(IntPtr kdtree, int sorted);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int kdtree_pointxyz_get_sorted_results(IntPtr kdtree);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern float kdtree_pointxyz_get_epsilon(KdTreePointXYZ kdTreePointXYZ);
+
+        #endregion
     }
 }

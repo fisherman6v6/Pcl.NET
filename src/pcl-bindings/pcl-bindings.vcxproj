@@ -155,8 +155,10 @@
     <ClCompile Include="Eigen_ArrayXf.cpp" />
     <ClCompile Include="Eigen_Matrix4f.cpp" />
     <ClCompile Include="Eigen_VectorXf.cpp" />
+    <ClCompile Include="common.cpp" />
     <ClCompile Include="GaussianKernelPointXYZPointXYZ.cpp" />
     <ClCompile Include="IO.cpp" />
+    <ClCompile Include="KdTreePointXYZ.cpp" />
     <ClCompile Include="PCLImage.cpp" />
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
