@@ -1,6 +1,6 @@
 ﻿namespace Pcl.NET
 {
-    public static class Extensions
+    public static class PointCloudExtensions
     {
         public static void Save(this PointCloudXYZ @this, string filename, bool ascii = false)
         {
