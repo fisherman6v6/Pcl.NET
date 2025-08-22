@@ -119,6 +119,11 @@
             return outpc;
         }
 
+        public static PointCloudXYZ Load(string filename)
+        {
+            return IO.LoadPointCloudXYZ(filename);
+        }
+
         #endregion
 
         #region Dispose
