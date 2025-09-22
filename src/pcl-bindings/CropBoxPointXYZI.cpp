@@ -32,7 +32,7 @@ EXPORT(void) cropbox_pointxyzi_set_min(cropbox_t* ptr, eigen_vector4f_t min)
     ptr->setMin(v);
 }
 
-eigen_vector4f_t cropbox_pointxyzi_get_min(cropbox_t* ptr)
+EXPORT(eigen_vector4f_t) cropbox_pointxyzi_get_min(cropbox_t* ptr)
 {
     eigen_vector4f_t cvec{};
     Eigen::Vector4f val = ptr->getMin();
@@ -53,7 +53,7 @@ EXPORT(void) cropbox_pointxyzi_set_max(cropbox_t* ptr, eigen_vector4f_t max)
     ptr->setMax(val);
 }
 
-eigen_vector4f_t cropbox_pointxyzi_get_max(cropbox_t* ptr)
+EXPORT(eigen_vector4f_t) cropbox_pointxyzi_get_max(cropbox_t* ptr)
 {
     eigen_vector4f_t cvec{};
     Eigen::Vector4f val = ptr->getMax();
@@ -73,7 +73,7 @@ EXPORT(void) cropbox_pointxyzi_set_translation(cropbox_t* ptr, eigen_vector3f_t 
     ptr->setTranslation(val);
 }
 
-eigen_vector3f_t cropbox_pointxyzi_get_translation(cropbox_t* ptr)
+EXPORT(eigen_vector3f_t) cropbox_pointxyzi_get_translation(cropbox_t* ptr)
 {
     eigen_vector3f_t cvec{};
     Eigen::Vector3f val = ptr->getTranslation();
@@ -92,7 +92,7 @@ EXPORT(void) cropbox_pointxyzi_set_rotation(cropbox_t* ptr, eigen_vector3f_t rot
     ptr->setRotation(val);
 }
 
-eigen_vector3f_t cropbox_pointxyzi_get_rotation(cropbox_t* ptr)
+EXPORT(eigen_vector3f_t) cropbox_pointxyzi_get_rotation(cropbox_t* ptr)
 {
     eigen_vector3f_t cvec{};
     Eigen::Vector3f val = ptr->getRotation();
@@ -108,7 +108,7 @@ EXPORT(void) cropbox_pointxyzi_set_input_cloud(cropbox_t* ptr, pointcloud_t* clo
     ptr->setInputCloud(shared);
 }
 
-const pointcloud_t* cropbox_pointxyzi_get_input_cloud(cropbox_t* ptr)
+EXPORT(const pointcloud_t*) cropbox_pointxyzi_get_input_cloud(cropbox_t* ptr)
 {
     return ptr->getInputCloud().get();
 }
