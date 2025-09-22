@@ -8,11 +8,14 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.6.0</Version>
+    <Version>0.6.6</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
     <PackageIcon>Pcl.NET.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/fisherman6v6/Pcl.NET</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
     <PackageId>PclNET</PackageId>
     <PackageTags>pcl, pointcloud, pointcloudlibrary, eigen, pcd</PackageTags>
     <Description>Pcl.NET is a C# wrapper on Pcl library that allows to use most common pcl (Point Cloud Library) functions in C#</Description>
@@ -34,6 +37,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
     <Deterministic>True</Deterministic>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\x64\Release\**\*.dll" Condition="'$(Configuration)' == 'Release'">

@@ -37,6 +37,12 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void common_get_min_max_3d_pointxyz(IntPtr cloud, ref PointXYZ min, ref PointXYZ max);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void common_get_min_max_3d_pointxyzi(IntPtr cloud, ref PointXYZI min, ref PointXYZI max);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void common_get_min_max_3d_pointxyzrgba(IntPtr cloud, ref PointXYZRGBA min, ref PointXYZRGBA max);
+
         #endregion
 
         #region PointCloudXYZ

@@ -128,6 +128,11 @@ namespace Pcl.NET
             return outpc;
         }
 
+        public static PointCloudXYZRGBA Load(string filename)
+        {
+            return IO.LoadPointCloudXYZRGBA(filename);
+        }
+
         #endregion
 
         #region Dispose

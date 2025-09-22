@@ -11,3 +11,15 @@ EXPORT(void) common_get_min_max_3d_pointxyz(const PointCloud<PointXYZ>* cloud,
 {
     pcl::getMinMax3D(*cloud, *min_pt, *max_pt);
 }
+
+EXPORT(void) common_get_min_max_3d_pointxyzi(const PointCloud<PointXYZI>* cloud,
+                            PointXYZI* min_pt, PointXYZI* max_pt)
+{
+    pcl::getMinMax3D(*cloud, *min_pt, *max_pt);
+}
+
+EXPORT(void) common_get_min_max_3d_pointxyzrgba(const PointCloud<PointXYZRGBA>* cloud,
+                            PointXYZRGBA* min_pt, PointXYZRGBA* max_pt)
+{
+    pcl::getMinMax3D(*cloud, *min_pt, *max_pt);
+}
