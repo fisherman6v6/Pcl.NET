@@ -106,8 +106,8 @@ namespace Pcl.NET
 
         public PointCloudXYZRGBA Downsample(int factor)
         {
-            PointCloudXYZRGBA output = new PointCloudXYZRGBA(this.Width, this.Height);
             ThrowIfDisposed();
+            PointCloudXYZRGBA output = new PointCloudXYZRGBA(this.Width, this.Height);
             Invoke.pointcloud_xyzrgba_downsample(_ptr, factor, output);
             return output;
         }
@@ -121,6 +121,9 @@ namespace Pcl.NET
 
         public static PointCloudXYZRGBA Concatenate(PointCloudXYZRGBA a, PointCloudXYZRGBA b)
         {
+            a.ThrowIfDisposed();
+            b.ThrowIfDisposed();
+
             PointCloudXYZRGBA outpc = new PointCloudXYZRGBA();
 
             Invoke.pointcloud_xyz_concatenate(a, b, outpc);

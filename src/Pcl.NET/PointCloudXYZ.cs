@@ -112,6 +112,9 @@
 
         public static PointCloudXYZ Concatenate(PointCloudXYZ a, PointCloudXYZ b)
         {
+            a.ThrowIfDisposed();
+            b.ThrowIfDisposed();
+
             PointCloudXYZ outpc = new PointCloudXYZ();
 
             Invoke.pointcloud_xyz_concatenate(a, b, outpc);
