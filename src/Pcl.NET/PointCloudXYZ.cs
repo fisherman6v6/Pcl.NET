@@ -83,6 +83,17 @@
         {
         }
 
+        public PointCloudXYZ(PointCloudXYZ other)
+          : this(Invoke.pointcloud_xyz_ctor_indices(other, IntPtr.Zero))
+        {
+        }
+
+        public PointCloudXYZ(PointCloudXYZ other, VectorInt indices)
+          : this(Invoke.pointcloud_xyz_ctor_indices(other, indices))
+        {
+
+        }
+
         public PointCloudXYZ Downsample(int factor)
         {
             ThrowIfDisposed();

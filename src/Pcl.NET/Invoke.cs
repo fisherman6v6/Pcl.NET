@@ -54,7 +54,7 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyz_ctor_indices(IntPtr cloud, IntPtr indices);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr pointcloud_xyz_ctor_wh(long width, long height);
+        public static extern IntPtr pointcloud_xyz_ctor_wh(uint width, uint height);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyz_delete(ref IntPtr ptr);
@@ -117,7 +117,7 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyzi_ctor_indices(IntPtr cloud, IntPtr indices);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr pointcloud_xyzi_ctor_wh(long width, long height);
+        public static extern IntPtr pointcloud_xyzi_ctor_wh(uint width, uint height);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzi_delete(ref IntPtr ptr);
@@ -180,7 +180,7 @@ namespace Pcl.NET
         public static extern IntPtr pointcloud_xyzrgba_ctor_indices(IntPtr cloud, IntPtr indices);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr pointcloud_xyzrgba_ctor_wh(long width, long height);
+        public static extern IntPtr pointcloud_xyzrgba_ctor_wh(uint width, uint height);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void pointcloud_xyzrgba_delete(ref IntPtr ptr);

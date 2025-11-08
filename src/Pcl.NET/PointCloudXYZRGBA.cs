@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
 
     public class PointCloudXYZRGBA : PointCloud<PointXYZRGBA>
     {
         private readonly VectorXYZRGBA _points;
 
-        public override int Width 
-        { 
+        public override int Width
+        {
             get
             {
                 ThrowIfDisposed();
                 return (int)Invoke.pointcloud_xyzrgba_get_width(_ptr);
             }
-            set 
+            set
             {
                 ThrowIfDisposed();
                 Invoke.pointcloud_xyzrgba_set_width(_ptr, (uint)value);
@@ -83,12 +75,22 @@ namespace Pcl.NET
         }
 
         public PointCloudXYZRGBA()
-          : this(Invoke.pointcloud_xyz_ctor())
+          : this(Invoke.pointcloud_xyzrgba_ctor())
         {
         }
 
         public PointCloudXYZRGBA(int width, int height)
-          : this(Invoke.pointcloud_xyz_ctor_wh((uint)width, (uint)height))
+          : this(Invoke.pointcloud_xyzrgba_ctor_wh((uint)width, (uint)height))
+        {
+        }
+
+        public PointCloudXYZRGBA(PointCloudXYZRGBA other)
+          : this(Invoke.pointcloud_xyzrgba_ctor_indices(other, IntPtr.Zero))
+        {
+        }
+
+        public PointCloudXYZRGBA(PointCloudXYZRGBA other, VectorInt indices)
+          : this(Invoke.pointcloud_xyzrgba_ctor_indices(other, indices))
         {
         }
 
@@ -126,7 +128,7 @@ namespace Pcl.NET
 
             PointCloudXYZRGBA outpc = new PointCloudXYZRGBA();
 
-            Invoke.pointcloud_xyz_concatenate(a, b, outpc);
+            Invoke.pointcloud_xyzrgba_concatenate(a, b, outpc);
 
             return outpc;
         }
@@ -145,7 +147,7 @@ namespace Pcl.NET
             {
                 Invoke.pointcloud_xyzrgba_delete(ref _ptr);
             }
-        } 
+        }
         #endregion
     }
 }

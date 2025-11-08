@@ -81,6 +81,16 @@
         {
         }
 
+        public PointCloudXYZI(PointCloudXYZI other) 
+            : this(Invoke.pointcloud_xyzi_ctor_indices(other, IntPtr.Zero))
+        {
+        }
+
+        public PointCloudXYZI(PointCloudXYZI other, VectorInt indices) 
+            : this(Invoke.pointcloud_xyzi_ctor_indices(other, indices))
+        {
+        }
+
         public unsafe override void Add(PointXYZI value)
         {
             ThrowIfDisposed();
