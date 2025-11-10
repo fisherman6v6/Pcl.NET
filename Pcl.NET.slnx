@@ -1,0 +1,21 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/pcl-bindings/pcl-bindings.vcxproj" Id="fa3800a9-bcb8-4964-a1e9-bdf8a8b9ec05" />
+    <Project Path="src/Pcl.NET/Pcl.NET.csproj">
+      <BuildDependency Project="src/pcl-bindings/pcl-bindings.vcxproj" />
+    </Project>
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/Pcl.Native.TestConsoleApp/Pcl.Native.TestConsoleApp.vcxproj" Id="34e5f1d7-049b-4b19-9706-d2ae25fecce4" />
+    <Project Path="test/Pcl.NET.TestConsoleApp/Pcl.NET.TestConsoleApp.csproj" />
+    <Project Path="test/Pcl.NET.UnitTests/Pcl.NET.UnitTests.csproj" />
+  </Folder>
+</Solution>
