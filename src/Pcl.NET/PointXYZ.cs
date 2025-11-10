@@ -4,6 +4,12 @@ using System.Runtime.InteropServices;
 
 namespace Pcl.NET
 {
+    /// <summary>
+    /// Represents a three-dimensional point or vector with single-precision floating-point X, Y, and Z components.
+    /// </summary>
+    /// <remarks>The PointXYZ struct provides multiple ways to access its components, including individual X,
+    /// Y, and Z fields, a Vector3 view, and a fixed-size float array. It supports value equality comparison and
+    /// implicit conversions to and from Vector3</remarks>
     [StructLayout(LayoutKind.Explicit, Size = 16)]
     [DebuggerDisplay("{V}")]
     public struct PointXYZ : IEquatable<PointXYZ>

@@ -14,4 +14,17 @@
         {
         }
     }
+
+    public class UnorganizedPointCloudException : PclException
+    {
+        public UnorganizedPointCloudException()
+        {
+        }
+        public UnorganizedPointCloudException(string? message) : base(message)
+        {
+        }
+        public UnorganizedPointCloudException(string? message, Exception? innerException) : base(message, innerException)
+        {
+        }
+    }
 }

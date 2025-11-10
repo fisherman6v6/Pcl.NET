@@ -9,6 +9,13 @@ using System.Threading.Tasks;
 
 namespace Pcl.NET
 {
+    /// <summary>
+    /// Represents a three-dimensional point with single-precision coordinates and an associated RGBA color value.
+    /// </summary>
+    /// <remarks>This structure is commonly used in point cloud processing and 3D graphics to store both
+    /// spatial position and color information for a point. The X, Y, and Z fields specify the position in 3D space,
+    /// while the RGBA value encodes the color using red, green, blue, and alpha (transparency) components. Equality and
+    /// hash code operations are based on both position and color values.</remarks>
     [DebuggerDisplay("{V}, {RGBA.ToString(\"X8\")}")]
     [StructLayout(LayoutKind.Explicit, Size = 32)]
     public unsafe struct PointXYZRGBA : IEquatable<PointXYZRGBA>

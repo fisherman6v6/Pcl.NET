@@ -27,7 +27,7 @@
             }
 
             PointCloudXYZI cloud = new PointCloudXYZI();
-            int ret = Invoke.io_load_pcd_xyz(filename, cloud);
+            int ret = Invoke.io_load_pcd_xyzi(filename, cloud);
             if (ret != 0)
             {
                 ThrowHelper.ThrowIOException_CannotReadFile(filename);

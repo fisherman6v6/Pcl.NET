@@ -103,6 +103,9 @@
         public unsafe override ref PointXYZRGBA At(int col, int row)
         {
             ThrowIfDisposed();
+            ThrowHelper.ThrowUnorganizedPointCloudfCondition_CantUse2DIndexing(!IsOrganized);
+            ThrowHelper.ThrowArgumentOutOfRangeIfCondition_IndexMustBeLessException(col >= Width, nameof(col));
+            ThrowHelper.ThrowArgumentOutOfRangeIfCondition_IndexMustBeLessException(row >= Height, nameof(row));
             return ref System.Runtime.CompilerServices.Unsafe.AsRef<PointXYZRGBA>(Invoke.pointcloud_xyzi_at_colrow(_ptr, col, row));
         }
 

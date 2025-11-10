@@ -9,9 +9,17 @@ namespace Pcl.NET
         {
             throw new ArgumentOutOfRangeException("Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')");
         }
+        [DoesNotReturn]
         public static void ThrowArgumentOutOfRange_IndexMustBeLessException(string name)
         {
             throw new ArgumentOutOfRangeException($"Index was out of range. Must be non-negative and less than the size of the collection. (Parameter '{name}')");
+        }
+        public static void ThrowArgumentOutOfRangeIfCondition_IndexMustBeLessException(bool condition, string name)
+        {
+            if (condition)
+            {
+                throw new ArgumentOutOfRangeException($"Index was out of range. Must be non-negative and less than the size of the collection. (Parameter '{name}')");
+            }
         }
         [DoesNotReturn]
         public static void ThrowIOException_CannotWriteFile(string filename)
@@ -32,6 +40,14 @@ namespace Pcl.NET
         public static void ThrowInvalidOperation_PointCloudNotSetException()
         {
             throw new InvalidOperationException("Input cloud is not set");
+        }
+        [DoesNotReturn]
+        public static void ThrowUnorganizedPointCloudfCondition_CantUse2DIndexing(bool condition)
+        {
+            if (condition)
+            {
+                throw new InvalidOperationException("Can't use 2D indexing with an unorganized point cloud");
+            }
         }
     }
 }

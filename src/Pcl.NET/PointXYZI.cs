@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace Pcl.NET
 {
+    /// <summary>
+    /// Represents a three-dimensional point with an associated intensity value
+    /// data processing.
+    /// </summary>
+    /// <remarks>The PointXYZI structure stores the X, Y, and Z coordinates along with an intensity value,
+    /// allowing efficient access to both individual components and the combined vector representation.</remarks>
     [DebuggerDisplay("{V}, {Label}")]
     [StructLayout(LayoutKind.Explicit, Size = 32)]
     public unsafe struct PointXYZI : IEquatable<PointXYZI>
@@ -26,9 +32,9 @@ namespace Pcl.NET
         public Vector3 V;
 
         [FieldOffset(16)]
-        public uint Intensity;
+        public float Intensity;
 
-        public PointXYZI(float x, float y, float z, uint intensity) : this()
+        public PointXYZI(float x, float y, float z, float intensity) : this()
         {
             X = x;
             Y = y;

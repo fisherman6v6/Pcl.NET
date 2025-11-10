@@ -24,11 +24,18 @@ namespace Pcl.NET
         {
             // Library is linked from nuget, so the path will be runtimes/os-ARCH/native
             var platFormDependantPath = GetLibraryPath(libraryName);
-            if (!NativeLibrary.TryLoad(platFormDependantPath, out nint handle))
+            if (NativeLibrary.TryLoad(platFormDependantPath, out nint handle))
             {
-                // fallback to app directory
-                handle = NativeLibrary.Load(libraryName, assembly, searchPath);
+                return handle;
             }
+            // in debug the library will be under the native folder
+            string path = Path.Combine("native", libraryName);
+            if (NativeLibrary.TryLoad(path, out handle))
+            {
+                return handle;
+            }
+            // fallback to app directory - last chance otherwise boom
+            handle = NativeLibrary.Load(libraryName, assembly, searchPath);
             return handle;
         }
 

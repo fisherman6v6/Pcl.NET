@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Pcl.NET": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
