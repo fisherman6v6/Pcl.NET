@@ -1,5 +1,10 @@
 ﻿namespace Pcl.NET
 {
+    /// <summary>
+    /// Represents a point cloud consisting of points with X, Y, Z coordinates and intensity values (XYZI).
+    /// Provides methodsand properties for managing and manipulating collections of PointXYZI points in organized or unorganized
+    /// form.
+    /// </summary>
     public class PointCloudXYZI : PointCloud<PointXYZI>
     {
         private readonly VectorXYZI _points;

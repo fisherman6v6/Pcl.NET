@@ -1,6 +1,10 @@
 ﻿namespace Pcl.NET
 {
-
+    /// <summary>
+    /// Represents a point cloud consisting of points with XYZ coordinates and RGBA color information. Provides methods
+    /// and properties for managing and manipulating collections of PointXYZRGBA points in organized or unorganized
+    /// form.
+    /// </summary>
     public class PointCloudXYZRGBA : PointCloud<PointXYZRGBA>
     {
         private readonly VectorXYZRGBA _points;

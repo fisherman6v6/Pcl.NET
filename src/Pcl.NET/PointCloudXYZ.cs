@@ -1,5 +1,9 @@
 ﻿namespace Pcl.NET
 {
+    /// <summary>
+    /// Represents a point cloud consisting of three-dimensional points with X, Y, and Z coordinates. Provides methods
+    /// and properties for managing, accessing, and manipulating 3D point data in a structured or unstructured format.
+    /// </summary>
     public class PointCloudXYZ : PointCloud<PointXYZ>
     {
         private readonly VectorXYZ _points;
