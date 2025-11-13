@@ -41,7 +41,6 @@ namespace Pcl.NET
         {
             throw new InvalidOperationException("Input cloud is not set");
         }
-        [DoesNotReturn]
         public static void ThrowUnorganizedPointCloudfCondition_CantUse2DIndexing(bool condition)
         {
             if (condition)
