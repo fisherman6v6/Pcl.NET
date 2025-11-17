@@ -8,25 +8,11 @@ original C++ PCL. It was inspired by the existing [PclSharp](https://github.com/
 coded. This choice was made in order to have a higher degree of flexibility and to make it possible to modify and improve it in a simpler way, even 
 if more code has to be written. Right now a lot of stuff is missing but it is already in an usable state.
 
-## Getting Started
+## Nuget 
 
-TODO
-
-### Dependencies
-
-TODO
-
-### Installing
-
-TODO
-
-### Executing program
-
-TODO
-
-## Help
-
-TODO
+```
+> dotnet add package PclNET
+```
 
 ## Authors
 
