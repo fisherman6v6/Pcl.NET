@@ -46,13 +46,23 @@ EXPORT(int) io_save_pcd_xyzi_ascii(const char* path, PointCloud<PointXYZI>* clou
 
 EXPORT(void) io_save_png_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud, const char* field_name)  
 {  
-   io::savePNGFile(path, *cloud, field_name); // Ensure the correct header is included for this function  
+   io::savePNGFile(path, *cloud, field_name);
 }  
 
 EXPORT(int) io_load_pcd_xyzrgba(const char* path, PointCloud<PointXYZRGBA>* cloud)  
 {  
    return io::loadPCDFile(path, *cloud);  
 }  
+
+EXPORT(int) io_save_pcd_xyzrgba_binary(const char* path, PointCloud<PointXYZRGBA>* cloud)
+{
+    return io::savePCDFile(path, *cloud);
+}
+
+EXPORT(int) io_save_pcd_xyzrgba_ascii(const char* path, PointCloud<PointXYZRGBA>* cloud)
+{
+    return io::savePCDFileASCII(path, *cloud);
+}
 
 EXPORT(void) io_pointcloud_xyzrgba_image_extractor_from_rgb_field(PointCloud<PointXYZRGBA>* cloud, PCLImage* image, bool setPaintNaNsWithBlack)  
 {  

@@ -7,6 +7,7 @@ namespace Pcl.NET.UnitTests
     {
         private readonly PointCloudXYZ _cloud;
         private const string TestFile = "simpleXYZ.pcd";
+        private const string TempFileName = "tempXYZ.pcd";
 
         public PointCloudXYZTests()
         {
@@ -81,7 +82,7 @@ namespace Pcl.NET.UnitTests
         {
             var factor = 2;
             var downsampled = _cloud.Downsample(factor);
-            
+
             Assert.NotNull(downsampled);
             Assert.True(downsampled.Count <= _cloud.Count);
             Assert.Equal(_cloud.Width / factor, downsampled.Width);
@@ -130,6 +131,32 @@ namespace Pcl.NET.UnitTests
 
             var combined = cloud1 + cloud2;
             Assert.Equal(cloud1.Count + cloud2.Count, combined.Count);
+        }
+
+        [Fact]
+        public void SaveBinary_ShoudlSaveValidFile()
+        {
+            _cloud.Save(TempFileName);
+            using var tmp = PointCloudXYZ.Load(TempFileName);
+            Assert.True(tmp.Count == _cloud.Count);
+            for (int i = 0; i < _cloud.Count; i++)
+            {
+                Assert.Equal(tmp.Points[i], _cloud.Points[i]);
+            }
+            File.Delete(TempFileName);
+        }
+
+        [Fact]
+        public void SaveAscii_ShoudlSaveValidFile()
+        {
+            _cloud.Save(TempFileName, true);
+            using var tmp = PointCloudXYZ.Load(TempFileName);
+            Assert.True(tmp.Count == _cloud.Count);
+            for (int i = 0; i < _cloud.Count; i++)
+            {
+                Assert.Equal(tmp.Points[i], _cloud.Points[i]);
+            }
+            File.Delete(TempFileName);
         }
 
         public void Dispose()

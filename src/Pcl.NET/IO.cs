@@ -128,6 +128,39 @@
             return cloud;
         }
 
+        public static void SavePointCloudXYZRGBAAscii(string filename, PointCloudXYZRGBA cloud)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException($"'{nameof(filename)}' cannot be null or empty.", nameof(filename));
+            }
+
+            ArgumentNullException.ThrowIfNull(cloud);
+
+            int ret = Invoke.io_save_pcd_xyzrgba_ascii(filename, cloud);
+            if (ret != 0)
+            {
+                ThrowHelper.ThrowIOException_CannotWriteFile(filename);
+            }
+        }
+
+        public static void SavePointCloudXYZRGBABinary(string filename, PointCloudXYZRGBA cloud)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException($"'{nameof(filename)}' cannot be null or empty.", nameof(filename));
+            }
+
+            ArgumentNullException.ThrowIfNull(cloud);
+
+            int ret = Invoke.io_save_pcd_xyzrgba_binary(filename, cloud);
+            if (ret != 0)
+            {
+                ThrowHelper.ThrowIOException_CannotWriteFile(filename);
+            }
+
+        }
+
         public static PclImage ExtractImageFromRGBField(PointCloudXYZRGBA pointCloud, string encoding, bool setPaintNaNsWithBlack)
         {
             PclImage image = new PclImage();

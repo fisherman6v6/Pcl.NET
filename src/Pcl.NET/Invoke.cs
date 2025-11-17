@@ -472,6 +472,12 @@ namespace Pcl.NET
         public static extern int io_load_pcd_xyzrgba(string fileName, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int io_save_pcd_xyzrgba_binary(string filename, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int io_save_pcd_xyzrgba_ascii(string filename, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void io_pointcloud_xyzrgba_image_extractor_from_rgb_field(IntPtr cloud, IntPtr image, [MarshalAs(UnmanagedType.Bool)] bool setPaintNaNsWithBlack);
 
         #endregion
