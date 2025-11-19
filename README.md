@@ -14,6 +14,33 @@ if more code has to be written. Right now a lot of stuff is missing but it is al
 > dotnet add package PclNET
 ```
 
+## Examples
+
+```csharp
+using Pcl.NET;
+
+static void Main(string[] args)
+{
+    // Loading a pcd from file
+    using PointCloudXYZ cloud = PointCloudXYZ.Load(@"\path\to\pointcloud.pcd");
+    
+    // Iterating through points
+    foreach (var point in cloud.Points)
+    {
+        Console.WriteLine($"X: {point.X}, Y: {point.Y}, Z: {point.Z}");
+    }
+    
+    // Adding points to point cloud
+    cloud.Add(new PointXYZ(1, 2, 3));
+    
+    // Saving point cloud in binary format
+    cloud.Save(@"\path\to\output_pointcloud_binary.pcd");
+    
+    // Saving point cloud in ascii format
+    cloud.Save(@"\path\to\output_pointcloud_ascii.pcd", true);
+}
+```
+
 ## Authors
 
 Alessandro Fici
