@@ -48,6 +48,7 @@ EXPORT(double) convolution_3d_gaussian_kernel_pointxyz_pointxyz_get_radius_searc
 
 EXPORT(void) convolution_3d_gaussian_kernel_pointxyz_pointxyz_convolve(convolution_t* ptr, pointcloud_t* output)
 {
+    ptr->setSearchMethod(pcl::search::KdTree<point_t>::Ptr(new pcl::search::KdTree<point_t>));
     ptr->convolve(*output);
 }
 
