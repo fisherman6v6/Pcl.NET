@@ -812,54 +812,54 @@ namespace Pcl.NET
         #region GaussianKernelPointXYZPointXYZ
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr gaussiankernel_pointxyz_pointxyz_ctor();
+        public static extern IntPtr gaussian_kernel_pointxyz_pointxyz_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gaussiankernel_pointxyz_pointxyz_delete(ref IntPtr ptr);
+        public static extern void gaussian_kernel_pointxyz_pointxyz_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gaussiankernel_pointxyz_pointxyz_set_sigma(IntPtr ptr, float sigma);
+        public static extern void gaussian_kernel_pointxyz_pointxyz_set_sigma(IntPtr ptr, float sigma);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gaussiankernel_pointxyz_pointxyz_set_threshold_relative_to_sigma(IntPtr ptr, float sigma_coeff);
+        public static extern void gaussian_kernel_pointxyz_pointxyz_set_threshold_relative_to_sigma(IntPtr ptr, float sigma_coeff);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gaussiankernel_pointxyz_pointxyz_set_threshold(IntPtr ptr, float threshold);
+        public static extern void gaussian_kernel_pointxyz_pointxyz_set_threshold(IntPtr ptr, float threshold);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void gaussiankernel_pointxyz_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+        public static extern void gaussian_kernel_pointxyz_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
-        public static extern bool gaussiankernel_pointxyz_pointxyz_init_compute(IntPtr ptr);
+        public static extern bool gaussian_kernel_pointxyz_pointxyz_init_compute(IntPtr ptr);
 
         #endregion
 
         #region Convolution3DGaussianKernelPointXYZPointXYZ
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr convolution3d_gaussiankernel_pointxyz_pointxyz_ctor();
+        public static extern IntPtr convolution_3d_gaussian_kernel_pointxyz_pointxyz_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_delete(ref IntPtr ptr);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_set_kernel(IntPtr ptr, IntPtr kernel);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_kernel(IntPtr ptr, IntPtr kernel);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_set_search_surface(IntPtr ptr, IntPtr cloud);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_search_surface(IntPtr ptr, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_set_threads(IntPtr ptr, int threads);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_threads(IntPtr ptr, int threads);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_set_radius_search(IntPtr ptr, float radius);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_radius_search(IntPtr ptr, float radius);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution3d_gaussiankernel_pointxyz_pointxyz_convolve(IntPtr ptr, IntPtr output_cloud);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_convolve(IntPtr ptr, IntPtr output_cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices_vector(IntPtr ptr, IntPtr indices);

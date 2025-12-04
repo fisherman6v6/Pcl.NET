@@ -22,7 +22,7 @@ namespace Pcl.NET
             set
             {
                 _numberOfThreads = value;
-                Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_set_threads(_ptr, value);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_threads(_ptr, value);
             }
         }
         public override GaussianKernel<PointXYZ, PointXYZ>? Kernel
@@ -36,7 +36,7 @@ namespace Pcl.NET
             {
                 ThrowIfDisposed();
                 _kernel = value;
-                Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_set_kernel(_ptr, _kernel);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_kernel(_ptr, _kernel);
             }
         }
         public override PointCloud<PointXYZ>? Input
@@ -50,7 +50,7 @@ namespace Pcl.NET
             {
                 ThrowIfDisposed();
                 _input = value;
-                Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_set_input_cloud(_ptr, _input);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_input_cloud(_ptr, _input);
             }
         }
         public override VectorInt Indices
@@ -73,13 +73,13 @@ namespace Pcl.NET
         public Convolution3DGaussianKernelPointXYZPointXYZ()
         {
             _indices = new VectorInt();
-            _ptr = Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_ctor();
+            _ptr = Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_ctor();
         }
         
         public override PointCloud<PointXYZ> Convolve()
         {
             PointCloudXYZ output = new PointCloudXYZ();
-            Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_convolve(_ptr, output);
+            Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_convolve(_ptr, output);
             return output;
         }
 
@@ -92,7 +92,7 @@ namespace Pcl.NET
         {
             if (!_suppressDispose)
             {
-                Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_delete(ref _ptr);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_delete(ref _ptr);
                 _ptr = IntPtr.Zero;
             }
         }
