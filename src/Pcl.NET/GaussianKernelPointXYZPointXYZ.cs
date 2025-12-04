@@ -15,7 +15,7 @@
             }
             set
             {
-                Invoke.gaussiankernel_pointxyz_pointxyz_set_sigma(_ptr, value);
+                Invoke.gaussian_kernel_pointxyz_pointxyz_set_sigma(_ptr, value);
                 _sigma = value;
             }
         }
@@ -27,7 +27,7 @@
             }
             set
             {
-                Invoke.gaussiankernel_pointxyz_pointxyz_set_threshold(_ptr, value);
+                Invoke.gaussian_kernel_pointxyz_pointxyz_set_threshold(_ptr, value);
                 _threshold = value;
             }
         }
@@ -39,7 +39,7 @@
             }
             set
             {
-                Invoke.gaussiankernel_pointxyz_pointxyz_set_threshold_relative_to_sigma(_ptr, value);
+                Invoke.gaussian_kernel_pointxyz_pointxyz_set_threshold_relative_to_sigma(_ptr, value);
                 _thresholdRelativeToSigma = value;
             }
         }
@@ -51,25 +51,25 @@
             }
             set
             {
-                Invoke.convolution3d_gaussiankernel_pointxyz_pointxyz_set_input_cloud(_ptr, value);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_input_cloud(_ptr, value);
                 _input = value;
             }
         }
 
         public GaussianKernelPointXYZPointXYZ()
         {
-            _ptr = Invoke.gaussiankernel_pointxyz_pointxyz_ctor();
+            _ptr = Invoke.gaussian_kernel_pointxyz_pointxyz_ctor();
         }
         public override void InitCompute()
         {
-            Invoke.gaussiankernel_pointxyz_pointxyz_init_compute(_ptr);
+            Invoke.gaussian_kernel_pointxyz_pointxyz_init_compute(_ptr);
         }
 
         protected override void DisposeObject()
         {
             if (!_suppressDispose)
             {
-                Invoke.gaussiankernel_pointxyz_pointxyz_delete(ref _ptr);
+                Invoke.gaussian_kernel_pointxyz_pointxyz_delete(ref _ptr);
                 _ptr = IntPtr.Zero;
             }
         }
