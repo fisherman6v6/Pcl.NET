@@ -37,13 +37,13 @@ EXPORT(bool) gaussian_kernel_pointxyz_pointxyz_init_compute(kernel_t* ptr)
     return ptr->initCompute();
 }
 
-EXPORT(void) gaussiankernel_pointxyz_pointxyz_set_input_cloud(kernel_t* ptr, PointCloud<point_t>* cloud)
+EXPORT(void) gaussian_kernel_pointxyz_pointxyz_set_input_cloud(kernel_t* ptr, PointCloud<point_t>* cloud)
 {
     PointCloud<point_t>::Ptr shared(std::make_shared<PointCloud<point_t>>(*cloud));
     ptr->setInputCloud(shared);
 }
 
-EXPORT(void) gaussiankernel_pointxyz_pointxyz_set_threshold(kernel_t* ptr, float threshold)
+EXPORT(void) gaussian_kernel_pointxyz_pointxyz_set_threshold(kernel_t* ptr, float threshold)
 {
     ptr->setThreshold(threshold);
 }

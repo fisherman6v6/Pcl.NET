@@ -2,6 +2,7 @@
 #include "pcl/pcl_base.h"
 #include "pcl/point_types.h"
 #include <pcl/filters/convolution_3d.h>
+#include <memory>
 
 using namespace pcl;
 using namespace std;
@@ -26,7 +27,7 @@ EXPORT(void) convolution_3d_gaussian_kernel_pointxyz_pointxyz_delete(convolution
 
 EXPORT(void) convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_input_cloud(convolution_t* ptr, pointcloud_t* cloud)
 {
-    pointcloud_t::Ptr shared(std::make_shared<pointcloud_t>(*cloud));
+    pointcloud_t::Ptr shared = std::make_shared<pointcloud_t>(*cloud);
     ptr->setInputCloud(shared);
 }
 

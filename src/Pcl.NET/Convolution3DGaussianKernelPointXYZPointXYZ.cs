@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
     public class Convolution3DGaussianKernelPointXYZPointXYZ : Convolution3D<PointXYZ, PointXYZ, GaussianKernel<PointXYZ, PointXYZ>>
     {
@@ -17,10 +11,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return _numberOfThreads;
             }
             set
             {
+                ThrowIfDisposed();
                 _numberOfThreads = value;
                 Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_threads(_ptr, value);
             }
@@ -67,6 +63,19 @@ namespace Pcl.NET
                 Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices_vector(_ptr, value);
             }
         }
+        public double SearchRadius
+        {
+            get
+            {
+                ThrowIfDisposed();
+                return Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_get_radius_search(_ptr);
+            }
+            set
+            {
+                ThrowIfDisposed();
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_radius_search(_ptr, value);
+            }
+        }
         /// <summary>
         /// Initializes a new instance of the <see cref="Convolution3DGaussianKernelPointXYZPointXYZ"/> class.
         /// </summary>
@@ -75,9 +84,10 @@ namespace Pcl.NET
             _indices = new VectorInt();
             _ptr = Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_ctor();
         }
-        
+
         public override PointCloud<PointXYZ> Convolve()
         {
+            ThrowHelper.ThrowArgumentException_SearchRadiusMustbeGreaterThanZero(SearchRadius == 0);
             PointCloudXYZ output = new PointCloudXYZ();
             Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_convolve(_ptr, output);
             return output;
@@ -85,6 +95,7 @@ namespace Pcl.NET
 
         public override void SetIndices(long row_start, long col_start, long nb_rows, long nb_cols)
         {
+            ThrowIfDisposed();
             Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices(_ptr, row_start, col_start, nb_rows, nb_cols);
         }
 

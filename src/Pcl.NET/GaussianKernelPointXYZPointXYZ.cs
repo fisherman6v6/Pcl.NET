@@ -51,7 +51,7 @@
             }
             set
             {
-                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_input_cloud(_ptr, value);
+                Invoke.gaussian_kernel_pointxyz_pointxyz_set_input_cloud(_ptr, value);
                 _input = value;
             }
         }

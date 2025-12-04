@@ -870,6 +870,11 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double convolution_3d_gaussian_kernel_pointxyz_pointxyz_get_radius_search(nint ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_radius_search(nint ptr, double value);
         #endregion
 
         #region VoxelGridPointXYZ

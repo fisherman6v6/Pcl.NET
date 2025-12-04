@@ -48,5 +48,12 @@ namespace Pcl.NET
                 throw new InvalidOperationException("Can't use 2D indexing with an unorganized point cloud");
             }
         }
+        public static void ThrowArgumentException_SearchRadiusMustbeGreaterThanZero(bool condition)
+        {
+            if (condition)
+            {
+                throw new ArgumentException("Search radius must be greater than zero");
+            }
+        }
     }
 }
