@@ -69,3 +69,8 @@ EXPORT(void) convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices(convol
 {
     ptr->setIndices(row_start, col_start, nb_rows, nb_cols);
 }
+
+EXPORT(void) convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_number_of_threads(convolution_t* ptr, unsigned int nr_threads)
+{
+    ptr->setNumberOfThreads(nr_threads);
+}

@@ -853,7 +853,7 @@ namespace Pcl.NET
         public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_search_surface(IntPtr ptr, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_threads(IntPtr ptr, int threads);
+        public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_number_of_threads(IntPtr ptr, int threads);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_radius_search(IntPtr ptr, float radius);

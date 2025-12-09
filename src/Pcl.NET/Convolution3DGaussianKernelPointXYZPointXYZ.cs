@@ -18,7 +18,7 @@
             {
                 ThrowIfDisposed();
                 _numberOfThreads = value;
-                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_threads(_ptr, value);
+                Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_number_of_threads(_ptr, value);
             }
         }
         public override GaussianKernel<PointXYZ, PointXYZ>? Kernel
