@@ -598,6 +598,64 @@ namespace Pcl.NET
 
         #endregion
 
+        #region CropBoxPointXYZRGBA
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr cropbox_pointxyzrgba_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_min(IntPtr ptr, Eigen.Vector4f min);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f cropbox_pointxyzrgba_get_min(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_max(IntPtr ptr, Eigen.Vector4f max);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector4f cropbox_pointxyzrgba_get_max(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_translation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyzrgba_get_translation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_rotation(IntPtr ptr, Eigen.Vector3f transform);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f cropbox_pointxyzrgba_get_rotation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr cropbox_pointxyzrgba_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_filter(IntPtr ptr, IntPtr outputCloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_filter_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_get_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int cropbox_pointxyzrgba_get_keep_organized(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void cropbox_pointxyzrgba_set_keep_organized(IntPtr ptr, int keep_organized);
+
+        #endregion
+
         #region Matrix4f
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
@@ -673,6 +731,9 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void transform_pointcloud_xyz(IntPtr affineTransform, IntPtr input, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void transform_pointcloud_xyzi(IntPtr affineTransform, IntPtr input, IntPtr output);
 
         #endregion
 
@@ -880,91 +941,273 @@ namespace Pcl.NET
         #region VoxelGridPointXYZ
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr voxel_grid_pointxyz_ctor();
+        public static extern IntPtr voxelgrid_pointxyz_ctor();
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_delete(ref IntPtr ptr);
+        public static extern void voxelgrid_pointxyz_delete(ref IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_leaf_size(IntPtr ptr, float lx, float ly, float lz);
+        public static extern void voxelgrid_pointxyz_set_leaf_size(IntPtr ptr, float lx, float ly, float lz);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_filter_field_name(IntPtr ptr, string field_name);
+        public static extern void voxelgrid_pointxyz_set_filter_field_name(IntPtr ptr, string field_name);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_filter_limits(IntPtr ptr, float min_limit, float max_limit);
+        public static extern void voxelgrid_pointxyz_set_filter_limits(IntPtr ptr, float min_limit, float max_limit);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool negative);
+        public static extern void voxelgrid_pointxyz_set_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool negative);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_min_points_per_voxel(IntPtr ptr, uint min_points);
+        public static extern void voxelgrid_pointxyz_set_min_points_per_voxel(IntPtr ptr, uint min_points);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_save_leaf_layout(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool save_leaf_layout);
+        public static extern void voxelgrid_pointxyz_set_save_leaf_layout(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool save_leaf_layout);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_downsample_all_data(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool downsample_all_data);
+        public static extern void voxelgrid_pointxyz_set_downsample_all_data(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool downsample_all_data);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+        public static extern void voxelgrid_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern IntPtr voxel_grid_pointxyz_get_input_cloud(IntPtr ptr);
+        public static extern IntPtr voxelgrid_pointxyz_get_input_cloud(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_filter(IntPtr ptr, IntPtr output);
+        public static extern void voxelgrid_pointxyz_filter(IntPtr ptr, IntPtr output);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3f voxel_grid_pointxyz_get_leaf_size(IntPtr ptr);
+        public static extern Eigen.Vector3f voxelgrid_pointxyz_get_leaf_size(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_get_filter_field_name(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] StringBuilder field_name, int max_length);
+        public static extern void voxelgrid_pointxyz_get_filter_field_name(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] StringBuilder field_name, int max_length);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_get_filter_limits(IntPtr ptr, out double min_limit, out double max_limit);
+        public static extern void voxelgrid_pointxyz_get_filter_limits(IntPtr ptr, out double min_limit, out double max_limit);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_get_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] out bool limit_negative);
+        public static extern void voxelgrid_pointxyz_get_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] out bool limit_negative);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3i voxel_grid_pointxyz_get_nr_divisions(IntPtr ptr);
+        public static extern Eigen.Vector3i voxelgrid_pointxyz_get_nr_divisions(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3i voxel_grid_pointxyz_get_min_box_coordinates(IntPtr ptr);
+        public static extern Eigen.Vector3i voxelgrid_pointxyz_get_min_box_coordinates(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3i voxel_grid_pointxyz_get_max_box_coordinates(IntPtr ptr);
+        public static extern Eigen.Vector3i voxelgrid_pointxyz_get_max_box_coordinates(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int voxel_grid_pointxyz_get_centroid_index(IntPtr ptr, ref PointXYZ point);
+        public static extern int voxelgrid_pointxyz_get_centroid_index(IntPtr ptr, ref PointXYZ point);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3i voxel_grid_pointxyz_get_grid_coordinates(IntPtr ptr, float x, float y, float z);
+        public static extern Eigen.Vector3i voxelgrid_pointxyz_get_grid_coordinates(IntPtr ptr, float x, float y, float z);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int voxel_grid_pointxyz_get_centroid_index_at(IntPtr ptr, int i, int j, int k);
+        public static extern int voxelgrid_pointxyz_get_centroid_index_at(IntPtr ptr, int i, int j, int k);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool voxel_grid_pointxyz_get_downsample_all_data(IntPtr ptr);
+        public static extern bool voxelgrid_pointxyz_get_downsample_all_data(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern uint voxel_grid_pointxyz_get_min_points_per_voxel(IntPtr ptr);
+        public static extern uint voxelgrid_pointxyz_get_min_points_per_voxel(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern bool voxel_grid_pointxyz_get_save_leaf_layout(IntPtr ptr);
+        public static extern bool voxelgrid_pointxyz_get_save_leaf_layout(IntPtr ptr);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
+        public static extern void voxelgrid_pointxyz_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_set_indices_vector(IntPtr ptr, IntPtr indices);
+        public static extern void voxelgrid_pointxyz_set_indices_vector(IntPtr ptr, IntPtr indices);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern void voxel_grid_pointxyz_get_indices_vector(IntPtr ptr, IntPtr indices);
+        public static extern void voxelgrid_pointxyz_get_indices_vector(IntPtr ptr, IntPtr indices);
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
-        public static extern Eigen.Vector3i voxel_grid_pointxyz_get_division_multiplier(IntPtr ptr);
+        public static extern Eigen.Vector3i voxelgrid_pointxyz_get_division_multiplier(IntPtr ptr);
+
+        #endregion
+
+        #region VoxelGridPointXYZI
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr voxelgrid_pointxyzi_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_leaf_size(IntPtr ptr, float lx, float ly, float lz);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_filter_field_name(IntPtr ptr, string field_name);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_filter_limits(IntPtr ptr, float min_limit, float max_limit);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool negative);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_min_points_per_voxel(IntPtr ptr, uint min_points);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_save_leaf_layout(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool save_leaf_layout);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_downsample_all_data(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool downsample_all_data);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr voxelgrid_pointxyzi_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_filter(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f voxelgrid_pointxyzi_get_leaf_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_get_filter_field_name(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] StringBuilder field_name, int max_length);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_get_filter_limits(IntPtr ptr, out double min_limit, out double max_limit);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_get_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] out bool limit_negative);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzi_get_nr_divisions(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzi_get_min_box_coordinates(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzi_get_max_box_coordinates(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int voxelgrid_pointxyzi_get_centroid_index(IntPtr ptr, ref PointXYZ point);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzi_get_grid_coordinates(IntPtr ptr, float x, float y, float z);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int voxelgrid_pointxyzi_get_centroid_index_at(IntPtr ptr, int i, int j, int k);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool voxelgrid_pointxyzi_get_downsample_all_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern uint voxelgrid_pointxyzi_get_min_points_per_voxel(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool voxelgrid_pointxyzi_get_save_leaf_layout(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzi_get_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzi_get_division_multiplier(IntPtr ptr);
+
+        #endregion
+
+        #region VoxelGridPointXYZRGBA
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr voxelgrid_pointxyzrgba_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_leaf_size(IntPtr ptr, float lx, float ly, float lz);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_filter_field_name(IntPtr ptr, string field_name);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_filter_limits(IntPtr ptr, float min_limit, float max_limit);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool negative);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_min_points_per_voxel(IntPtr ptr, uint min_points);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_save_leaf_layout(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool save_leaf_layout);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_downsample_all_data(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] bool downsample_all_data);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr voxelgrid_pointxyzrgba_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_filter(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3f voxelgrid_pointxyzrgba_get_leaf_size(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_get_filter_field_name(IntPtr ptr, [MarshalAs(UnmanagedType.LPStr)] StringBuilder field_name, int max_length);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_get_filter_limits(IntPtr ptr, out double min_limit, out double max_limit);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_get_filter_limits_negative(IntPtr ptr, [MarshalAs(UnmanagedType.Bool)] out bool limit_negative);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzrgba_get_nr_divisions(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzrgba_get_min_box_coordinates(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzrgba_get_max_box_coordinates(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int voxelgrid_pointxyzrgba_get_centroid_index(IntPtr ptr, ref PointXYZ point);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzrgba_get_grid_coordinates(IntPtr ptr, float x, float y, float z);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int voxelgrid_pointxyzrgba_get_centroid_index_at(IntPtr ptr, int i, int j, int k);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool voxelgrid_pointxyzrgba_get_downsample_all_data(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern uint voxelgrid_pointxyzrgba_get_min_points_per_voxel(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool voxelgrid_pointxyzrgba_get_save_leaf_layout(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void voxelgrid_pointxyzrgba_get_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern Eigen.Vector3i voxelgrid_pointxyzrgba_get_division_multiplier(IntPtr ptr);
 
         #endregion
 

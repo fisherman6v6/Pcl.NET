@@ -57,4 +57,9 @@ EXPORT(void) eigen_affine3f_scale(Affine3f* ptr, float scale)
     ptr->scale(scale);
 }
 
+EXPORT(void) transform_pointcloud_xyzi(Affine3f* ptr, PointCloud<PointXYZI>* input, PointCloud<PointXYZI>* output)
+{
+    pcl::transformPointCloud(*input, *output, *ptr);
+}
+
 

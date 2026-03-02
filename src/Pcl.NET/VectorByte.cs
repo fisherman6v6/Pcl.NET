@@ -78,15 +78,6 @@ namespace Pcl.NET
             Invoke.std_vector_byte_resize(_ptr, (ulong)size);
         }
 
-        public override IEnumerator<byte> GetEnumerator()
-        {
-            long count = Count;
-            for (var i = 0; i < count; i++)
-            {
-                yield return this[i];
-            }
-        }
-
         protected override void DisposeObject()
         {
             if (!_suppressDispose)

@@ -69,5 +69,10 @@ namespace Pcl.NET
         {
             return !(left == right);
         }
+
+        public override readonly string ToString()
+        {
+            return $"({X}, {Y}, {Z}, {Intensity})";
+        }
     }
 }

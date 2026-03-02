@@ -8,5 +8,12 @@
             Invoke.transform_pointcloud_xyz(transform, input, output);
             return output;
         }
+
+        public static PointCloudXYZI TransformPointCloudXYZI(Eigen.Affine3f transform, PointCloudXYZI input)
+        {
+            PointCloudXYZI output = new PointCloudXYZI();
+            Invoke.transform_pointcloud_xyzi(transform, input, output);
+            return output;
+        }
     }
 }

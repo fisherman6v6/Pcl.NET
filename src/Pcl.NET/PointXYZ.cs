@@ -74,5 +74,10 @@ namespace Pcl.NET
         {
             return v.V;
         }
+
+        public override readonly string ToString()
+        {
+            return $"({X}, {Y}, {Z})";
+        }
     }
 }

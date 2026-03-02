@@ -82,8 +82,11 @@ namespace Pcl.NET
 
         public virtual IEnumerator<T> GetEnumerator()
         {
-            return this.Select(x => x)
-              .GetEnumerator();
+            long count = Count;
+            for (long i = 0; i < count; i++)
+            {
+                yield return this[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

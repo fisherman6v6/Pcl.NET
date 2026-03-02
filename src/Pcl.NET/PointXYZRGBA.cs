@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Numerics;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pcl.NET
 {
@@ -46,6 +41,17 @@ namespace Pcl.NET
         [FieldOffset(16)]
         public fixed float data_c[4];
 
+        public PointXYZRGBA(float x, float y, float z, byte r = default, byte g = default, byte b = default, byte a = default) : this()
+        {
+            X = x;
+            Y = y;
+            Z = z;
+            B = b;
+            G = g;
+            R = r;
+            A = a;
+        }
+
         public override readonly bool Equals(object? obj)
         {
             return obj is PointXYZRGBA xYZRGBA && Equals(xYZRGBA);
@@ -75,6 +81,11 @@ namespace Pcl.NET
         public static bool operator !=(PointXYZRGBA left, PointXYZRGBA right)
         {
             return !(left == right);
+        }
+
+        public override readonly string ToString()
+        {
+            return $"({X}, {Y}, {Z}), RGBA: ({R}, {G}, {B}, {A})";
         }
     }
 }

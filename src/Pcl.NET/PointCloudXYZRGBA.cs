@@ -1,5 +1,8 @@
-﻿namespace Pcl.NET
+﻿using System.Diagnostics;
+
+namespace Pcl.NET
 {
+    [DebuggerDisplay("PointCloudXYZRGBA Width = {Width}, Height = {Height}, Count = {Count}, IsDense = {IsDense}, IsOrganized = {IsOrganized}")]
     /// <summary>
     /// Represents a point cloud consisting of points with XYZ coordinates and RGBA color information. Provides methods
     /// and properties for managing and manipulating collections of PointXYZRGBA points in organized or unorganized

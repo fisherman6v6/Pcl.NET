@@ -152,6 +152,7 @@
     <ClCompile Include="ConvolutionPointXYZPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZ.cpp" />
     <ClCompile Include="CropBoxPointXYZI.cpp" />
+    <ClCompile Include="CropBoxPointXYZRGBA.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Eigen_Affine3f.cpp" />
     <ClCompile Include="Eigen_ArrayXf.cpp" />
@@ -172,6 +173,8 @@
     <ClCompile Include="VectorXYZI.cpp" />
     <ClCompile Include="VectorXYZRGBA.cpp" />
     <ClCompile Include="VoxelGridPointXYZ.cpp" />
+    <ClCompile Include="VoxelGridPointXYZI.cpp" />
+    <ClCompile Include="VoxelGridPointXYZRGBA.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc" />

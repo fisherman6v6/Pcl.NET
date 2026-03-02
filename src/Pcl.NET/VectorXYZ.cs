@@ -87,15 +87,6 @@ namespace Pcl.NET
             Invoke.std_vector_xyz_resize(_ptr, (ulong)size);
         }
 
-        public override IEnumerator<PointXYZ> GetEnumerator()
-        {
-            long count = Count;
-            for (var i = 0; i < count; i++)
-            {
-                yield return this[i];
-            }
-        }
-
         protected override void DisposeObject()
         {
             if (!_suppressDispose)
