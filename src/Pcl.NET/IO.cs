@@ -170,5 +170,19 @@
 
             return image;
         }
+
+        public static void ReadPCDHeader(string filename, out PCDHeader header)
+        {
+            if (string.IsNullOrEmpty(filename))
+            {
+                throw new ArgumentException($"'{nameof(filename)}' cannot be null or empty.", nameof(filename));
+            }
+            header = new();
+            int ret = Invoke.io_read_pcd_header(filename, ref header);
+            if (ret != 0)
+            {
+                ThrowHelper.ThrowIOException_CannotReadFile(filename);
+            }
+        }
     }
 }

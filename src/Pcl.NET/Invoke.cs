@@ -1254,5 +1254,12 @@ namespace Pcl.NET
         public static extern float kdtree_pointxyz_get_epsilon(KdTreePointXYZ kdTreePointXYZ);
 
         #endregion
+
+        #region Header
+        
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
+        public static extern int io_read_pcd_header(string filename, ref PCDHeader header); 
+
+        #endregion
     }
 }

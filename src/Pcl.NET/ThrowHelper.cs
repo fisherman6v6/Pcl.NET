@@ -21,6 +21,14 @@ namespace Pcl.NET
                 throw new ArgumentOutOfRangeException($"Index was out of range. Must be non-negative and less than the size of the collection. (Parameter '{name}')");
             }
         }
+
+        public static void ThrowArgumentOutOfRangeIfCondition_IndexMustBeNonNegativeException(bool condition, string name)
+        {
+            if (condition)
+            {
+                throw new ArgumentOutOfRangeException($"Index was out of range. Must be non-negative. (Parameter '{name}')");
+            }
+        }
         [DoesNotReturn]
         public static void ThrowIOException_CannotWriteFile(string filename)
         {
