@@ -649,4 +649,7 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
+### vcpkg ###
+vcpkg_installed*/
+
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,csharp,c,c++
