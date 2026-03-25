@@ -1,6 +1,30 @@
 ﻿namespace Pcl.NET
 {
-    public abstract class PointCloud<PointT> : UnmanagedObject where PointT : unmanaged
+    public interface IPointCloud
+    {
+        /// <summary>
+        /// Gets or sets the width, in pixels, of the element.
+        /// </summary>
+        int Width { get; set; }
+        /// <summary>
+        /// Gets or sets the height dimension.
+        /// </summary>
+        int Height { get; set; }
+        /// <summary>
+        /// Gets the total number of elements contained in the collection.
+        /// </summary>
+        long Count { get; }
+        /// <summary>
+        /// Pointcloud is dense when it does not contain NaN points
+        /// </summary>
+        bool IsDense { get; set; }
+        /// <summary>
+        /// Gets a value indicating whether the collection is organized i.e., whether the height is greater than 1.
+        /// </summary>
+        bool IsOrganized { get; }
+    }
+
+    public abstract class PointCloud<PointT> : UnmanagedObject, IPointCloud where PointT : unmanaged
     {
         /// <summary>
         /// Gets or sets the point at the specified column and row in the collection.
@@ -39,26 +63,14 @@
                 Points[row * Width + col] = value;
             }
         }
-        /// <summary>
-        /// Gets or sets the width, in pixels, of the element.
-        /// </summary>
         public abstract int Width { get; set; }
-        /// <summary>
-        /// Gets or sets the height dimension.
-        /// </summary>
         public abstract int Height { get; set; }
         public abstract bool IsDense { get; set; }
         /// <summary>
         /// Gets the collection of points defining the point cloud.
         /// </summary>
         public abstract Vector<PointT> Points { get; }
-        /// <summary>
-        /// Gets the total number of elements contained in the collection.
-        /// </summary>
         public abstract long Count { get; }
-        /// <summary>
-        /// Gets a value indicating whether the collection is organized i.e., whether the height is greater than 1.
-        /// </summary>
         public abstract bool IsOrganized { get; }
         /// <summary>
         /// Provides a reference to the element at the specified column and row in the collection.

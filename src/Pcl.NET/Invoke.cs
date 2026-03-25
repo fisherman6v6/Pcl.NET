@@ -50,6 +50,15 @@ namespace Pcl.NET
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void common_get_min_max_3d_pointxyzrgba(IntPtr cloud, ref PointXYZRGBA min, ref PointXYZRGBA max);
 
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int common_remove_nan_pointxyz(IntPtr input, IntPtr output, int[] indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int common_remove_nan_pointxyzi(IntPtr input, IntPtr output, int[] indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int common_remove_nan_pointxyzrgba(IntPtr input, IntPtr output, int[] indices);
+
         #endregion
 
         #region PointCloudXYZ
@@ -782,7 +791,6 @@ namespace Pcl.NET
         public static extern void pclimage_set_step(IntPtr ptr, uint value);
 
         #endregion
-
 
         #region ArrayXf
 

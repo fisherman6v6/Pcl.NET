@@ -1,6 +1,9 @@
 #pragma once
-#include "pcl/pcl_base.h"
 #include "pcl/point_types.h"
+#include "pcl/types.h"
+#include <pcl/filters/filter.h>
+#include <pcl/point_cloud.h>
+#include <pcl/filters/impl/filter.hpp>
 
 using namespace pcl;
 using namespace std;
@@ -37,4 +40,23 @@ void downsample(PointCloud<PointT>* ptr, int factor, PointCloud<PointT>* output)
             oarr[r * ow + c] = iarr[r * factor * iw + c * factor];
         }
     }
+}
+
+template<typename PointT>
+int remove_nan_points(const PointCloud<PointT>* input, PointCloud<PointT>* output, int* indices)
+{
+    Indices ind;
+    pcl::removeNaNFromPointCloud(*input, *output, ind);
+
+    if (indices == NULL)
+    {
+        return ind.size();
+    }
+
+    for (size_t i = 0; i < ind.size(); i++)
+    {
+        indices[i] = ind[i];
+    }
+
+    return ind.size();
 }
