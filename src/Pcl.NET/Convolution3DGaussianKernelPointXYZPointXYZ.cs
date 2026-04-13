@@ -87,6 +87,7 @@
 
         public override PointCloud<PointXYZ> Convolve()
         {
+            ThrowIfInputNotSet();
             ThrowHelper.ThrowArgumentException_SearchRadiusMustbeGreaterThanZero(SearchRadius == 0);
             PointCloudXYZ output = new PointCloudXYZ();
             Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_convolve(_ptr, output);
@@ -96,6 +97,7 @@
         public override void SetIndices(long row_start, long col_start, long nb_rows, long nb_cols)
         {
             ThrowIfDisposed();
+            ThrowIfBadIndices(row_start, col_start, nb_rows, nb_cols);
             Invoke.convolution_3d_gaussian_kernel_pointxyz_pointxyz_set_indices(_ptr, row_start, col_start, nb_rows, nb_cols);
         }
 

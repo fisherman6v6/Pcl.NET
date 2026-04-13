@@ -100,6 +100,7 @@ namespace Pcl.NET
         public override PointCloud<PointXYZRGBA> ApplyFilter()
         {
             ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZRGBA output = new PointCloudXYZRGBA();
             Invoke.cropbox_pointxyzrgba_filter(_ptr, output);
             return output;
@@ -107,29 +108,7 @@ namespace Pcl.NET
         public override void SetIndices(long row_start, long col_start, long nb_rows, long nb_cols)
         {
             ThrowIfDisposed();
-            if (_input == null)
-            {
-                ThrowHelper.ThrowInvalidOperation_PointCloudNotSetException();
-            }
-            if ((nb_rows > _input.Height) || (row_start > _input.Height))
-            {
-                ThrowHelper.ThrowPclException($"[PCLBase::setIndices] cloud is only {_input.Height} height");
-            }
-            if ((nb_cols > _input.Width) || (col_start > _input.Width))
-            {
-                ThrowHelper.ThrowPclException($"[PCLBase::setIndices] cloud is only {_input.Width} width");
-            }
-            long row_end = row_start + nb_rows;
-            if (row_end > _input.Height)
-            {
-                ThrowHelper.ThrowPclException($"[PCLBase::setIndices] {row_end} is out of rows range {_input.Height}");
-            }
-            long col_end = col_start + nb_cols;
-            if (col_end > _input.Width)
-            {
-                ThrowHelper.ThrowPclException($"[PCLBase::setIndices] {col_end} is out of columns range {_input.Width}");
-                return;
-            }
+            ThrowIfBadIndices(row_start, col_start, nb_rows, nb_cols);
             Invoke.cropbox_pointxyzrgba_set_filter_indices(_ptr, (ulong)row_start, (ulong)col_start, (ulong)nb_rows, (ulong)nb_cols);
         }
         public override VectorInt Indices

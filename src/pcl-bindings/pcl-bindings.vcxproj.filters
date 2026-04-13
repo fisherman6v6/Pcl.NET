@@ -113,6 +113,9 @@
     <ClCompile Include="CropBoxPointXYZRGBA.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="StatisticalOutlierRemovalPointXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc">

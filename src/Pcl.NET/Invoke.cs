@@ -1266,7 +1266,44 @@ namespace Pcl.NET
         #region Header
         
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
-        public static extern int io_read_pcd_header(string filename, ref PCDHeader header); 
+        public static extern int io_read_pcd_header(string filename, ref PCDHeader header);
+
+        #endregion
+
+        #region StatisticalOutlierRemovalPointXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr statistical_outlier_removal_pointxyz_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_set_mean_k(IntPtr ptr, int mean_k);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_set_stddev_mul_thresh(IntPtr ptr, double stddev_mul_thresh);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int statistical_outlier_removal_pointxyz_get_mean_k(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double statistical_outlier_removal_pointxyz_get_stddev_mul_thresh(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_set_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_get_filter_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_filter(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void statistical_outlier_removal_pointxyz_set_filter_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
 
         #endregion
     }

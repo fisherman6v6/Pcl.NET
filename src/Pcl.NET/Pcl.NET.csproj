@@ -8,7 +8,7 @@
     <Authors>Alessandro Fici</Authors>
     <Description></Description>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>0.8.1-dev1</Version>
+    <Version>0.8.1-dev2</Version>
     <PackageOutputPath>../../packages</PackageOutputPath>
     <PackageIcon>Pcl.NET.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>

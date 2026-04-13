@@ -1,10 +1,14 @@
-﻿using System.Reflection;
-using System.Threading;
-
-namespace Pcl.NET
+﻿namespace Pcl.NET
 {
     public abstract class Convolution<PointIn, PointOut> : UnmanagedObject where PointIn : unmanaged where PointOut : unmanaged
     {
+        protected void ThrowIfInputNotSet()
+        {
+            if (Input == null)
+            {
+                ThrowHelper.ThrowInvalidOperation_PointCloudNotSetException();
+            }
+        }
         /// <summary>
         /// Defines the policy for handling borders during convolution.
         /// </summary>

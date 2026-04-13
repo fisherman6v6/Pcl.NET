@@ -17,21 +17,24 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return (BordersPolicy)Invoke.convolution_pointxyz_pointxyz_get_borders_policy(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.convolution_pointxyz_pointxyz_set_borders_policy(_ptr, (int)value);
             }
         }
         public override float DistanceThreshold
         {
             get
-            {
+            {   ThrowIfDisposed();
                 return Invoke.convolution_pointxyz_pointxyz_get_distance_threshold(_ptr);
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.convolution_pointxyz_pointxyz_set_distance_threshold(_ptr, value);
             }
         }
@@ -39,11 +42,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return _numberOfThreads;
             }
             set
-
             {
+                ThrowIfDisposed();
                 _numberOfThreads = value;
                 Invoke.convolution_pointxyz_pointxyz_set_threads(_ptr, value);
             }
@@ -52,10 +56,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return _input;
             }
             set
             {
+                ThrowIfDisposed();
                 _input = value;
                 Invoke.convolution_pointxyz_pointxyz_set_input_cloud(_ptr, value);
             }
@@ -64,10 +70,12 @@ namespace Pcl.NET
         {
             get
             {
+                ThrowIfDisposed();
                 return _kernel;
             }
             set
             {
+                ThrowIfDisposed();
                 _kernel = value;
                 Invoke.convolution_pointxyz_pointxyz_set_kernel(_ptr, value);
             }
@@ -80,6 +88,8 @@ namespace Pcl.NET
 
         public override PointCloud<PointXYZ> Convolve()
         {
+            ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZ ouput = new();
             Invoke.convolution_pointxyz_pointxyz_convolve_rows(_ptr, ouput);
             return ouput;
@@ -87,6 +97,8 @@ namespace Pcl.NET
 
         public override PointCloud<PointXYZ> ConvolveColumns()
         {
+            ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZ ouput = new();
             Invoke.convolution_pointxyz_pointxyz_convolve_cols(_ptr, ouput);
             return ouput;
@@ -94,6 +106,8 @@ namespace Pcl.NET
 
         public override PointCloud<PointXYZ> ConvolveRows()
         {
+            ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZ ouput = new();
             Invoke.convolution_pointxyz_pointxyz_convolve(_ptr, ouput);
             return ouput;

@@ -155,6 +155,7 @@ namespace Pcl.NET
         public override PointCloud<PointXYZ> ApplyFilter()
         {
             ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZ output = new();
             Invoke.voxelgrid_pointxyz_filter(_ptr, output);
             return output;
@@ -184,6 +185,7 @@ namespace Pcl.NET
         public override void SetIndices(long row_start, long col_start, long nb_rows, long nb_cols)
         {
             ThrowIfDisposed();
+            ThrowIfBadIndices(row_start, col_start, nb_rows, nb_cols);
             Invoke.voxelgrid_pointxyz_set_indices(_ptr, row_start, col_start, nb_rows, nb_cols);
         }
         /// <summary>

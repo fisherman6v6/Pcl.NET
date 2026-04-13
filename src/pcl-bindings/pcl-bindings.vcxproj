@@ -171,6 +171,7 @@
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
     <ClCompile Include="PointCloudXYZRGBA.cpp" />
+    <ClCompile Include="StatisticalOutlierRemovalPointXYZ.cpp" />
     <ClCompile Include="VectorByte.cpp" />
     <ClCompile Include="VectorFloat.cpp" />
     <ClCompile Include="VectorInt.cpp" />

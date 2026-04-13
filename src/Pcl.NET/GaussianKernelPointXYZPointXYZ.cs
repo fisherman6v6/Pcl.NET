@@ -11,10 +11,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return _sigma;
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.gaussian_kernel_pointxyz_pointxyz_set_sigma(_ptr, value);
                 _sigma = value;
             }
@@ -23,10 +25,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return _threshold;
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.gaussian_kernel_pointxyz_pointxyz_set_threshold(_ptr, value);
                 _threshold = value;
             }
@@ -35,10 +39,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return _thresholdRelativeToSigma;
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.gaussian_kernel_pointxyz_pointxyz_set_threshold_relative_to_sigma(_ptr, value);
                 _thresholdRelativeToSigma = value;
             }
@@ -47,10 +53,12 @@
         {
             get
             {
+                ThrowIfDisposed();
                 return _input;
             }
             set
             {
+                ThrowIfDisposed();
                 Invoke.gaussian_kernel_pointxyz_pointxyz_set_input_cloud(_ptr, value);
                 _input = value;
             }
