@@ -160,6 +160,7 @@ namespace Pcl.NET
         public override PointCloud<PointXYZI> ApplyFilter()
         {
             ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZI output = new();
             Invoke.voxelgrid_pointxyzi_filter(_ptr, output);
             return output;

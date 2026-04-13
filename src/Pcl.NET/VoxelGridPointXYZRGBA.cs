@@ -159,6 +159,7 @@ namespace Pcl.NET
         public override PointCloud<PointXYZRGBA> ApplyFilter()
         {
             ThrowIfDisposed();
+            ThrowIfInputNotSet();
             PointCloudXYZRGBA output = new();
             Invoke.voxelgrid_pointxyzrgba_filter(_ptr, output);
             return output;
