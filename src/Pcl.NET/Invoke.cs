@@ -549,7 +549,7 @@ namespace Pcl.NET
 
         #endregion
 
-        #region CropBoxXYZ
+        #region CropBoxXYZI
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr cropbox_pointxyzi_ctor();
@@ -1304,6 +1304,198 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void statistical_outlier_removal_pointxyz_set_filter_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        #endregion
+
+        #region SACSegmentationXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyz_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_model_type(IntPtr ptr, int model);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyz_get_model_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_method_type(IntPtr ptr, int method);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyz_get_method_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_distance_threshold(IntPtr ptr, double threshold);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double sacsegmentation_pointxyz_get_distance_threshold(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_max_iterations(IntPtr ptr, int maxIterations);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyz_get_max_iterations(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_optimize_coefficients(IntPtr ptr, bool optimize);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool sacsegmentation_pointxyz_get_optimize_coefficients(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_radius_limits(IntPtr ptr, double minRadius, double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_get_radius_limits(IntPtr ptr, ref double minRadius, ref double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyz_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_segment(IntPtr ptr, IntPtr inliers, IntPtr coefficients);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyz_get_indices_vector(IntPtr ptr, IntPtr indices);
+
+        #endregion
+
+        #region SACSegmentationXYZI
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyzi_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_model_type(IntPtr ptr, int model);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzi_get_model_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_method_type(IntPtr ptr, int method);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzi_get_method_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_distance_threshold(IntPtr ptr, double threshold);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double sacsegmentation_pointxyzi_get_distance_threshold(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_max_iterations(IntPtr ptr, int maxIterations);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzi_get_max_iterations(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_optimize_coefficients(IntPtr ptr, bool optimize);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool sacsegmentation_pointxyzi_get_optimize_coefficients(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_radius_limits(IntPtr ptr, double minRadius, double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_get_radius_limits(IntPtr ptr, ref double minRadius, ref double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyzi_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_segment(IntPtr ptr, IntPtr inliers, IntPtr coefficients);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzi_get_indices_vector(IntPtr ptr, IntPtr indices);
+
+        #endregion
+
+        #region SACSegmentationXYZRGBA
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyzrgba_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_model_type(IntPtr ptr, int model);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzrgba_get_model_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_method_type(IntPtr ptr, int method);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzrgba_get_method_type(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_distance_threshold(IntPtr ptr, double threshold);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double sacsegmentation_pointxyzrgba_get_distance_threshold(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_max_iterations(IntPtr ptr, int maxIterations);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int sacsegmentation_pointxyzrgba_get_max_iterations(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_optimize_coefficients(IntPtr ptr, bool optimize);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern bool sacsegmentation_pointxyzrgba_get_optimize_coefficients(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_radius_limits(IntPtr ptr, double minRadius, double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_get_radius_limits(IntPtr ptr, ref double minRadius, ref double maxRadius);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_input_cloud(IntPtr ptr, IntPtr cloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr sacsegmentation_pointxyzrgba_get_input_cloud(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_segment(IntPtr ptr, IntPtr inliers, IntPtr coefficients);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_indices(IntPtr ptr, ulong row_start, ulong col_start, ulong nb_rows, ulong nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void sacsegmentation_pointxyzrgba_get_indices_vector(IntPtr ptr, IntPtr indices);
 
         #endregion
     }
