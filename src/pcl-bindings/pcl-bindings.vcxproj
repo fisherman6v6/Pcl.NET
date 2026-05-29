@@ -171,6 +171,9 @@
     <ClCompile Include="PointCloudXYZ.cpp" />
     <ClCompile Include="PointCloudXYZI.cpp" />
     <ClCompile Include="PointCloudXYZRGBA.cpp" />
+    <ClCompile Include="SACSegmentationXYZ.cpp" />
+    <ClCompile Include="SACSegmentationXYZI.cpp" />
+    <ClCompile Include="SACSegmentationXYZRGBA.cpp" />
     <ClCompile Include="StatisticalOutlierRemovalPointXYZ.cpp" />
     <ClCompile Include="VectorByte.cpp" />
     <ClCompile Include="VectorFloat.cpp" />

@@ -116,6 +116,15 @@
     <ClCompile Include="StatisticalOutlierRemovalPointXYZ.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SACSegmentationXYZ.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SACSegmentationXYZI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SACSegmentationXYZRGBA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="pcl-bindings.rc">
