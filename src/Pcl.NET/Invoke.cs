@@ -1264,7 +1264,7 @@ namespace Pcl.NET
         #endregion
 
         #region Header
-        
+
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl, CharSet = CharSet.Ansi)]
         public static extern int io_read_pcd_header(string filename, ref PCDHeader header);
 
@@ -1496,6 +1496,85 @@ namespace Pcl.NET
 
         [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
         public static extern void sacsegmentation_pointxyzrgba_get_indices_vector(IntPtr ptr, IntPtr indices);
+
+        #endregion
+
+        #region IterativeClosestPointXYZXYZ
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr iterative_closest_point_xyz_xyz_ctor();
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_delete(ref IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_input_source(IntPtr ptr, IntPtr pointcloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_input_target(IntPtr ptr, IntPtr pointcloud);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_use_reciprocal_correspondences(IntPtr ptr, bool use_reciprocal_correspondences);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int iterative_closest_point_xyz_xyz_get_use_reciprocal_correspondences(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_maximum_iterations(IntPtr ptr, int nr_iterations);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int iterative_closest_point_xyz_xyz_get_maximum_iterations(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_max_correspondence_distance(IntPtr ptr, double max_correspondence_distance);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double iterative_closest_point_xyz_xyz_get_max_correspondence_distance(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_transformation_epsilon(IntPtr ptr, double transformation_epsilon);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double iterative_closest_point_xyz_xyz_get_transformation_epsilon(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_euclidean_fitness_epsilon(IntPtr ptr, double transformation_epsilon);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double iterative_closest_point_xyz_xyz_get_euclidean_fitness_epsilon(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int iterative_closest_point_xyz_xyz_has_converged(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double iterative_closest_point_xyz_xyz_get_fitness_score(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr iterative_closest_point_xyz_xyz_get_final_transformation(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_indices(IntPtr ptr, long row_start, long col_start, long nb_rows, long nb_cols);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_indices_vector(IntPtr ptr, IntPtr indices);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_ransac_outlier_rejection_threshold(IntPtr ptr, double threshold);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double  iterative_closest_point_xyz_xyz_get_ransac_outlier_rejection_threshold(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_set_transformation_rotation_epsilon(IntPtr ptr, double epsilon);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern double iterative_closest_point_xyz_xyz_get_transformation_rotation_epsilon(IntPtr ptr);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_align(IntPtr ptr, IntPtr output);
+
+        [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+        public static extern void iterative_closest_point_xyz_xyz_align_guess(IntPtr ptr, IntPtr output, IntPtr guess);
 
         #endregion
     }
