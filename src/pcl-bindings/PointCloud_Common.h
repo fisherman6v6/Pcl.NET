@@ -14,9 +14,11 @@ void downsample(PointCloud<PointT>* ptr, int factor, PointCloud<PointT>* output)
     if (output->width != ptr->width / factor ||
         output->height != ptr->height / factor)
     {
-        output->resize(ptr->width / factor * ptr->height / factor);
-        output->width = ptr->width / factor;
-        output->height = ptr->height / factor;
+        auto nw = ptr->width / factor;
+        auto nh = ptr->height / factor;
+        output->resize(nw * nh);
+        output->width = nw;
+        output->height = nh;
         output->is_dense = ptr->is_dense;
     }
 

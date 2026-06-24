@@ -119,6 +119,7 @@ namespace Pcl.NET
         public PointCloudXYZRGBA Downsample(int factor)
         {
             ThrowIfDisposed();
+            ThrowHelper.ThrowInvalidOperationExceptioIfCondition_PointCloudMustBeOrganized(!IsOrganized);
             PointCloudXYZRGBA output = new PointCloudXYZRGBA(this.Width, this.Height);
             Invoke.pointcloud_xyzrgba_downsample(_ptr, factor, output);
             return output;

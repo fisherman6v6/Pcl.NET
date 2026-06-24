@@ -63,5 +63,13 @@ namespace Pcl.NET
                 throw new ArgumentException("Search radius must be greater than zero");
             }
         }
+
+        public static void ThrowInvalidOperationExceptioIfCondition_PointCloudMustBeOrganized(bool condition)
+        {
+            if (condition)
+            {
+                throw new InvalidOperationException("Point Cloud must be organized i.e. Height != 1");
+            }
+        }
     }
 }

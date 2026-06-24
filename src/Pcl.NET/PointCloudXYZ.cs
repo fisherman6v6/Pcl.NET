@@ -104,6 +104,7 @@ namespace Pcl.NET
         public PointCloudXYZ Downsample(int factor)
         {
             ThrowIfDisposed();
+            ThrowHelper.ThrowInvalidOperationExceptioIfCondition_PointCloudMustBeOrganized(!IsOrganized);
             PointCloudXYZ output = new PointCloudXYZ(this.Width, this.Height);
             Invoke.pointcloud_xyz_downsample(_ptr, factor, output);
             return output;
