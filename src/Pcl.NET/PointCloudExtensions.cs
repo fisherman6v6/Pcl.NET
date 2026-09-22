@@ -14,6 +14,11 @@
             }
         }
 
+        public static void SaveCompressed(this PointCloudXYZ @this, string filename)
+        {
+            IO.SavePointCloudXYZBinary(filename, @this, true);
+        }
+
         public static void Save(this PointCloudXYZI @this, string filename, bool ascii = false)
         {
             if (ascii)
@@ -24,6 +29,11 @@
             {
                 IO.SavePointCloudXYZIBinary(filename, @this);
             }
+        }
+
+        public static void SaveCompressed(this PointCloudXYZI @this, string filename)
+        {
+            IO.SavePointCloudXYZIBinary(filename, @this, true);
         }
 
         public static void Save(this PointCloudXYZRGBA @this, string filename, bool ascii = false)
